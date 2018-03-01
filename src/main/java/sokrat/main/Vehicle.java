@@ -8,6 +8,12 @@ public class Vehicle {
     private List<Ride> rides;
     private Ride currentRide;
 
+    public static enum Status{
+        MOVING_TO_RIDE,
+        MOVING_TO_DESTINATION,
+        AVAILABLE
+    }
+
     public Vehicle(Position initialPosition){
          currentPosition = initialPosition;
     }
@@ -30,6 +36,12 @@ public class Vehicle {
 
     public void AffectRide(Ride newRide) {
         this.currentRide = newRide;
+        if( currentPosition.equals(newRide.getFrom())) moveToDestination();
+    }
+
+    private void moveToDestination() {
+        //if(currentPosition)
+        //status = Status.MOVING_TO_DESTINATION;
     }
 
     public void endRide(){

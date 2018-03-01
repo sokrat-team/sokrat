@@ -1,9 +1,9 @@
 package sokrat.main;
 
 import java.util.List;
-import java.util.Set;
 
 public class SimpleSimulator extends Simulator{
+
 
 
     private int nbRemainingSteps;
@@ -14,8 +14,11 @@ public class SimpleSimulator extends Simulator{
 
     public SimpleSimulator(int duration, int nbRows, int nbColumns, int nbVehicles, List<Ride> rides, int bonus) {
         super(duration, nbRows, nbColumns, nbVehicles, bonus);
-        super.setRides(rides);
+        addRides(rides);
     }
+
+
+
 
     @Override
     public int runSimulation() {
@@ -29,7 +32,7 @@ public class SimpleSimulator extends Simulator{
     }
 
     private int calculateScore() {
-        return 0;
+        return getSolution().gain();
     }
 
     @Override
@@ -44,10 +47,17 @@ public class SimpleSimulator extends Simulator{
     }
 
     private void checkVehicles() {
+
     }
 
     public void affectRides(){
-        
+        for(Vehicle vehicle : freeVehicles){
+            affectRideTo(vehicle);
+        }
+    }
+
+    private void affectRideTo(Vehicle vehicle) {
+
     }
 
 }

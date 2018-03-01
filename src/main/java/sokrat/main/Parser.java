@@ -19,7 +19,7 @@ public class Parser {
                 rides.add(parseRide(line));
                 line = reader.readLine();
             }
-            getSimulator().setRides(rides);
+            getSimulator().addRides(rides);
         }
 
     }

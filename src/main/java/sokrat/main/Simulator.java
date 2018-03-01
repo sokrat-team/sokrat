@@ -55,11 +55,23 @@ public abstract class Simulator {
         for(int i = 0 ; i<nbVehicles; i++){
             freeVehicles.add(new Vehicle(Position.INITIAL_POSITION));
         }
+    }
+
+    public Solution getSolution(){
+        return new Solution(getAllVehicles(),bonus );
 
     }
 
-    public void setRides(List<Ride> rides) {
+    private List<Vehicle> getAllVehicles() {
+        ArrayList<Vehicle> results = new ArrayList<>();
+        results.addAll(busyVehicles);
+        results.addAll(freeVehicles);
+        return results;
+    }
+    private final List<Ride> unasssignedRides = new ArrayList<>();
+    public void addRides(List<Ride> rides) {
         this.rides = rides;
+        unasssignedRides.addAll(rides);
     }
 
     public int getBonus() {
