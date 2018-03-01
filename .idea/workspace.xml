@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b3d7a7e-fa47-4ed9-9fba-84f586c24ab1" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/SimpleSimulator.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/PositionTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_cp_profiler_cpprof_java_1_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_cp_profiler_cpprof_java_1_3_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_spullara_cli_parser_cli_parser_1_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_spullara_cli_parser_cli_parser_1_1_2.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" />
@@ -36,6 +35,8 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Position.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Position.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Ride.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Ride.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/SimpleSimulator.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/SimpleSimulator.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" />
     </list>
@@ -64,7 +65,7 @@
       <file leaf-file-name="Ride.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Ride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
+            <state relative-caret-position="578">
               <caret line="55" column="36" lean-forward="false" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="36" />
               <folding>
                 <element signature="e#255#256#0" expanded="true" />
@@ -96,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vehicle.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Vehicle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+            <state relative-caret-position="408">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
                 <element signature="e#213#214#0" expanded="true" />
                 <element signature="e#263#264#0" expanded="true" />
@@ -121,22 +122,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Position.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Position.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Position.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="347">
+              <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
               <folding>
-                <element signature="e#332#333#0" expanded="true" />
-                <element signature="e#356#357#0" expanded="true" />
-                <element signature="e#387#388#0" expanded="true" />
-                <element signature="e#413#414#0" expanded="true" />
-                <element signature="e#438#439#0" expanded="true" />
-                <element signature="e#462#463#0" expanded="true" />
-                <element signature="e#493#494#0" expanded="true" />
-                <element signature="e#519#520#0" expanded="true" />
-                <element signature="e#562#563#0" expanded="true" />
-                <element signature="e#640#641#0" expanded="true" />
+                <element signature="e#343#344#0" expanded="true" />
+                <element signature="e#367#368#0" expanded="true" />
+                <element signature="e#398#399#0" expanded="true" />
+                <element signature="e#424#425#0" expanded="true" />
+                <element signature="e#449#450#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
+                <element signature="e#504#505#0" expanded="true" />
+                <element signature="e#530#531#0" expanded="true" />
+                <element signature="e#573#574#0" expanded="true" />
+                <element signature="e#651#652#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PositionTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/PositionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -145,8 +158,8 @@
       <file leaf-file-name="Simulator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+            <state relative-caret-position="228">
+              <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#656#657#0" expanded="true" />
@@ -199,16 +212,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/log4j.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -224,8 +227,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -247,10 +250,11 @@
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Ride.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Position.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/SimpleSimulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java" />
+        <option value="$PROJECT_DIR$/src/test/java/sokrat/main/PositionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Position.java" />
       </list>
     </option>
   </component>
@@ -378,6 +382,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="sokrat.main" />
       <recent name="main" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -400,7 +405,32 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MainTest (1)">
+  <component name="RunManager" selected="Android JUnit.PositionTest">
+    <configuration name="PositionTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="sokrat.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="sokrat" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="sokrat.main" />
+      <option name="MAIN_CLASS_NAME" value="sokrat.main.PositionTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -485,31 +515,6 @@
       <option name="PACKAGE_NAME" value="main" />
       <option name="MAIN_CLASS_NAME" value="main.MainTest" />
       <option name="METHOD_NAME" value="testConstructorWithExistingFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="MainTest.testNullFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="sokrat" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="main" />
-      <option name="MAIN_CLASS_NAME" value="main.MainTest" />
-      <option name="METHOD_NAME" value="testNullFile" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -609,18 +614,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest.testNullFile" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.testNullFileShouldFail" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest.testConstructorWithExistingFile" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MainTest (1)" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest.testNullFileShouldFail" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.testConstructorWithExistingFile" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Android JUnit.PositionTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.testConstructorWithExistingFile" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest.testNullFileShouldFail" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MainTest.testNullFile" />
+        <item index="0" class="java.lang.String" itemvalue="Android JUnit.PositionTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest.testConstructorWithExistingFile" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MainTest.testNullFileShouldFail" />
       </list>
     </recent_temporary>
   </component>
@@ -638,9 +643,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MainTest - 2018.02.23 at 17h 05m 40s.xml">
-      <configuration name="MainTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MainTest - 2018.02.23 at 17h 09m 12s.xml">
       <configuration name="MainTest" configurationId="JUnit" />
     </history-entry>
@@ -668,6 +670,9 @@
     <history-entry file="MainTest_testNullFileShouldFail - 2018.02.23 at 17h 09m 40s.xml">
       <configuration name="MainTest.testNullFileShouldFail" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PositionTest - 2018.03.01 at 19h 53m 24s.xml">
+      <configuration name="PositionTest" configurationId="AndroidJUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
@@ -681,7 +686,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16388175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35443038" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35364237" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30588236" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -790,9 +795,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/SimpleSimulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+          <folding>
+            <element signature="e#652#653#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
+            <element signature="e#750#751#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#813#814#0" expanded="true" />
+            <element signature="e#847#848#0" expanded="true" />
+            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#915#916#0" expanded="true" />
+            <element signature="e#943#944#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="e#213#214#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Ride.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
+        <state relative-caret-position="578">
           <caret line="55" column="36" lean-forward="false" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="36" />
           <folding>
             <element signature="e#255#256#0" expanded="true" />
@@ -823,75 +882,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Position.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/PositionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#356#357#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#413#414#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#813#814#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#915#916#0" expanded="true" />
-            <element signature="e#943#944#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/SimpleSimulator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Position.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        <state relative-caret-position="347">
+          <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
           <folding>
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-          <folding>
-            <element signature="e#213#214#0" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
             <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
             <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
           </folding>
         </state>
       </provider>
