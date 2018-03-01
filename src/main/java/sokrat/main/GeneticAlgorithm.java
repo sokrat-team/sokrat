@@ -17,8 +17,8 @@ public class GeneticAlgorithm {
     }
 
     public Solution solve(){
+        solutions.addAll(generateNSolutions(1000));
         for(int index = 0 ; index < 5 ; ++index){
-            solutions.addAll(generateNSolutions(1000));
             //gradeAll();
             solutions.sort(new Comparator<Solution>() {
                 @Override
@@ -36,7 +36,38 @@ public class GeneticAlgorithm {
     }
 
     public List<Solution> generateNSolutions(int poolsize){
-        return null;
+        List<Solution> retVal = new ArrayList<>();
+        for(int index = 0 ; index < poolsize-1 ; ++index){
+            List<Vehicle> vehicles = new ArrayList<>();
+            for(int vehindex = 0 ; vehindex < this.simulator.getNbVehicles(); ++vehindex){
+                vehicles.add(new Vehicle(new Position(0,0)));
+            }
+            Solution sol = new Solution(vehicles, this.simulator.getBonus());
+            assignRDMRides(this.simulator.getRides(), sol);
+            retVal.add(sol);
+        }
+        List<Vehicle> clevervehicles = new ArrayList<>();
+        for(int vehindex = 0 ; vehindex < this.simulator.getNbVehicles(); ++vehindex){
+            clevervehicles.add(new Vehicle(new Position(0,0)));
+        }
+        Solution cleversol = new Solution(clevervehicles, this.simulator.getBonus());
+        assignCLEVERRides(this.simulator.getRides(), cleversol);
+        retVal.add(cleversol);
+        return retVal;
+    }
+
+    public void assignRDMRides(List<Ride> rides, Solution sol){
+        for(Ride ride : rides){
+            int vehicleIndex = (int)(Math.random() * this.simulator.getNbVehicles());
+            sol.addRideToVehicle(vehicleIndex, ride);
+        }
+    }
+
+    public void assignCLEVERRides(List<Ride> rides, Solution sol){
+        for(int index = 0 ; index < rides.size() ; ++ index){
+            int vehicleIndex = index % this.simulator.getNbVehicles();
+            sol.addRideToVehicle(vehicleIndex, rides.get(index));
+        }
     }
 
     public Solution getMutation(Solution parent){
