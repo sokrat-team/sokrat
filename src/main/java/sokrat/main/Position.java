@@ -7,7 +7,12 @@ public class Position {
     private int x;
     private int y;
 
+    public static final Position INITIAL_POSITION=new Position(0,0);
 
+    public Position(int x, int y) {
+        this.x =x;
+        this.y = y;
+    }
 
     public int getX() {
         return x;
@@ -27,5 +32,13 @@ public class Position {
 
     public int distanceTo(Position that){
         return Math.abs(this.x - that.x ) + Math.abs(this.y - that.y );
+    }
+
+    public Position moveTo(Position that){
+        if (this.x != that.x){
+
+
+        }
+        return null;
     }
 }
