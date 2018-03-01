@@ -8,6 +8,7 @@ public class Parser {
 
 
     private Simulator simulator;
+    private int currentIndex = 0;
 
     public Parser(Reader dataIn) throws IOException, ParserExcception {
         try(BufferedReader reader = new BufferedReader(dataIn)){
@@ -18,6 +19,7 @@ public class Parser {
             while ( line != null){
                 rides.add(parseRide(line));
                 line = reader.readLine();
+                currentIndex++;
             }
             getSimulator().addRides(rides);
         }
@@ -33,7 +35,8 @@ public class Parser {
                 new Position( Integer.valueOf(fields[0]),Integer.valueOf(fields[1])),
                 new Position( Integer.valueOf(fields[2]),Integer.valueOf(fields[3])),
                 Integer.valueOf(fields[4]),
-                Integer.valueOf(fields[5])
+                Integer.valueOf(fields[5]),
+                currentIndex
         );
     }
 

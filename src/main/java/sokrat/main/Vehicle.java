@@ -7,15 +7,47 @@ public class Vehicle {
     private Position currentPosition;
     private List<Ride> rides;
     private Ride currentRide;
+    private Status status;
+
+    public void checkRide(int step) {
+        switch(status){
+            case MOVING_TO_RIDE_START:
+                if (atStartingPoint()) moveToDestinationIfNeeded(step);
+                break;
+            case MOVING_TO_DESTINATION:
+                if (atDestination()) endRide(step);
+                break;
+
+        }
+
+
+    }
+
+    private boolean atStartingPoint() {
+        return currentPosition.equals(currentRide.getFrom());
+    }
+
+    private boolean atDestination() {
+        return currentPosition.equals(currentRide.getTo());
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 
     public static enum Status{
-        MOVING_TO_RIDE,
+        MOVING_TO_RIDE_START,
         MOVING_TO_DESTINATION,
         AVAILABLE
     }
 
     public Vehicle(Position initialPosition){
          currentPosition = initialPosition;
+         status=Status.AVAILABLE;
     }
 
     public Position getCurrentPosition() {
@@ -34,28 +66,55 @@ public class Vehicle {
         this.rides = rides;
     }
 
-    public void AffectRide(Ride newRide) {
+    public void AffectRide(Ride newRide, int step) {
         this.currentRide = newRide;
-        if( currentPosition.equals(newRide.getFrom())) moveToDestination();
+        moveToRideStartIfNeeded(step);
     }
 
-    private void moveToDestination() {
-        //if(currentPosition)
-        //status = Status.MOVING_TO_DESTINATION;
+    private void moveToRideStartIfNeeded(int step) {
+        if( currentPosition.equals(currentRide.getFrom()))
+            moveToDestinationIfNeeded(step);
+        else
+            setStatus(Status.MOVING_TO_RIDE_START);
+
     }
 
-    public void endRide(){
+    private void moveToDestinationIfNeeded( int step) {
+        if(currentPosition.equals(currentRide.getTo()))
+            setStatus(Status.AVAILABLE);
+        else if(step >= currentRide.getEarliestStart()) {
+            currentRide.setActualStartTime(step);
+            setStatus(Status.MOVING_TO_DESTINATION);
+        }
+    }
+
+    public void endRide(int step){
+        currentRide.setActualArrivalTime(step);
         this.rides.add(getCurrentRide());
         this.currentRide = null;
+        setStatus(Status.AVAILABLE);
     }
 
     public boolean available(){
-        return getCurrentRide() == null;
+        return getStatus() == Status.AVAILABLE;
     }
 
 
     public Ride getCurrentRide() {
         return currentRide;
+    }
+
+    public void move(int step){
+        switch(getStatus()){
+            case MOVING_TO_RIDE_START:
+                moveTowardsOrigin();
+                break;
+            case MOVING_TO_DESTINATION:
+                moveTowardsDestination();
+                break;
+            default:
+                // no move
+        }
     }
 
     public void moveTowardsDestination() {

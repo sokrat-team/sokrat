@@ -6,7 +6,7 @@ public class SimpleSimulator extends Simulator{
 
 
 
-    private int nbRemainingSteps;
+    private int currentStep;
 
     public SimpleSimulator(int duration, int nbRows, int nbColumns, int nbVehicles,int bonus) {
         super(duration, nbRows, nbColumns, nbVehicles,bonus);
@@ -23,10 +23,10 @@ public class SimpleSimulator extends Simulator{
     @Override
     public int runSimulation() {
         this.initialize();
-        for (nbRemainingSteps = getDuration(); nbRemainingSteps > 0 ; nbRemainingSteps--  ){
-            this.affectRides();
-            this.moveVehicles();
-            this.checkVehicles();
+        for (currentStep = 0; currentStep < getDuration() ; currentStep++  ){
+            this.affectRides(currentStep);
+            this.moveVehicles(currentStep);
+            this.checkVehicles(currentStep);
         }
         return calculateScore();
     }
@@ -40,17 +40,23 @@ public class SimpleSimulator extends Simulator{
         super.initialize();
     }
 
-    private void moveVehicles() {
+    private void moveVehicles(int currentStep) {
         for(Vehicle vehicle: busyVehicles){
-            vehicle.moveTowardsDestination();
+            vehicle.move(currentStep);
         }
     }
 
-    private void checkVehicles() {
-
+    private void checkVehicles(int currentStep) {
+        for(Vehicle v : busyVehicles){
+            v.checkRide(currentStep);
+            if (v.available()){
+               freeVehicles.add(v);
+               busyVehicles.remove(v);
+            }
+        }
     }
 
-    public void affectRides(){
+    public void affectRides(int currentStep){
         for(Vehicle vehicle : freeVehicles){
             affectRideTo(vehicle);
         }
