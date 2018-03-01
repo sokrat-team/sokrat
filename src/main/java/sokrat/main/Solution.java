@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Solution {
     private List<Vehicle> vehicles;
-    public static int bonus = 20;
+    public int bonus = 20;
     int gain;
 
     public Solution(){
@@ -16,6 +16,11 @@ public class Solution {
     public Solution(List<Vehicle> vehicles, int bonus){
         this.vehicles = vehicles;
         this.bonus = bonus;
+        gain = -1;
+    }
+
+    public void addRideToVehicle(int vehindex, Ride ride){
+        this.vehicles.get(vehindex).getRides().add(ride);
     }
 
     public int gain() {
