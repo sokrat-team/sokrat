@@ -49,4 +49,16 @@ public class Solution {
         }
         return gain;
     }
+
+    public String toString(){
+        String solutionsString = "";
+        for(Vehicle vehicle : this.vehicles){
+            solutionsString+=vehicle.getRides().size();
+            for(Ride ride : vehicle.getRides()){
+                solutionsString+=" "+ride.getIndex();
+            }
+            solutionsString+="\n";
+        }
+        return solutionsString;
+    }
 }
