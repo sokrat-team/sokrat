@@ -8,9 +8,12 @@ public class GeneticAlgorithm {
 
     public List<Solution> solutions;
 
-    public GeneticAlgorithm(){
+    public Simulator simulator;
+
+    public GeneticAlgorithm(Simulator simulator){
         this.bestGrade = 0;
         solutions = new ArrayList<>();
+        this.simulator = simulator;
     }
 
     public Solution solve(){
@@ -26,7 +29,9 @@ public class GeneticAlgorithm {
             removeNWeakest(980);
             iterate();
         }
-
+        if(solutions.size() > 0){
+            return solutions.get(0);
+        }
         return null;
     }
 
