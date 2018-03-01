@@ -65,4 +65,12 @@ public abstract class Simulator {
     public int getBonus() {
         return bonus;
     }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 }

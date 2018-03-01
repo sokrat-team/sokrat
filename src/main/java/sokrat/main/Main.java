@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Main {
     @Argument(alias = "i", description = "Input File, mandatory", required = true)
@@ -25,7 +26,7 @@ public class Main {
 
         try {
             new Main(inputFile,outputFile).proceed();
-        } catch (FileNotFoundException e) {
+        } catch (Throwable e) {
             e.printStackTrace();
             System.exit(1);
         }
@@ -46,8 +47,9 @@ public class Main {
         logger.info("Will write to output file: {}",outputFile);
     }
 
-    public void proceed(){
-
-
+    public void proceed() throws IOException, ParserExcception {
+        Simulator s = new Parser(inputFile).getSimulator();
+        s.runSimulation();
+        logger.info("Score : " + s.getScore());
     }
 }
