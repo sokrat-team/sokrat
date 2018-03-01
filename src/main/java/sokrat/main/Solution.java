@@ -6,13 +6,20 @@ import java.util.List;
 public class Solution {
     private List<Vehicle> vehicles;
     public static int BONUS = 20;
+    int gain;
 
     public Solution(){
         vehicles = new ArrayList<>();
+        gain = -1;
     }
 
+
+
     public int gain() {
-        int gain = 0;
+        if(this.gain >=0){
+            return this.gain;
+        }
+        gain = 0;
         for (Vehicle vehicle : this.vehicles) {
             int currentStep = 0;
             Position currentPos = new Position(0, 0);
