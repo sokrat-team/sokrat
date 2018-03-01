@@ -13,6 +13,7 @@ public class Solution {
         gain = -1;
     }
 
+
     public Solution(List<Vehicle> vehicles, int bonus){
         this.vehicles = vehicles;
         this.bonus = bonus;
