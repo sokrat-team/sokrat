@@ -28,11 +28,13 @@ public class SimpleSimulator extends Simulator{
 
     @Override
     public void initialize() {
-
+        super.initialize();
     }
 
     private void moveVehicles() {
-
+        for(Vehicle vehicle: busyVehicles){
+            vehicle.moveTowardsDestination();
+        }
     }
 
     private void checkVehicles() {

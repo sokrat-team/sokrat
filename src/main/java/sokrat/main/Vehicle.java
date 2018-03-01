@@ -33,15 +33,24 @@ public class Vehicle {
     }
 
     public void endRide(){
-        this.rides.add(currentRide);
+        this.rides.add(getCurrentRide());
         this.currentRide = null;
     }
 
     public boolean available(){
-        return currentRide == null;
+        return getCurrentRide() == null;
     }
 
 
+    public Ride getCurrentRide() {
+        return currentRide;
+    }
 
+    public void moveTowardsDestination() {
+        this.setCurrentPosition(currentPosition.moveTowards(currentRide.getTo()));
+    }
 
+    public void moveTowardsOrigin() {
+        this.setCurrentPosition(currentPosition.moveTowards(currentRide.getFrom()));
+    }
 }
