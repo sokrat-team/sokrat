@@ -1,5 +1,6 @@
 package sokrat.main;
 
+import java.util.List;
 import java.util.Set;
 
 public class SimpleSimulator extends Simulator{
@@ -7,8 +8,13 @@ public class SimpleSimulator extends Simulator{
 
     private int nbRemainingSteps;
 
-    public SimpleSimulator(int duration, int nbRows, int nbColumns, int nbVehicles, Set<Ride> rides) {
-        super(duration, nbRows, nbColumns, nbVehicles, rides);
+    public SimpleSimulator(int duration, int nbRows, int nbColumns, int nbVehicles,int bonus) {
+        super(duration, nbRows, nbColumns, nbVehicles,bonus);
+    }
+
+    public SimpleSimulator(int duration, int nbRows, int nbColumns, int nbVehicles, List<Ride> rides, int bonus) {
+        super(duration, nbRows, nbColumns, nbVehicles, bonus);
+        super.setRides(rides);
     }
 
     @Override

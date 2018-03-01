@@ -6,8 +6,17 @@ public class Ride {
     private Position to;
     private int earliestStart;
     private int latestFinish;
+
+    public Ride(Position from, Position to, int earliestStart, int latestFinish) {
+        this.from = from;
+        this.to = to;
+        this.earliestStart = earliestStart;
+        this.latestFinish = latestFinish;
+    }
+
     private int actualStartTime;
     private int actualArrivalTime;
+
 
     public Position getFrom() {
         return from;
