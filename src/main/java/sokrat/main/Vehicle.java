@@ -1,11 +1,12 @@
 package sokrat.main;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Vehicle {
 
     private Position currentPosition;
-    private List<Ride> rides;
+    private List<Ride> rides=new ArrayList<>();
     private Ride currentRide;
     private Status status;
 

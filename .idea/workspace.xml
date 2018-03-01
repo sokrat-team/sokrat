@@ -101,33 +101,34 @@
       <file leaf-file-name="Vehicle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="73" column="52" lean-forward="true" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
+            <state relative-caret-position="119">
+              <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
               <folding>
-                <element signature="e#565#566#0" expanded="true" />
-                <element signature="e#633#634#0" expanded="true" />
-                <element signature="e#672#673#0" expanded="true" />
-                <element signature="e#738#739#0" expanded="true" />
-                <element signature="e#771#772#0" expanded="true" />
-                <element signature="e#800#801#0" expanded="true" />
-                <element signature="e#844#845#0" expanded="true" />
-                <element signature="e#880#881#0" expanded="true" />
-                <element signature="e#1172#1173#0" expanded="true" />
-                <element signature="e#1210#1211#0" expanded="true" />
-                <element signature="e#1274#1275#0" expanded="true" />
-                <element signature="e#1328#1329#0" expanded="true" />
-                <element signature="e#1364#1365#0" expanded="true" />
-                <element signature="e#1392#1393#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
+                <element signature="e#679#680#0" expanded="true" />
+                <element signature="e#718#719#0" expanded="true" />
+                <element signature="e#784#785#0" expanded="true" />
+                <element signature="e#817#818#0" expanded="true" />
+                <element signature="e#846#847#0" expanded="true" />
+                <element signature="e#890#891#0" expanded="true" />
+                <element signature="e#926#927#0" expanded="true" />
+                <element signature="e#1218#1219#0" expanded="true" />
+                <element signature="e#1256#1257#0" expanded="true" />
+                <element signature="e#1320#1321#0" expanded="true" />
+                <element signature="e#1374#1375#0" expanded="true" />
+                <element signature="e#1410#1411#0" expanded="true" />
                 <element signature="e#1438#1439#0" expanded="true" />
-                <element signature="e#1472#1473#0" expanded="true" />
-                <element signature="e#2403#2404#0" expanded="true" />
-                <element signature="e#2457#2458#0" expanded="true" />
-                <element signature="e#2494#2495#0" expanded="true" />
-                <element signature="e#2528#2529#0" expanded="true" />
-                <element signature="e#2902#2903#0" expanded="true" />
-                <element signature="e#2991#2992#0" expanded="true" />
-                <element signature="e#3030#3031#0" expanded="true" />
-                <element signature="e#3121#3122#0" expanded="true" />
+                <element signature="e#1484#1485#0" expanded="true" />
+                <element signature="e#1518#1519#0" expanded="true" />
+                <element signature="e#2449#2450#0" expanded="true" />
+                <element signature="e#2503#2504#0" expanded="true" />
+                <element signature="e#2540#2541#0" expanded="true" />
+                <element signature="e#2574#2575#0" expanded="true" />
+                <element signature="e#2948#2949#0" expanded="true" />
+                <element signature="e#3037#3038#0" expanded="true" />
+                <element signature="e#3076#3077#0" expanded="true" />
+                <element signature="e#3167#3168#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,8 +137,8 @@
       <file leaf-file-name="VehicleTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/VehicleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="267">
+              <caret line="38" column="43" lean-forward="false" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -214,7 +215,7 @@
       <file leaf-file-name="ParserTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/ParserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="365">
               <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -287,11 +288,11 @@
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Solution.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Position.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/SimpleSimulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Ride.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Parser.java" />
         <option value="$PROJECT_DIR$/src/test/java/sokrat/main/ParserTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/test/java/sokrat/main/VehicleTest.java" />
       </list>
     </option>
@@ -316,7 +317,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="65" />
     <option name="y" value="4" />
     <option name="width" value="1400" />
@@ -446,7 +447,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VehicleTest">
+  <component name="RunManager" selected="JUnit.VehicleTest.testVehicleMoveToRide">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -662,10 +663,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.VehicleTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.VehicleTest.testVehicleShouldGoToDestinationIfAlreadyAtStart" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ParserTest.testSimpleParse" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.VehicleTest.testVehicleMoveToRide" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.VehicleTest.testVehicleMoveToRide" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.VehicleTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.VehicleTest.testVehicleShouldGoToDestinationIfAlreadyAtStart" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ParserTest.testSimpleParse" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.VehicleTest.testStatusChanges" />
       </list>
     </recent_temporary>
@@ -684,15 +685,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MainTest_(1) - 2018.02.23 at 17h 26m 59s.xml">
-      <configuration name="MainTest (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainTest_testConstructorWithExistingFile - 2018.02.23 at 17h 17m 13s.xml">
-      <configuration name="MainTest.testConstructorWithExistingFile" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainTest_testNullFile - 2018.02.23 at 17h 05m 30s.xml">
-      <configuration name="MainTest.testNullFile" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MainTest_testNullFileShouldFail - 2018.02.23 at 17h 09m 40s.xml">
       <configuration name="MainTest.testNullFileShouldFail" configurationId="JUnit" />
     </history-entry>
@@ -705,6 +697,9 @@
     <history-entry file="VehicleTest - 2018.03.01 at 21h 07m 19s.xml">
       <configuration name="VehicleTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="VehicleTest - 2018.03.01 at 21h 27m 09s.xml">
+      <configuration name="VehicleTest" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="VehicleTest_testStatusChanges - 2018.03.01 at 21h 03m 30s.xml">
       <configuration name="VehicleTest.testStatusChanges" configurationId="JUnit" />
     </history-entry>
@@ -714,9 +709,15 @@
     <history-entry file="VehicleTest_testVehicleMoveToRide - 2018.03.01 at 21h 10m 52s.xml">
       <configuration name="VehicleTest.testVehicleMoveToRide" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="VehicleTest_testVehicleMoveToRide - 2018.03.01 at 21h 29m 24s.xml">
+      <configuration name="VehicleTest.testVehicleMoveToRide" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VehicleTest_testVehicleMoveToRide - 2018.03.01 at 21h 29m 39s.xml">
+      <configuration name="VehicleTest.testVehicleMoveToRide" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -727,7 +728,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16388175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35364237" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35364237" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30588236" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -858,39 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="73" column="52" lean-forward="true" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
-          <folding>
-            <element signature="e#565#566#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-            <element signature="e#800#801#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#1172#1173#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1328#1329#0" expanded="true" />
-            <element signature="e#1364#1365#0" expanded="true" />
-            <element signature="e#1392#1393#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#2403#2404#0" expanded="true" />
-            <element signature="e#2457#2458#0" expanded="true" />
-            <element signature="e#2494#2495#0" expanded="true" />
-            <element signature="e#2528#2529#0" expanded="true" />
-            <element signature="e#2902#2903#0" expanded="true" />
-            <element signature="e#2991#2992#0" expanded="true" />
-            <element signature="e#3030#3031#0" expanded="true" />
-            <element signature="e#3121#3122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -916,14 +884,6 @@
             <element signature="e#956#957#0" expanded="true" />
             <element signature="e#1034#1035#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/Assert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="833" column="0" lean-forward="false" selection-start-line="833" selection-start-column="0" selection-end-line="833" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -966,6 +926,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/ParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="34" column="64" lean-forward="false" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#419#425#0" expanded="true" />
+            <element signature="e#1972#1973#0" expanded="true" />
+            <element signature="e#2004#2005#0" expanded="true" />
+            <element signature="e#2057#2058#0" expanded="true" />
+            <element signature="e#2099#2100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Ride.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1003,35 +988,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Parser.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/Assert.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="34" column="64" lean-forward="false" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#419#425#0" expanded="true" />
-            <element signature="e#1972#1973#0" expanded="true" />
-            <element signature="e#2004#2005#0" expanded="true" />
-            <element signature="e#2057#2058#0" expanded="true" />
-            <element signature="e#2099#2100#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="833" column="0" lean-forward="false" selection-start-line="833" selection-start-column="0" selection-end-line="833" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/ParserTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+        <state relative-caret-position="119">
+          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
+            <element signature="e#784#785#0" expanded="true" />
+            <element signature="e#817#818#0" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+            <element signature="e#890#891#0" expanded="true" />
+            <element signature="e#926#927#0" expanded="true" />
+            <element signature="e#1218#1219#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
+            <element signature="e#1320#1321#0" expanded="true" />
+            <element signature="e#1374#1375#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1438#1439#0" expanded="true" />
+            <element signature="e#1484#1485#0" expanded="true" />
+            <element signature="e#1518#1519#0" expanded="true" />
+            <element signature="e#2449#2450#0" expanded="true" />
+            <element signature="e#2503#2504#0" expanded="true" />
+            <element signature="e#2540#2541#0" expanded="true" />
+            <element signature="e#2574#2575#0" expanded="true" />
+            <element signature="e#2948#2949#0" expanded="true" />
+            <element signature="e#3037#3038#0" expanded="true" />
+            <element signature="e#3076#3077#0" expanded="true" />
+            <element signature="e#3167#3168#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/VehicleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="267">
+          <caret line="38" column="43" lean-forward="false" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
