@@ -21,6 +21,8 @@ public class ParserTest {
         assertEquals(4,s.getNbColumns());
         assertEquals(3,s.getRides().size());
         assertEquals(2,s.getBonus());
+        assertEquals(0,s.getRides().get(0).getIndex());
+
 
     }
 
