@@ -46,7 +46,7 @@ public class Main {
      * @throws FileNotFoundException
      */
     public Main(File inputFile, File outputFile) throws FileNotFoundException {
-        outputFile.mkdirs();
+        outputFile.getParent().mkdirs();
         Preconditions.checkNotNull(inputFile, "input file must not be null");
         Preconditions.checkNotNull(outputFile, "output file must not be null");
         if (!inputFile.exists()) throw new FileNotFoundException();

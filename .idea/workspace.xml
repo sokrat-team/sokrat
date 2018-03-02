@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b3d7a7e-fa47-4ed9-9fba-84f586c24ab1" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/a_example.out" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/b_should_be_easy.out" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/c_no_hurry.out" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/d_metropolis.out" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/e_high_bonus.out" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_cp_profiler_cpprof_java_1_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_cp_profiler_cpprof_java_1_3_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_spullara_cli_parser_cli_parser_1_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_spullara_cli_parser_cli_parser_1_1_2.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" />
@@ -34,6 +29,17 @@
       <change beforePath="$PROJECT_DIR$/input_files/c_no_hurry.in" afterPath="$PROJECT_DIR$/input_files/c_no_hurry.in" />
       <change beforePath="$PROJECT_DIR$/input_files/d_metropolis.in" afterPath="$PROJECT_DIR$/input_files/d_metropolis.in" />
       <change beforePath="$PROJECT_DIR$/input_files/e_high_bonus.in" afterPath="$PROJECT_DIR$/input_files/e_high_bonus.in" />
+      <change beforePath="$PROJECT_DIR$/online_qualification_round_2018.pdf" afterPath="$PROJECT_DIR$/online_qualification_round_2018.pdf" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.genetic" afterPath="$PROJECT_DIR$/output_files/a_example.out.genetic" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.naive" afterPath="$PROJECT_DIR$/output_files/a_example.out.naive" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.genetic" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.genetic" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.naive" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.naive" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.genetic" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.genetic" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.naive" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.naive" />
+      <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.genetic" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.genetic" />
+      <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.naive" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.naive" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.genetic" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.genetic" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.naive" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.naive" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change beforePath="$PROJECT_DIR$/sokrat.iml" afterPath="$PROJECT_DIR$/sokrat.iml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/GeneticAlgorithm.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/GeneticAlgorithm.java" />
@@ -61,11 +67,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="80" column="38" lean-forward="false" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+            <state relative-caret-position="214">
+              <caret line="50" column="40" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Simulator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Simulator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="544">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#827#828#0" expanded="true" />
@@ -256,8 +262,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>getS</find>
-      <find>score</find>
       <find>toto</find>
+      <find>score</find>
     </findStrings>
     <dirStrings>
       <dir>C:\_Loic_dossier_personnel\sokrat</dir>
@@ -290,8 +296,8 @@
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Solution.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/GeneticAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
       </list>
     </option>
   </component>
@@ -722,7 +728,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.159375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30588236" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5146138" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5146138" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1005,20 +1011,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="80" column="38" lean-forward="false" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="544">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#827#828#0" expanded="true" />
@@ -1033,6 +1029,16 @@
             <element signature="e#1115#1116#0" expanded="true" />
             <element signature="e#2161#2162#0" expanded="true" />
             <element signature="e#2189#2190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="50" column="40" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
