@@ -17,7 +17,7 @@ public class GeneticAlgorithm {
     }
 
     public Solution solve(){
-        solutions = generateNSolutions(1000);
+        solutions = generateNSolutions(5000);
         for(int index = 0 ; index < 2 ; ++index){
             //gradeAll();
             solutions.sort(new Comparator<Solution>() {
@@ -29,7 +29,7 @@ public class GeneticAlgorithm {
                     return o1.gain() - o2.gain();
                 }
             });
-            removeNWeakest(980);
+            removeNWeakest(4900);
             iterate();
         }
         if(solutions.size() > 0){
@@ -48,7 +48,7 @@ public class GeneticAlgorithm {
             Solution sol = new Solution(vehicles, this.simulator.getBonus());
             assignRDMRides(this.simulator.getRides(), sol);
             retVal.add(sol);
-            System.out.println("toto"+retVal.get(index).gain());
+            System.out.println("toto "+index+"    "+retVal.get(index).gain());
         }
         List<Vehicle> clevervehicles = new ArrayList<>();
         for(int vehindex = 0 ; vehindex < this.simulator.getNbVehicles(); ++vehindex){
@@ -111,7 +111,7 @@ public class GeneticAlgorithm {
     }
 
     public void iterate(){
-        for(int index = 0 ; index < 980 ; index ++){
+        for(int index = 0 ; index < 4900 ; index ++){
             int iParent = (int)(solutions.size()*Math.random());
             Solution parent = solutions.get(iParent);
             solutions.add(getMutation(parent));
