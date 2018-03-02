@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main {
@@ -51,8 +52,12 @@ public class Main {
         Simulator s = new Parser(inputFile).getSimulator();
         GeneticAlgorithm g = new GeneticAlgorithm(s);
         Solution sol = g.solve();
+        logger.info("Number of vehicles: {}", s.getNbVehicles());
         logger.info("Score genetic: {}", sol.gain());
-        logger.info(sol.toString());
+        System.out.println(sol.toString());
+        FileWriter w = new FileWriter(outputFile);
+        w.write(sol.toString());
+        w.close();
         s.runSimulation();
         logger.info("Score : " + s.getScore());
     }
