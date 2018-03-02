@@ -52,6 +52,7 @@ public class Main {
         GeneticAlgorithm g = new GeneticAlgorithm(s);
         Solution sol = g.solve();
         logger.info("Score genetic: {}", sol.gain());
+        logger.info(sol.toString());
         s.runSimulation();
         logger.info("Score : " + s.getScore());
     }
