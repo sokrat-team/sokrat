@@ -23,6 +23,13 @@ public class Solution {
         gain = -1;
     }
 
+    public static Solution generateSolution(List<Vehicle> vehicles, int bonus){
+        Solution results = new Solution();
+        results.bonus = bonus;
+        results.vehicles = vehicles;
+        return results;
+    }
+
     public void addRideToVehicle(int vehindex, Ride ride){
         this.vehicles.get(vehindex).getRides().add(ride);
     }

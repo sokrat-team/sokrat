@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public abstract class Simulator {
 
@@ -58,7 +59,7 @@ public abstract class Simulator {
     }
 
     public Solution getSolution(){
-        return new Solution(getAllVehicles(),bonus );
+        return Solution.generateSolution(getAllVehicles(),bonus );
 
     }
 
@@ -68,10 +69,18 @@ public abstract class Simulator {
         results.addAll(freeVehicles);
         return results;
     }
-    private final List<Ride> unasssignedRides = new ArrayList<>();
+    protected final List<Ride> unasssignedRides = new ArrayList<>();
+
     public void addRides(List<Ride> rides) {
         this.rides = rides;
         unasssignedRides.addAll(rides);
+        unasssignedRides.sort((r1,r2)->compareRides(r1,r2));
+    }
+
+    protected int compareRides(Ride r1, Ride r2){
+        int results = Integer.compare(r1.getEarliestStart(),r2.getEarliestStart());
+        if(results == 0 ) return Integer.compare(r1.getLength(),r2.getLength());
+        return results;
     }
 
     public int getBonus() {

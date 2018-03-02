@@ -76,4 +76,8 @@ public class Ride {
     public void setIndex(int index) {
         this.index = index;
     }
+
+    public int getLength() {
+        return from.distanceTo(to);
+    }
 }
