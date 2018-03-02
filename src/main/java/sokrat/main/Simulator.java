@@ -17,7 +17,6 @@ public abstract class Simulator {
     protected final Set<Vehicle> busyVehicles = new HashSet<>();
     private final int bonus;
 
-    private int score = 0;
 
     public Simulator(int duration, int nbRows, int nbColumns, int nbVehicles, int bonus ){
         this.duration = duration;
@@ -87,11 +86,4 @@ public abstract class Simulator {
         return bonus;
     }
 
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
 }

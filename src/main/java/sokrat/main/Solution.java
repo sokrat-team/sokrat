@@ -34,6 +34,10 @@ public class Solution {
         this.vehicles.get(vehindex).getRides().add(ride);
     }
 
+    public List<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
     public int gain() {
         if(this.gain >=0){
             return this.gain;

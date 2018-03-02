@@ -17,17 +17,20 @@ public class GeneticAlgorithm {
     }
 
     public Solution solve(){
-        solutions = generateNSolutions(1000);
-        for(int index = 0 ; index < 1 ; ++index){
+        solutions = generateNSolutions(5000);
+        for(int index = 0 ; index < 2 ; ++index){
             //gradeAll();
             solutions.sort(new Comparator<Solution>() {
                 @Override
                 public int compare(Solution o1, Solution o2) {
+                    if (o1 == null && o2 == null) return 0;
+                    else if (o1 == null) return 1;
+                    else if (o2 == null) return -1;
                     return o1.gain() - o2.gain();
                 }
             });
-            //removeNWeakest(980);
-            //iterate();
+            removeNWeakest(4900);
+            iterate();
         }
         if(solutions.size() > 0){
             return solutions.get(0);
@@ -45,7 +48,6 @@ public class GeneticAlgorithm {
             Solution sol = new Solution(vehicles, this.simulator.getBonus());
             assignRDMRides(this.simulator.getRides(), sol);
             retVal.add(sol);
-            System.out.println("toto"+retVal.get(index).gain());
         }
         List<Vehicle> clevervehicles = new ArrayList<>();
         for(int vehindex = 0 ; vehindex < this.simulator.getNbVehicles(); ++vehindex){
@@ -72,7 +74,35 @@ public class GeneticAlgorithm {
     }
 
     public Solution getMutation(Solution parent){
-        return null;
+        List<Vehicle> vehicles = new ArrayList<>();
+        for(int vehindex = 0 ; vehindex < this.simulator.getNbVehicles(); ++vehindex){
+            vehicles.add(new Vehicle(new Position(0,0)));
+        }
+        Solution child = new Solution(vehicles, this.simulator.getBonus());
+        int permutationIndex = (int)(this.simulator.getRides().size() * Math.random());
+        int count = 0;
+        int vehicleCount = 0;
+        for(Vehicle vhparent : parent.getVehicles()){
+            for(Ride ride : vhparent.getRides()){
+                count++;
+                if(count == permutationIndex){
+                    int randomette = (int)(Math.random() * parent.getVehicles().size());
+                    if(randomette == vehicleCount){
+                        randomette++;
+                        if(randomette >=parent.getVehicles().size()){
+                            randomette = 0;
+                        }
+                    }
+                    child.addRideToVehicle(randomette, ride);
+                }
+                else
+                {
+                    child.addRideToVehicle(vehicleCount, ride);
+                }
+            }
+            vehicleCount++;
+        }
+        return child;
     }
 
     public Solution getCrossover(Solution mother, Solution motherfucker){
@@ -80,7 +110,7 @@ public class GeneticAlgorithm {
     }
 
     public void iterate(){
-        for(int index = 0 ; index < 750 ; index ++){
+        for(int index = 0 ; index < 4900 ; index ++){
             int iParent = (int)(solutions.size()*Math.random());
             Solution parent = solutions.get(iParent);
             solutions.add(getMutation(parent));

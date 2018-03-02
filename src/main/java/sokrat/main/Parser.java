@@ -57,7 +57,6 @@ public class Parser {
 
     public Parser(File file) throws IOException, ParserExcception {
         this(new FileReader( file ));
-
     }
 
     public Simulator getSimulator() {
