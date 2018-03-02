@@ -45,7 +45,11 @@ public class SimpleSimulator extends Simulator{
     }
 
     private void cleanUndoableRides(int step) {
-        unasssignedRides.removeIf(r-> (currentStep + r.getLength()) > r.getLatestFinish());
+        unasssignedRides.removeIf(r-> tooLateForARide(r, currentStep));
+    }
+
+    public static boolean tooLateForARide(Ride r, int currentStep) {
+        return (currentStep + r.getLength()) >= r.getLatestFinish();
     }
 
     private int calculateScore() {
@@ -115,14 +119,14 @@ public class SimpleSimulator extends Simulator{
 
 
 
-    private boolean availableToVehicle(Ride r, Vehicle vehicle, int step) {
+    public static boolean availableToVehicle(Ride r, Vehicle vehicle, int step) {
         int startStep = step + r.getFrom().distanceTo(vehicle.getCurrentPosition());
         int earliestStart = Math.max(r.getEarliestStart(), startStep);
-        return r.getEarliestStart() <= startStep &&
+        return r.getEarliestStart() >= startStep &&
                 r.getLatestFinish() > earliestStart + r.getLength();
     }
 
-    private int shortestUsingVehicle(Ride r1, Ride r2, Vehicle vehicle) {
+    public static int shortestUsingVehicle(Ride r1, Ride r2, Vehicle vehicle) {
         return Integer.compare(r1.getFrom().distanceTo(vehicle.getCurrentPosition()),
                 r2.getFrom().distanceTo(vehicle.getCurrentPosition()));
     }
