@@ -2,8 +2,6 @@ package sokrat.main;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Predicate;
 
 public class SimpleSimulator extends Simulator{
 
@@ -15,14 +13,22 @@ public class SimpleSimulator extends Simulator{
 
     public SimpleSimulator(int duration, int nbRows, int nbColumns, int nbVehicles,int bonus) {
         super(duration, nbRows, nbColumns, nbVehicles,bonus);
+        initializeStrategy();
     }
 
     private AffectationStrategy strategy;
+
     public SimpleSimulator(int duration, int nbRows, int nbColumns, int nbVehicles, List<Ride> rides, int bonus) {
         super(duration, nbRows, nbColumns, nbVehicles, bonus);
+        initializeStrategy();
         addRides(rides);
-        strategy=nextAvailableRideStrategy;
     }
+
+    private void initializeStrategy() {
+        setStrategy(nextAvailableRideStrategy);
+    }
+
+
 
 
     @Override
@@ -30,11 +36,16 @@ public class SimpleSimulator extends Simulator{
         this.initialize();
 
         for (currentStep = 0; currentStep < getDuration() ; currentStep++  ){
+            this.cleanUndoableRides(currentStep);
             this.affectRides(currentStep);
             this.moveVehicles(currentStep);
             this.checkVehicles(currentStep);
         }
         return calculateScore();
+    }
+
+    private void cleanUndoableRides(int step) {
+        unasssignedRides.removeIf(r-> (currentStep + r.getLength()) > r.getLatestFinish());
     }
 
     private int calculateScore() {
@@ -78,13 +89,19 @@ public class SimpleSimulator extends Simulator{
 
     private void affectRideTo(Vehicle vehicle, int step) {
         if(unasssignedRides.isEmpty()) return;
-        strategy.giveRideTo(vehicle,step);
+        getStrategy().giveRideTo(vehicle,step);
 
     }
 
 
 
     private AffectationStrategy nextAvailableRideStrategy = (vehicle, step) -> unasssignedRides.stream()
+            .findFirst()
+            .ifPresent( r -> affectRideTo(r,vehicle, step));
+
+
+    private AffectationStrategy nextAvailableAndDoableRideStrategy = (vehicle, step) -> unasssignedRides.stream()
+            .filter(r -> availableToVehicle(r,vehicle,step))
             .findFirst()
             .ifPresent( r -> affectRideTo(r,vehicle, step));
 
@@ -102,7 +119,7 @@ public class SimpleSimulator extends Simulator{
         int startStep = step + r.getFrom().distanceTo(vehicle.getCurrentPosition());
         int earliestStart = Math.max(r.getEarliestStart(), startStep);
         return r.getEarliestStart() <= startStep &&
-                r.getLatestFinish() <= earliestStart + r.getLength();
+                r.getLatestFinish() > earliestStart + r.getLength();
     }
 
     private int shortestUsingVehicle(Ride r1, Ride r2, Vehicle vehicle) {
@@ -110,4 +127,11 @@ public class SimpleSimulator extends Simulator{
                 r2.getFrom().distanceTo(vehicle.getCurrentPosition()));
     }
 
+    public AffectationStrategy getStrategy() {
+        return strategy;
+    }
+
+    public void setStrategy(AffectationStrategy strategy) {
+        this.strategy = strategy;
+    }
 }

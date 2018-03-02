@@ -54,7 +54,7 @@ public class Solution {
                 currentPos = ride.getFrom();
                 currentStep += currentPos.distanceTo(ride.getTo());
                 int ridelength  = ride.getFrom().distanceTo(ride.getTo());
-                if (currentStep <= ride.getLatestFinish()) {
+                if (currentStep < ride.getLatestFinish()) {
                     gain += ridelength;
                 }
                 currentPos = ride.getTo();
