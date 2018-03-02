@@ -11,13 +11,17 @@ public class SimpleSimulator extends Simulator{
 
     private int currentStep;
 
+
+
     public SimpleSimulator(int duration, int nbRows, int nbColumns, int nbVehicles,int bonus) {
         super(duration, nbRows, nbColumns, nbVehicles,bonus);
     }
 
+    private AffectationStrategy strategy;
     public SimpleSimulator(int duration, int nbRows, int nbColumns, int nbVehicles, List<Ride> rides, int bonus) {
         super(duration, nbRows, nbColumns, nbVehicles, bonus);
         addRides(rides);
+        strategy=nextAvailableRideStrategy;
     }
 
 
@@ -74,10 +78,16 @@ public class SimpleSimulator extends Simulator{
 
     private void affectRideTo(Vehicle vehicle, int step) {
         if(unasssignedRides.isEmpty()) return;
-            unasssignedRides.stream()
-                .findFirst()
-                .ifPresent( r -> affectRideTo(r,vehicle, step));
-        }
+        strategy.giveRideTo(vehicle,step);
+
+    }
+
+
+
+    private AffectationStrategy nextAvailableRideStrategy = (vehicle, step) -> unasssignedRides.stream()
+            .findFirst()
+            .ifPresent( r -> affectRideTo(r,vehicle, step));
+
 
     private void affectRideTo(Ride r, Vehicle vehicle, int currentStep) {
         //System.out.println("Ride "  + r.getIndex() + " to " + vehicle);
