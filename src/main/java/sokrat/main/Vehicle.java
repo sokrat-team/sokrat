@@ -9,6 +9,7 @@ public class Vehicle {
     private List<Ride> rides=new ArrayList<>();
     private Ride currentRide;
     private Status status;
+    private int timeAtTopOfRideStack;
 
     public void checkRide(int step) {
         switch(status){
@@ -23,6 +24,7 @@ public class Vehicle {
 
 
     }
+
 
     private boolean atStartingPoint() {
         return currentPosition.equals(currentRide.getFrom());
@@ -49,6 +51,20 @@ public class Vehicle {
     public Vehicle(Position initialPosition){
          currentPosition = initialPosition;
          status=Status.AVAILABLE;
+        timeAtTopOfRideStack = 0;
+    }
+
+    public int getTimeAtTopOfRideStack(){
+        timeAtTopOfRideStack = 0;
+        Position currPos = new Position(0,0);
+        for(Ride ride : rides){
+            timeAtTopOfRideStack += currPos.distanceTo(ride.getFrom());
+            currPos = ride.getFrom();
+            timeAtTopOfRideStack += currPos.distanceTo(ride.getTo());
+            currPos = ride.getTo();
+        }
+
+        return timeAtTopOfRideStack;
     }
 
     public Position getCurrentPosition() {
