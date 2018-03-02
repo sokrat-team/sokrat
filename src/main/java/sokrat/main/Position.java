@@ -1,8 +1,8 @@
 package sokrat.main;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import com.google.common.collect.ComparisonChain;
 
-public class Position {
+public class Position implements Comparable<Position> {
 
     private int x;
     private int y;
@@ -34,11 +34,35 @@ public class Position {
         return Math.abs(this.x - that.x ) + Math.abs(this.y - that.y );
     }
 
-    public Position moveTo(Position that){
+    public Position moveTowards(Position that){
         if (this.x != that.x){
-
-
+            return  moveX(that);
+        }else {
+            return moveY(that);
         }
-        return null;
+    }
+
+    private Position moveX(Position that) {
+        if (this.x == that.x){
+            return this;
+        }
+        if (this.x > that.x) return new Position(this.x-1, this.y);
+        else return new Position(this.x+1, this.y);
+    }
+
+    private Position moveY(Position that) {
+        if (this.y == that.y){
+            return this;
+        }
+        if (this.y > that.y) return new Position(this.x, this.y-1);
+        else return new Position(this.x, this.y+1);
+    }
+
+    @Override
+    public int compareTo(Position that) {
+        return ComparisonChain.start()
+                .compare(this.x, that.x)
+                .compare(this.y, that.y)
+                .result();
     }
 }

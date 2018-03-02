@@ -10,7 +10,8 @@ public abstract class Simulator {
     private final int duration;
     private final int nbVehicles;
     private final Set<Ride> rides = new HashSet<>();
-    private final Set<Vehicle> vehicles = new HashSet<>();
+    protected final Set<Vehicle> freeVehicles = new HashSet<>();
+    protected final Set<Vehicle> busyVehicles = new HashSet<>();
 
     private int score = 0;
 
@@ -48,7 +49,7 @@ public abstract class Simulator {
 
     public void initialize(){
         for(int i = 0 ; i<nbVehicles; i++){
-            vehicles.add(new Vehicle(Position.INITIAL_POSITION));
+            freeVehicles.add(new Vehicle(Position.INITIAL_POSITION));
         }
 
     }
