@@ -14,6 +14,14 @@ public class SimpleSimulatorTest {
         assertTrue("Ride should be available",SimpleSimulator.availableToVehicle(r, v,0));
         assertFalse("Ride should not be available",SimpleSimulator.availableToVehicle(r, v,2));
 
+        v.setCurrentPosition(new Position(1,0));
+        r = new Ride(Position.INITIAL_POSITION, new Position(1,0),1,5,0);
+        assertTrue("Ride should be available",SimpleSimulator.availableToVehicle(r, v,0));
+        assertTrue("Ride should be available",SimpleSimulator.availableToVehicle(r, v,2));
+        assertFalse("Ride should not be available",SimpleSimulator.availableToVehicle(r, v,3));
+        assertFalse("Ride should not be available",SimpleSimulator.availableToVehicle(r, v,4));
+        assertFalse("Ride should not be available",SimpleSimulator.availableToVehicle(r, v,5));
+
 
     }
 
