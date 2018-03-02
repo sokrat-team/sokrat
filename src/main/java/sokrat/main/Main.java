@@ -2,8 +2,6 @@ package sokrat.main;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
-import com.sampullara.cli.Args;
-import com.sampullara.cli.Argument;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -58,29 +58,43 @@ public class Main {
 
     public void proceed() throws IOException, ParserExcception {
         Simulator s = new Parser(inputFile).getSimulator();
-        proceedGenetic( s);
-        proceedNaive( s);
+
+        List<Solution> results = new ArrayList<>();
+        results.add(proceedGenetic(s));
+        results.add(proceedNaive(s));
+
+        writeSolutionToFile(results.stream().sorted((s1,s2)->Integer.compare(s2.gain,s1.gain)).findFirst().get(), outputFile);
+
+
     }
 
-    private void proceedNaive(Simulator s) throws IOException {
+    private Solution proceedNaive(Simulator s) throws IOException {
         Stopwatch timer = Stopwatch.createStarted();
         s.runSimulation();
         Solution sol = s.getSolution();
         logger.info("Score naive: {}", NumberFormat.getIntegerInstance().format(sol.gain()));
-        logger.info("Score naive (2): {}", NumberFormat.getIntegerInstance().format(s.calculateGain()));
+        sol.gain = s.calculateGain();
+        logger.info("Score naive (2): {}", NumberFormat.getIntegerInstance().format(sol.gain));
+
         logger.info("Time naive (ms): {}", NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
-        FileWriter w = new FileWriter(outputFile+".naive");
-        w.write(s.getSolution().toString());
-        w.close();
+        writeSolutionToFile(sol, outputFile+".naive");
+        return sol;
     }
 
-    private void proceedGenetic(Simulator s) throws IOException {
+    private Solution proceedGenetic(Simulator s) throws IOException {
         Stopwatch timer = Stopwatch.createStarted();
         GeneticAlgorithm g = new GeneticAlgorithm(s);
         Solution sol = g.solve();
         logger.info("Score genetic: {}", NumberFormat.getIntegerInstance().format(sol.gain()));
         logger.info("Time genetic (ms): {}", NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
-        FileWriter w = new FileWriter(outputFile+".genetic");
+        writeSolutionToFile(sol,outputFile+".genetic");
+        return sol;
+    }
+    private void writeSolutionToFile(Solution sol, String file) throws IOException {
+        writeSolutionToFile(sol,new File(file));
+    }
+    private void writeSolutionToFile(Solution sol, File file) throws IOException {
+        FileWriter w = new FileWriter(file);
         w.write(sol.toString());
         w.close();
     }
