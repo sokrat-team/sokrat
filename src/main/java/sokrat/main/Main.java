@@ -49,6 +49,9 @@ public class Main {
 
     public void proceed() throws IOException, ParserExcception {
         Simulator s = new Parser(inputFile).getSimulator();
+        GeneticAlgorithm g = new GeneticAlgorithm(s);
+        Solution sol = g.solve();
+        logger.info("Score genetic: {}", sol.gain());
         s.runSimulation();
         logger.info("Score : " + s.getScore());
     }

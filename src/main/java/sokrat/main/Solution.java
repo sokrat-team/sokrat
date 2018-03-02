@@ -15,6 +15,9 @@ public class Solution {
 
     public Solution(List<Vehicle> vehicles, int bonus){
         this.vehicles = vehicles;
+        for (Vehicle v : vehicles) {
+            v.setRides(new ArrayList<>());
+        }
         this.bonus = bonus;
         gain = -1;
     }
