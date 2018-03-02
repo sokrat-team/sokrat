@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b3d7a7e-fa47-4ed9-9fba-84f586c24ab1" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/District.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/DistrictTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_cp_profiler_cpprof_java_1_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_cp_profiler_cpprof_java_1_3_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_spullara_cli_parser_cli_parser_1_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_spullara_cli_parser_cli_parser_1_1_2.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" />
@@ -45,6 +43,7 @@
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change beforePath="$PROJECT_DIR$/sokrat.iml" afterPath="$PROJECT_DIR$/sokrat.iml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/AffectationStrategy.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/AffectationStrategy.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/District.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/District.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/GeneticAlgorithm.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/GeneticAlgorithm.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Parser.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Parser.java" />
@@ -55,6 +54,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Solution.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Solution.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/DistrictTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/DistrictTest.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/ParserTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/ParserTest.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/PositionTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/PositionTest.java" />
@@ -71,11 +71,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="35" />
+            <state relative-caret-position="473">
+              <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleSimulator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SimpleSimulator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/SimpleSimulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="139" column="1" lean-forward="true" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
+            <state relative-caret-position="282">
+              <caret line="107" column="4" lean-forward="false" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#673#674#0" expanded="true" />
@@ -263,12 +263,12 @@
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/GeneticAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/AffectationStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Solution.java" />
         <option value="$PROJECT_DIR$/src/test/java/sokrat/main/DistrictTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/District.java" />
         <option value="$PROJECT_DIR$/src/test/java/sokrat/main/SimpleSimulatorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/SimpleSimulator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
       </list>
     </option>
   </component>
@@ -688,6 +688,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -971,16 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/DistrictTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1035,8 +1026,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/SimpleSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="139" column="1" lean-forward="true" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
+        <state relative-caret-position="282">
+          <caret line="107" column="4" lean-forward="false" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#673#674#0" expanded="true" />
@@ -1051,6 +1042,16 @@
             <element signature="e#3775#3776#0" expanded="true" />
             <element signature="e#3836#3837#0" expanded="true" />
             <element signature="e#3876#3877#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

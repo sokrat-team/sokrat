@@ -21,7 +21,7 @@ public class Main {
 
     private File outputFile = new File("output_file");
 
-    final Logger logger = LoggerFactory.getLogger(Main.class);
+    static final Logger logger = LoggerFactory.getLogger(Main.class);
 
 
     public static void main(String[] args) {
@@ -30,8 +30,8 @@ public class Main {
 
         for(String f : files) {
             try {
-
                 new Main(new File("input_files",f+".in"), new File("output_files",f+".out")).proceed();
+                logger.info("------------------   {}  --------------------- ", f);
             } catch (Throwable e) {
                 e.printStackTrace();
                 System.exit(1);
