@@ -13,6 +13,7 @@ public class Solution {
         gain = -1;
     }
 
+
     public Solution(List<Vehicle> vehicles, int bonus){
         this.vehicles = vehicles;
         for (Vehicle v : vehicles) {
@@ -50,5 +51,17 @@ public class Solution {
             }
         }
         return gain;
+    }
+
+    public String toString(){
+        String solutionsString = "";
+        for(Vehicle vehicle : this.vehicles){
+            solutionsString+=vehicle.getRides().size();
+            for(Ride ride : vehicle.getRides()){
+                solutionsString+=" "+ride.getIndex();
+            }
+            solutionsString+="\n";
+        }
+        return solutionsString;
     }
 }

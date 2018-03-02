@@ -2,16 +2,19 @@ package sokrat.main;
 
 public class Ride {
 
+    private int index;
+
     private Position from;
     private Position to;
     private int earliestStart;
     private int latestFinish;
 
-    public Ride(Position from, Position to, int earliestStart, int latestFinish) {
+    public Ride(Position from, Position to, int earliestStart, int latestFinish, int index) {
         this.from = from;
         this.to = to;
         this.earliestStart = earliestStart;
         this.latestFinish = latestFinish;
+        this.setIndex(index);
     }
 
     private int actualStartTime;
@@ -64,5 +67,13 @@ public class Ride {
 
     public void setActualArrivalTime(int actualArrivalTime) {
         this.actualArrivalTime = actualArrivalTime;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 }
