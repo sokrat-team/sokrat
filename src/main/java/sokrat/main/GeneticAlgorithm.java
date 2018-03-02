@@ -18,11 +18,14 @@ public class GeneticAlgorithm {
 
     public Solution solve(){
         solutions = generateNSolutions(1000);
-        for(int index = 0 ; index < 1 ; ++index){
+        for(int index = 0 ; index < 2 ; ++index){
             //gradeAll();
             solutions.sort(new Comparator<Solution>() {
                 @Override
                 public int compare(Solution o1, Solution o2) {
+                    if (o1 == null && o2 == null) return 0;
+                    else if (o1 == null) return 1;
+                    else if (o2 == null) return -1;
                     return o1.gain() - o2.gain();
                 }
             });
