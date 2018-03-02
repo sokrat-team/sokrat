@@ -137,4 +137,6 @@ public class SimpleSimulator extends Simulator{
     public void setStrategy(AffectationStrategy strategy) {
         this.strategy = strategy;
     }
+
+
 }

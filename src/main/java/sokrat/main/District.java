@@ -29,10 +29,11 @@ public class District {
     }
 
     public int districtNumber(Position p){
-        int xIndex = 1 + p.getX() / districtsSize;
-        int nbRows = p.getX() / districtsSize;
+        int nbDistrictPerRows = nbColumns/districtsSize;
+        return (p.getX()/districtsSize)  + ((p.getY() / districtsSize) * nbDistrictPerRows) + 1;
+    }
 
-        int yIndex = 1 + (p.getY() / districtsSize);
-        return xIndex*yIndex;
+    public  boolean sameDistrict(Position p1, Position p2){
+            return districtNumber(p1) == districtNumber(p2);
     }
 }

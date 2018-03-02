@@ -62,7 +62,7 @@ public abstract class Simulator {
 
     }
 
-    private List<Vehicle> getAllVehicles() {
+    protected List<Vehicle> getAllVehicles() {
         ArrayList<Vehicle> results = new ArrayList<>();
         results.addAll(busyVehicles);
         results.addAll(freeVehicles);
@@ -86,4 +86,16 @@ public abstract class Simulator {
         return bonus;
     }
 
+    public int calculateGain(){
+        int gain = 0;
+        for (Vehicle v : getAllVehicles()){
+            for( Ride r : v.getRides()){
+                gain+=r.getLength();
+                if(r.startedOnTime()) gain += getBonus();
+
+            }
+
+        }
+        return gain;
+    }
 }
