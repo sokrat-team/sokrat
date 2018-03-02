@@ -25,7 +25,7 @@ public class SimpleSimulator extends Simulator{
     }
 
     private void initializeStrategy() {
-        setStrategy(nextAvailableRideStrategy);
+        setStrategy(nextAvailableAndDoableRideStrategy);
     }
 
 
@@ -45,7 +45,11 @@ public class SimpleSimulator extends Simulator{
     }
 
     private void cleanUndoableRides(int step) {
-        unasssignedRides.removeIf(r-> (currentStep + r.getLength()) > r.getLatestFinish());
+        unasssignedRides.removeIf(r-> tooLateForARide(r, currentStep));
+    }
+
+    public static boolean tooLateForARide(Ride r, int currentStep) {
+        return (currentStep + r.getLength()) >= r.getLatestFinish();
     }
 
     private int calculateScore() {
@@ -95,34 +99,33 @@ public class SimpleSimulator extends Simulator{
 
 
 
+
     private AffectationStrategy nextAvailableRideStrategy = (vehicle, step) -> unasssignedRides.stream()
             .findFirst()
             .ifPresent( r -> affectRideTo(r,vehicle, step));
 
 
     private AffectationStrategy nextAvailableAndDoableRideStrategy = (vehicle, step) -> unasssignedRides.stream()
+            .parallel()
             .filter(r -> availableToVehicle(r,vehicle,step))
             .findFirst()
             .ifPresent( r -> affectRideTo(r,vehicle, step));
 
 
     private void affectRideTo(Ride r, Vehicle vehicle, int currentStep) {
-        //System.out.println("Ride "  + r.getIndex() + " to " + vehicle);
         unasssignedRides.remove(r);
         vehicle.AffectRide(r, currentStep);
-
     }
 
 
 
-    private boolean availableToVehicle(Ride r, Vehicle vehicle, int step) {
-        int startStep = step + r.getFrom().distanceTo(vehicle.getCurrentPosition());
-        int earliestStart = Math.max(r.getEarliestStart(), startStep);
-        return r.getEarliestStart() <= startStep &&
-                r.getLatestFinish() > earliestStart + r.getLength();
+    public static boolean availableToVehicle(Ride r, Vehicle vehicle, int step) {
+        int canStartStep = step + r.getFrom().distanceTo(vehicle.getCurrentPosition());
+        int earliestStart = Math.max(r.getEarliestStart(), canStartStep);
+        return  r.getLatestFinish() > (earliestStart + r.getLength());
     }
 
-    private int shortestUsingVehicle(Ride r1, Ride r2, Vehicle vehicle) {
+    public static int shortestUsingVehicle(Ride r1, Ride r2, Vehicle vehicle) {
         return Integer.compare(r1.getFrom().distanceTo(vehicle.getCurrentPosition()),
                 r2.getFrom().distanceTo(vehicle.getCurrentPosition()));
     }
@@ -134,4 +137,6 @@ public class SimpleSimulator extends Simulator{
     public void setStrategy(AffectationStrategy strategy) {
         this.strategy = strategy;
     }
+
+
 }

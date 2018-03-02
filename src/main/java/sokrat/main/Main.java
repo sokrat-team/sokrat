@@ -21,7 +21,7 @@ public class Main {
 
     private File outputFile = new File("output_file");
 
-    final Logger logger = LoggerFactory.getLogger(Main.class);
+    static final Logger logger = LoggerFactory.getLogger(Main.class);
 
 
     public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class Main {
 
         for(String f : files) {
             try {
-
+                logger.info("------------------   {}  --------------------- ", f);
                 new Main(new File("input_files",f+".in"), new File("output_files",f+".out")).proceed();
             } catch (Throwable e) {
                 e.printStackTrace();
@@ -67,6 +67,7 @@ public class Main {
         s.runSimulation();
         Solution sol = s.getSolution();
         logger.info("Score naive: {}", NumberFormat.getIntegerInstance().format(sol.gain()));
+        logger.info("Score naive (2): {}", NumberFormat.getIntegerInstance().format(s.calculateGain()));
         logger.info("Time naive (ms): {}", NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
         FileWriter w = new FileWriter(outputFile+".naive");
         w.write(s.getSolution().toString());

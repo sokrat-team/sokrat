@@ -80,4 +80,8 @@ public class Ride {
     public int getLength() {
         return from.distanceTo(to);
     }
+
+    public boolean startedOnTime() {
+        return getActualStartTime() == getEarliestStart();
+    }
 }
