@@ -39,30 +39,42 @@ public class Solution {
     }
 
     public int gain() {
-        if(this.gain >=0){
-            return this.gain;
+        if(gain >= 0){
+            return gain;
         }
-        gain = 0;
         for (Vehicle vehicle : this.vehicles) {
             int currentStep = 0;
-            Position currentPos = new Position(0, 0);
+            Position currentPos = Position.INITIAL_POSITION;
             for (Ride ride : vehicle.getRides()) {
+                int ridelength  = ride.getLength();
                 currentStep += currentPos.distanceTo(ride.getFrom());
                 if (currentStep <= ride.getEarliestStart()) {
-                    gain += this.bonus;
+                    currentStep = ride.getEarliestStart();
+
                 }
-                currentPos = ride.getFrom();
-                currentStep += currentPos.distanceTo(ride.getTo());
-                int ridelength  = ride.getFrom().distanceTo(ride.getTo());
-                if (currentStep < ride.getLatestFinish()) {
-                    gain += ridelength;
-                }
+                ride.setActualStartTime(currentStep);
                 currentPos = ride.getTo();
                 currentStep += ridelength;
+                ride.setActualArrivalTime(currentStep);
+            }
+        }
+        gain = calculateGain();
+        return gain;
+    }
+
+    public int calculateGain(){
+        int gain = 0;
+        for (Vehicle v : this.vehicles){
+            for( Ride r : v.getRides()){
+                if(r.getActualArrivalTime() > r.getLatestFinish()){
+                    gain+=r.getLength();
+                    if(r.startedOnTime()) gain += bonus;
+                }
             }
         }
         return gain;
     }
+
 
     public String toString(){
         String solutionsString = "";

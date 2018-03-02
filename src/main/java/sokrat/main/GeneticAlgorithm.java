@@ -9,8 +9,8 @@ public class GeneticAlgorithm {
     public List<Solution> solutions;
 
     public Simulator simulator;
-    int poolsize = 30;
-    int tail = 8;
+    int poolsize = 100;
+    int tail = 90;
 
     public GeneticAlgorithm(Simulator simulator){
         this.bestGrade = 0;
@@ -31,9 +31,6 @@ public class GeneticAlgorithm {
             solutions.sort(new Comparator<Solution>() {
                 @Override
                 public int compare(Solution o1, Solution o2) {
-                    if (o1 == null && o2 == null) return 0;
-                    else if (o1 == null) return Integer.MAX_VALUE;
-                    else if (o2 == null) return Integer.MIN_VALUE;
                     return o2.gain() - o1.gain();
                 }
             });
