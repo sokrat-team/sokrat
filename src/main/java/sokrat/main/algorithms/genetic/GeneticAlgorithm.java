@@ -15,25 +15,27 @@ public class GeneticAlgorithm {
     public List<Solution> solutions;
 
     public Rules rules;
-    int poolsize = 100;
-    int tail = 90;
+    int poolsize;
+    int tail;
+    final long SEED = 1234567890L;
+    Random random = new Random(SEED);
 
-    public GeneticAlgorithm(Rules rules){
+    public GeneticAlgorithm(Rules rules, int poolsize, int tailSize){
         this.bestGrade = 0;
+        this.poolsize=poolsize;
+        this.tail=tailSize;
         solutions = new ArrayList<>();
         this.rules = rules;
     }
 
-    public Solution solve(){
+    public Solution solveWithRandomInitialSet(){
         solutions = generateNSolutions(poolsize);
-        //int indexBLAH = 0;
-        //for(Solution sol : solutions){
-        //    System.out.println("solution "+indexBLAH+" gains: "+sol.gain()+" _______________");
-        //    ++indexBLAH;
-        //    System.out.println(sol);
-        //}
+
+        return solve();
+    }
+
+    private Solution solve() {
         for(int index = 0 ; index < 2 ; ++index){
-            //gradeAll();
             solutions.sort(new Comparator<Solution>() {
                 @Override
                 public int compare(Solution o1, Solution o2) {
@@ -49,6 +51,14 @@ public class GeneticAlgorithm {
         return null;
     }
 
+    public Solution solveWith( List<Solution> initialSolutions){
+        solutions = new ArrayList<>();
+        solutions.addAll(0,initialSolutions);
+        solutions.addAll(generateNSolutions(poolsize-initialSolutions.size()));
+
+        return solve();
+    }
+
     public List<Solution> generateNSolutions(int poolsize){
         List<Solution> retVal = new ArrayList<>();
         for(int index = 0 ; index < poolsize-1 ; ++index){
@@ -58,7 +68,6 @@ public class GeneticAlgorithm {
             }
             Solution sol = new Solution(vehicles, this.rules.getBonus());
             assignFEASIBLERides(this.rules.getRides(), sol);
-            //System.out.println(sol);
             retVal.add(sol);
         }
         List<Vehicle> clevervehicles = new ArrayList<>();
@@ -73,7 +82,7 @@ public class GeneticAlgorithm {
 
     public void assignRDMRides(List<Ride> rides, Solution sol){
         for(Ride ride : rides){
-            int vehicleIndex = (int)(Math.random() * this.rules.getNbVehicles());
+            int vehicleIndex = random.nextInt(this.rules.getNbVehicles());
             sol.addRideToVehicle(vehicleIndex, ride);
         }
     }
@@ -88,7 +97,7 @@ public class GeneticAlgorithm {
     public void assignFEASIBLERides(List<Ride> rides, Solution sol){
         for(int index = 0 ; index < rides.size() ; ++ index){
             Ride ride = rides.get(index);
-            int rdmStartIndex = (int)(Math.random()*sol.getVehicles().size());
+            int rdmStartIndex = random.nextInt(this.rules.getNbVehicles());;
             for(int vehindex = rdmStartIndex; vehindex < sol.getVehicles().size()+rdmStartIndex; ++vehindex){
                 Vehicle car = sol.getVehicles().get(vehindex%sol.getVehicles().size());
                 if(isFeasible(car, ride)){
@@ -100,22 +109,6 @@ public class GeneticAlgorithm {
         }
     }
 
-    //public void assignFeasibleToNearest(List<Ride> rides, Solution sol){
-    //    for(int index = 0 ; index < rides.size() ; ++ index){
-    //        Ride ride = rides.get(index);
-    //        int rdmStartIndex = (int)(Math.random()*sol.getVehicles().size());
-    //        int leastDist = Integer.MAX_VALUE;
-    //        for(int vehindex = rdmStartIndex; vehindex < sol.getVehicles().size()+rdmStartIndex; ++vehindex){
-    //            Vehicle car = sol.getVehicles().get(vehindex%sol.getVehicles().size());
-//
-    //            if(isFeasible(car, ride) && car.get){
-    //                leastDist =
-    //                //sol.addRideToVehicle(vehindex%sol.getVehicles().size(), rides.get(index));
-    //            }
-//
-    //        }
-    //    }
-    //}
 
     public boolean isFeasible(Vehicle car, Ride ride){
         return car.getRides().size() == 0
@@ -131,14 +124,14 @@ public class GeneticAlgorithm {
             vehicles.add(new Vehicle(new Position(0,0)));
         }
         Solution child = new Solution(vehicles, this.rules.getBonus());
-        int permutationIndex = (int)(this.rules.getRides().size() * Math.random());
+        int permutationIndex = random.nextInt(rules.getRides().size());
         int count = 0;
         int vehicleCount = 0;
         for(Vehicle vhparent : parent.getVehicles()){
             for(Ride ride : vhparent.getRides()){
                 count++;
                 if(count == permutationIndex){
-                    int randomette = (int)(Math.random() * parent.getVehicles().size());
+                    int randomette = random.nextInt(parent.getVehicles().size());
                     if(randomette == vehicleCount){
                         randomette++;
                         if(randomette >=parent.getVehicles().size()){
@@ -163,37 +156,17 @@ public class GeneticAlgorithm {
 
     public void iterate(){
         for(int index = 0 ; index < tail ; index ++){
-            int iParent = (int)(solutions.size()*Math.random());
+            int iParent = random.nextInt(solutions.size());
             Solution parent = solutions.get(iParent);
             Solution child = getMutation(parent);
             solutions.add(child);
         }
-        //for(int index = 0 ; index < 230; index ++){
-        //    int iParent1 = (int)(solutions.size()*Math.random());
-        //    int iParent2 = (int)(solutions.size()*Math.random());
-        //    if(iParent1 == iParent2){
-        //        iParent2++;
-        //        if(iParent2 >= solutions.size()){
-        //            iParent2 = 0;
-        //        }
-        //    }
-        //    Solution parent1 = solutions.get(iParent1);
-        //    Solution parent2 = solutions.get(iParent2);
-        //    solutions.add(getCrossover(parent1, parent2));
-        //}
     }
 
 
-    public void gradeAll(){
-
-    }
 
     public void removeNWeakest(int tailsize){
-        List<Solution> remaining = new ArrayList<>();
-        for(int index = 0 ; index < solutions.size() - tailsize; ++index){
-            remaining.add(solutions.get(index));
-        }
-        solutions = new ArrayList(remaining);
+        solutions = new ArrayList(solutions.subList(0,poolsize-tail));
     }
 
 

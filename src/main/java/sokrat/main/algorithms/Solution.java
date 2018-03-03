@@ -10,7 +10,7 @@ import java.util.List;
 public class Solution {
     private List<Vehicle> vehicles;
     public int bonus = 20;
-    int gain;
+    int gain=-1;
 
     public void setGain(int gain) {
         this.gain = gain;
@@ -18,8 +18,6 @@ public class Solution {
 
     public Solution(){
         vehicles = new ArrayList<>();
-        gain = -1;
-
     }
 
 
@@ -29,7 +27,6 @@ public class Solution {
             v.setRides(new ArrayList<>());
         }
         this.bonus = bonus;
-        gain = -1;
     }
 
     public static Solution generateSolution(List<Vehicle> vehicles, int bonus){
@@ -55,15 +52,14 @@ public class Solution {
             int currentStep = 0;
             Position currentPos = Position.INITIAL_POSITION;
             for (Ride ride : vehicle.getRides()) {
-                int ridelength  = ride.getLength();
-                currentStep += currentPos.distanceTo(ride.getFrom());
-                if (currentStep <= ride.getEarliestStart()) {
-                    currentStep = ride.getEarliestStart();
 
+                currentStep += currentPos.distanceTo(ride.getFrom());
+                if (currentStep < ride.getEarliestStart()) {
+                    currentStep = ride.getEarliestStart();
                 }
                 ride.setActualStartTime(currentStep);
                 currentPos = ride.getTo();
-                currentStep += ridelength;
+                currentStep += ride.getLength();
                 ride.setActualArrivalTime(currentStep);
             }
         }
@@ -75,7 +71,7 @@ public class Solution {
         int gain = 0;
         for (Vehicle v : this.vehicles){
             for( Ride r : v.getRides()){
-                if(r.getActualArrivalTime() > r.getLatestFinish()){
+                if(r.finishedOnTime()){
                     gain+=r.getLength();
                     if(r.startedOnTime()) gain += bonus;
                 }

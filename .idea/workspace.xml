@@ -2,15 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b3d7a7e-fa47-4ed9-9fba-84f586c24ab1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out" afterPath="$PROJECT_DIR$/output_files/a_example.out" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.genetic" afterPath="$PROJECT_DIR$/output_files/a_example.out.genetic" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.genetic" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.genetic" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.naive.EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.naive.EARLIEST_START_FIRST" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.naive.LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.naive.LATEST_START_FIRST" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.naive.LATEST_START_LAST" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.naive.LATEST_START_LAST" />
       <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.genetic" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.genetic" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.naive.EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.naive.EARLIEST_START_FIRST" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.naive.LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.naive.LATEST_START_FIRST" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.naive.LATEST_START_LAST" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.naive.LATEST_START_LAST" />
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out" />
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.genetic" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.genetic" />
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.naive.EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.naive.EARLIEST_START_FIRST" />
+      <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.naive.LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.naive.LATEST_START_FIRST" />
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.naive.LATEST_START_LAST" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.naive.LATEST_START_LAST" />
       <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out" />
       <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.genetic" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.genetic" />
       <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.naive.EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.naive.EARLIEST_START_FIRST" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.naive.LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.naive.LATEST_START_FIRST" />
       <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.naive.LATEST_START_LAST" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.naive.LATEST_START_LAST" />
+      <change beforePath="$PROJECT_DIR$/src.tgz" afterPath="$PROJECT_DIR$/src.tgz" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/genetic/GeneticAlgorithm.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/genetic/GeneticAlgorithm.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,9 +43,40 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="83" column="47" lean-forward="false" selection-start-line="83" selection-start-column="47" selection-end-line="83" selection-end-column="47" />
-              <folding />
+            <state relative-caret-position="405">
+              <caret line="76" column="79" lean-forward="true" selection-start-line="76" selection-start-column="79" selection-end-line="76" selection-end-column="79" />
+              <folding>
+                <element signature="e#5064#5065#0" expanded="true" />
+                <element signature="e#5122#5123#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneticAlgorithm.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/genetic/GeneticAlgorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+              <folding>
+                <element signature="e#1055#1056#0" expanded="true" />
+                <element signature="e#1123#1124#0" expanded="true" />
+                <element signature="e#5784#5785#0" expanded="true" />
+                <element signature="e#5861#5862#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="66" column="19" lean-forward="false" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="19" />
+              <folding>
+                <element signature="e#381#382#0" expanded="true" />
+                <element signature="e#425#426#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,19 +87,6 @@
             <state relative-caret-position="840">
               <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding>
-                <element signature="e#322#323#0" expanded="true" />
-                <element signature="e#354#355#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -70,8 +106,8 @@
       <file leaf-file-name="Simulator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+            <state relative-caret-position="218">
+              <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -80,8 +116,8 @@
       <file leaf-file-name="Ride.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="29" />
+            <state relative-caret-position="386">
+              <caret line="87" column="13" lean-forward="false" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
               <folding>
                 <element signature="e#1861#1862#0" expanded="true" />
                 <element signature="e#1926#1927#0" expanded="true" />
@@ -125,23 +161,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AffectationStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/AffectationStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RidesOrderingStrategy.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RidesOrderingStrategy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+            <state relative-caret-position="435">
+              <caret line="29" column="111" lean-forward="false" selection-start-line="29" selection-start-column="111" selection-end-line="29" selection-end-column="111" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -165,6 +189,7 @@
       <find>getS</find>
       <find>toto</find>
       <find>score</find>
+      <find>ran</find>
     </findStrings>
     <dirStrings>
       <dir>C:\_Loic_dossier_personnel\sokrat</dir>
@@ -207,12 +232,10 @@
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/simulator/District.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/District.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/definition/ParserExcception.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/genetic/GeneticAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Solution.java" />
         <option value="$PROJECT_DIR$/src/test/java/sokrat/main/definition/ParserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/definition/Parser.java" />
         <option value="$PROJECT_DIR$/src/test/java/sokrat/main/model/DistrictTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/District.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/NearbyRideAffectationStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java" />
@@ -221,8 +244,10 @@
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" />
         <option value="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/genetic/GeneticAlgorithm.java" />
       </list>
     </option>
   </component>
@@ -669,9 +694,9 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RideTest.testLatestStart" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.sokrat.main in sokrat" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.sokrat.main in sokrat" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RideTest.testLatestStart" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.sokrat.main.model in sokrat" />
       </list>
     </recent_temporary>
@@ -705,13 +730,13 @@
     <history-entry file="RideTest_testLatestStart - 2018.03.03 at 09h 42m 35s.xml">
       <configuration name="RideTest.testLatestStart" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="sokrat_main_definition_in_sokrat - 2018.03.03 at 09h 12m 27s.xml">
-      <configuration name="sokrat.main.definition in sokrat" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="sokrat_main_definition_in_sokrat - 2018.03.03 at 09h 15m 09s.xml">
       <configuration name="sokrat.main.definition in sokrat" configurationId="JUnit" />
     </history-entry>
     <history-entry file="sokrat_main_in_sokrat - 2018.03.03 at 09h 24m 45s.xml">
+      <configuration name="sokrat.main in sokrat" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="sokrat_main_in_sokrat - 2018.03.03 at 12h 51m 49s.xml">
       <configuration name="sokrat.main in sokrat" configurationId="JUnit" />
     </history-entry>
     <history-entry file="sokrat_main_model_in_sokrat - 2018.03.03 at 09h 15m 15s.xml">
@@ -789,7 +814,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-          <folding />
+          <folding>
+            <element signature="e#5064#5065#0" expanded="true" />
+            <element signature="e#5122#5123#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -805,7 +833,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#5064#5065#0" expanded="true" />
+            <element signature="e#5122#5123#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -821,7 +852,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#5064#5065#0" expanded="true" />
+            <element signature="e#5122#5123#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -868,7 +902,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
           <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-          <folding />
+          <folding>
+            <element signature="e#5064#5065#0" expanded="true" />
+            <element signature="e#5122#5123#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -884,7 +921,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#5064#5065#0" expanded="true" />
+            <element signature="e#5122#5123#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -997,14 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/genetic/GeneticAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/definition/ParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1040,17 +1072,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="e#322#323#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/algorithms/naive/SimpleSimulatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -1064,16 +1085,8 @@
         <state relative-caret-position="165">
           <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,17 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="29" />
-          <folding>
-            <element signature="e#1861#1862#0" expanded="true" />
-            <element signature="e#1926#1927#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/model/RideTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1137,20 +1139,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="83" column="47" lean-forward="false" selection-start-line="83" selection-start-column="47" selection-end-line="83" selection-end-column="47" />
+        <state relative-caret-position="435">
+          <caret line="29" column="111" lean-forward="false" selection-start-line="29" selection-start-column="111" selection-end-line="29" selection-end-column="111" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="87" column="13" lean-forward="false" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+          <folding>
+            <element signature="e#1861#1862#0" expanded="true" />
+            <element signature="e#1926#1927#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        <state relative-caret-position="690">
+          <caret line="66" column="19" lean-forward="false" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#381#382#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="76" column="79" lean-forward="true" selection-start-line="76" selection-start-column="79" selection-end-line="76" selection-end-column="79" />
+          <folding>
+            <element signature="e#5064#5065#0" expanded="true" />
+            <element signature="e#5122#5123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/genetic/GeneticAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+          <folding>
+            <element signature="e#1055#1056#0" expanded="true" />
+            <element signature="e#1123#1124#0" expanded="true" />
+            <element signature="e#5784#5785#0" expanded="true" />
+            <element signature="e#5861#5862#0" expanded="true" />
           </folding>
         </state>
       </provider>
