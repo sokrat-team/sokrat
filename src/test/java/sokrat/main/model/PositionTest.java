@@ -1,6 +1,7 @@
-package sokrat.main;
+package sokrat.main.model;
 
 import org.junit.Test;
+import sokrat.main.model.Position;
 
 import static org.junit.Assert.*;
 

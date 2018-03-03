@@ -1,6 +1,10 @@
 package sokrat.main;
 
 import org.junit.Test;
+import sokrat.main.algorithms.naive.SimpleSimulator;
+import sokrat.main.definition.Parser;
+import sokrat.main.algorithms.naive.Simulator;
+import sokrat.main.definition.ParserException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,37 +35,34 @@ public class MainTest {
     }
 
     @Test
-    public void testSimple() throws IOException, ParserExcception {
+    public void testSimple() throws IOException, ParserException {
         File f = new File("input_files/a_example.in");
-        Simulator s = new Parser(f).getSimulator();
+        Simulator s = new SimpleSimulator(new Parser(f).getRules());
         s.runSimulation();
         System.out.println(s.getSolution().toString());
     }
 
-    @Test
-    public void testShouldBeEasy() throws IOException, ParserExcception {
+    public void testShouldBeEasy() throws IOException, ParserException {
         File f = new File("input_files/b_should_be_easy.in");
-        Simulator s = new Parser(f).getSimulator();
+        Simulator s = new SimpleSimulator(new Parser(f).getRules());
         s.runSimulation();
         System.out.println(s.getSolution().toString());
         System.out.println("GAIN " + s.getSolution().gain());
 
     }
 
-    @Test
-    public void testNoHurry() throws IOException, ParserExcception {
+    public void testNoHurry() throws IOException, ParserException {
         File f = new File("input_files/c_no_hurry.in");
-        Simulator s = new Parser(f).getSimulator();
+        Simulator s = new SimpleSimulator(new Parser(f).getRules());
         s.runSimulation();
         System.out.println(s.getSolution().toString());
         System.out.println("GAIN " + s.getSolution().gain());
 
     }
 
-    @Test
-    public void testHighBonus() throws IOException, ParserExcception {
+    public void testHighBonus() throws IOException, ParserException {
         File f = new File("input_files/e_high_bonus.in");
-        Simulator s = new Parser(f).getSimulator();
+        Simulator s = new SimpleSimulator(new Parser(f).getRules());
         s.runSimulation();
         System.out.println(s.getSolution().toString());
         System.out.println("GAIN " + s.getSolution().gain());

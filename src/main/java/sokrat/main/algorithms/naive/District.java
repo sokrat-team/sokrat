@@ -1,4 +1,6 @@
-package sokrat.main;
+package sokrat.main.algorithms.naive;
+
+import sokrat.main.model.Position;
 
 public class District {
 

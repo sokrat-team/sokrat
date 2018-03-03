@@ -1,4 +1,4 @@
-package sokrat.main;
+package sokrat.main.model;
 
 import java.util.ArrayList;
 import java.util.List;

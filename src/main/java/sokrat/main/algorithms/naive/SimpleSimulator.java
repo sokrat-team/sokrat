@@ -1,4 +1,8 @@
-package sokrat.main;
+package sokrat.main.algorithms.naive;
+
+import sokrat.main.definition.Rules;
+import sokrat.main.model.Ride;
+import sokrat.main.model.Vehicle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,17 +15,16 @@ public class SimpleSimulator extends Simulator{
 
 
 
-    public SimpleSimulator(int duration, int nbRows, int nbColumns, int nbVehicles,int bonus) {
-        super(duration, nbRows, nbColumns, nbVehicles,bonus);
+    public SimpleSimulator(Rules rules) {
+        super(rules);
         initializeStrategy();
     }
 
     private AffectationStrategy strategy;
 
-    public SimpleSimulator(int duration, int nbRows, int nbColumns, int nbVehicles, List<Ride> rides, int bonus) {
-        super(duration, nbRows, nbColumns, nbVehicles, bonus);
-        initializeStrategy();
-        addRides(rides);
+    public SimpleSimulator(Rules rules, AffectationStrategy strategy) {
+        super(rules);
+        setStrategy(strategy);
     }
 
     private void initializeStrategy() {
@@ -35,7 +38,7 @@ public class SimpleSimulator extends Simulator{
     public int runSimulation() {
         this.initialize();
 
-        for (currentStep = 0; currentStep < getDuration() ; currentStep++  ){
+        for (currentStep = 0; currentStep < rules.getDuration(); currentStep++  ){
             this.cleanUndoableRides(currentStep);
             this.affectRides(currentStep);
             this.moveVehicles(currentStep);
@@ -44,13 +47,7 @@ public class SimpleSimulator extends Simulator{
         return calculateScore();
     }
 
-    private void cleanUndoableRides(int step) {
-        unasssignedRides.removeIf(r-> tooLateForARide(r, currentStep));
-    }
 
-    public static boolean tooLateForARide(Ride r, int currentStep) {
-        return (currentStep + r.getLength()) >= r.getLatestFinish();
-    }
 
     private int calculateScore() {
         return getSolution().gain();
@@ -81,6 +78,11 @@ public class SimpleSimulator extends Simulator{
 
     }
 
+    void cleanUndoableRides(int step) {
+        unasssignedRides.removeIf(r-> tooLateForARide(r, currentStep));
+    }
+
+
     private void affectRides(int currentStep){
 
         for(Vehicle vehicle : freeVehicles){
@@ -93,23 +95,19 @@ public class SimpleSimulator extends Simulator{
 
     private void affectRideTo(Vehicle vehicle, int step) {
         if(unasssignedRides.isEmpty()) return;
-        getStrategy().giveRideTo(vehicle,step);
-
+        strategy.giveRideTo(vehicle,step).ifPresent( r -> affectRideTo(r,vehicle, step));
     }
 
 
 
-
     private AffectationStrategy nextAvailableRideStrategy = (vehicle, step) -> unasssignedRides.stream()
-            .findFirst()
-            .ifPresent( r -> affectRideTo(r,vehicle, step));
+            .findFirst();
 
 
     private AffectationStrategy nextAvailableAndDoableRideStrategy = (vehicle, step) -> unasssignedRides.stream()
             .parallel()
             .filter(r -> availableToVehicle(r,vehicle,step))
-            .findFirst()
-            .ifPresent( r -> affectRideTo(r,vehicle, step));
+            .findFirst();
 
 
     private void affectRideTo(Ride r, Vehicle vehicle, int currentStep) {

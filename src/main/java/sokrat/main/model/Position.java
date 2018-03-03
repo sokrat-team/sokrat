@@ -1,4 +1,4 @@
-package sokrat.main;
+package sokrat.main.model;
 
 import com.google.common.collect.ComparisonChain;
 

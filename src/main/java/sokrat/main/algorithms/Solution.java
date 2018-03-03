@@ -1,4 +1,8 @@
-package sokrat.main;
+package sokrat.main.algorithms;
+
+import sokrat.main.model.Position;
+import sokrat.main.model.Ride;
+import sokrat.main.model.Vehicle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +12,14 @@ public class Solution {
     public int bonus = 20;
     int gain;
 
+    public void setGain(int gain) {
+        this.gain = gain;
+    }
+
     public Solution(){
         vehicles = new ArrayList<>();
         gain = -1;
+
     }
 
 

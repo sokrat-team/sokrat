@@ -1,4 +1,4 @@
-package sokrat.main;
+package sokrat.main.model;
 
 public class Ride {
 
@@ -83,5 +83,9 @@ public class Ride {
 
     public boolean startedOnTime() {
         return getActualStartTime() == getEarliestStart();
+    }
+    
+    public boolean finishedOnTime() {
+        return getActualArrivalTime() < getLatestFinish();
     }
 }

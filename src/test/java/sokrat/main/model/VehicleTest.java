@@ -1,6 +1,9 @@
-package sokrat.main;
+package sokrat.main.model;
 
 import org.junit.Test;
+import sokrat.main.model.Position;
+import sokrat.main.model.Ride;
+import sokrat.main.model.Vehicle;
 
 import static org.junit.Assert.*;
 

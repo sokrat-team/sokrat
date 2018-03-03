@@ -1,6 +1,10 @@
-package sokrat.main;
+package sokrat.main.algorithms.naive;
 
 import org.junit.Test;
+import sokrat.main.model.Position;
+import sokrat.main.model.Ride;
+import sokrat.main.model.Vehicle;
+import sokrat.main.algorithms.naive.SimpleSimulator;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +15,7 @@ public class SimpleSimulatorTest {
         Ride r = new Ride(Position.INITIAL_POSITION, new Position(1,0),1,3,0);
         Vehicle v = new Vehicle(Position.INITIAL_POSITION);
 
-        assertTrue("Ride should be available",SimpleSimulator.availableToVehicle(r, v,0));
+        assertTrue("Ride should be available", SimpleSimulator.availableToVehicle(r, v,0));
         assertFalse("Ride should not be available",SimpleSimulator.availableToVehicle(r, v,2));
 
         v.setCurrentPosition(new Position(1,0));

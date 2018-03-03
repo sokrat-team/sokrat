@@ -1,4 +1,10 @@
-package sokrat.main;
+package sokrat.main.algorithms.genetic;
+
+import sokrat.main.algorithms.Solution;
+import sokrat.main.definition.Rules;
+import sokrat.main.model.Position;
+import sokrat.main.model.Ride;
+import sokrat.main.model.Vehicle;
 
 import java.util.*;
 
@@ -8,14 +14,14 @@ public class GeneticAlgorithm {
 
     public List<Solution> solutions;
 
-    public Simulator simulator;
+    public Rules rules;
     int poolsize = 100;
     int tail = 90;
 
-    public GeneticAlgorithm(Simulator simulator){
+    public GeneticAlgorithm(Rules rules){
         this.bestGrade = 0;
         solutions = new ArrayList<>();
-        this.simulator = simulator;
+        this.rules = rules;
     }
 
     public Solution solve(){
@@ -47,34 +53,34 @@ public class GeneticAlgorithm {
         List<Solution> retVal = new ArrayList<>();
         for(int index = 0 ; index < poolsize-1 ; ++index){
             List<Vehicle> vehicles = new ArrayList<>();
-            for(int vehindex = 0 ; vehindex < this.simulator.getNbVehicles(); ++vehindex){
+            for(int vehindex = 0; vehindex < this.rules.getNbVehicles(); ++vehindex){
                 vehicles.add(new Vehicle(new Position(0,0)));
             }
-            Solution sol = new Solution(vehicles, this.simulator.getBonus());
-            assignFEASIBLERides(this.simulator.getRides(), sol);
+            Solution sol = new Solution(vehicles, this.rules.getBonus());
+            assignFEASIBLERides(this.rules.getRides(), sol);
             //System.out.println(sol);
             retVal.add(sol);
         }
         List<Vehicle> clevervehicles = new ArrayList<>();
-        for(int vehindex = 0 ; vehindex < this.simulator.getNbVehicles(); ++vehindex){
+        for(int vehindex = 0; vehindex < this.rules.getNbVehicles(); ++vehindex){
             clevervehicles.add(new Vehicle(new Position(0,0)));
         }
-        Solution cleversol = new Solution(clevervehicles, this.simulator.getBonus());
-        assignCLEVERRides(this.simulator.getRides(), cleversol);
+        Solution cleversol = new Solution(clevervehicles, this.rules.getBonus());
+        assignCLEVERRides(this.rules.getRides(), cleversol);
         retVal.add(cleversol);
         return retVal;
     }
 
     public void assignRDMRides(List<Ride> rides, Solution sol){
         for(Ride ride : rides){
-            int vehicleIndex = (int)(Math.random() * this.simulator.getNbVehicles());
+            int vehicleIndex = (int)(Math.random() * this.rules.getNbVehicles());
             sol.addRideToVehicle(vehicleIndex, ride);
         }
     }
 
     public void assignCLEVERRides(List<Ride> rides, Solution sol){
         for(int index = 0 ; index < rides.size() ; ++ index){
-            int vehicleIndex = index % this.simulator.getNbVehicles();
+            int vehicleIndex = index % this.rules.getNbVehicles();
             sol.addRideToVehicle(vehicleIndex, rides.get(index));
         }
     }
@@ -121,11 +127,11 @@ public class GeneticAlgorithm {
 
     public Solution getMutation(Solution parent){
         List<Vehicle> vehicles = new ArrayList<>();
-        for(int vehindex = 0 ; vehindex < this.simulator.getNbVehicles(); ++vehindex){
+        for(int vehindex = 0; vehindex < this.rules.getNbVehicles(); ++vehindex){
             vehicles.add(new Vehicle(new Position(0,0)));
         }
-        Solution child = new Solution(vehicles, this.simulator.getBonus());
-        int permutationIndex = (int)(this.simulator.getRides().size() * Math.random());
+        Solution child = new Solution(vehicles, this.rules.getBonus());
+        int permutationIndex = (int)(this.rules.getRides().size() * Math.random());
         int count = 0;
         int vehicleCount = 0;
         for(Vehicle vhparent : parent.getVehicles()){

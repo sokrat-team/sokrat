@@ -1,6 +1,8 @@
-package sokrat.main;
+package sokrat.main.model;
 
 import org.junit.Test;
+import sokrat.main.model.Position;
+import sokrat.main.algorithms.naive.District;
 
 import static org.junit.Assert.*;
 
@@ -27,6 +29,6 @@ public class DistrictTest {
     public void testSameDistrict() {
         District instance = new District(10,10,2);
         assertTrue("should be same district",instance.sameDistrict(Position.INITIAL_POSITION,new Position(1,0)));
-        assertFalse("should not be same district",instance.sameDistrict(Position.INITIAL_POSITION,new Position(1,1)));
+        assertFalse("should not be same district",instance.sameDistrict(Position.INITIAL_POSITION,new Position(1,2)));
     }
 }
