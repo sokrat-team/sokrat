@@ -15,15 +15,15 @@ public class SimpleSimulator extends Simulator{
 
 
 
-    public SimpleSimulator(Rules rules) {
-        super(rules);
+    public SimpleSimulator(Rules rules, RidesOrderingStrategy orderingStrategy) {
+        super(rules,orderingStrategy);
         initializeStrategy();
     }
 
     private AffectationStrategy strategy;
 
-    public SimpleSimulator(Rules rules, AffectationStrategy strategy) {
-        super(rules);
+    public SimpleSimulator(Rules rules, AffectationStrategy strategy, RidesOrderingStrategy orderingStrategy) {
+        super(rules,orderingStrategy);
         setStrategy(strategy);
     }
 
@@ -119,8 +119,8 @@ public class SimpleSimulator extends Simulator{
 
     public static boolean availableToVehicle(Ride r, Vehicle vehicle, int step) {
         int canStartStep = step + r.getFrom().distanceTo(vehicle.getCurrentPosition());
-        int earliestStart = Math.max(r.getEarliestStart(), canStartStep);
-        return  r.getLatestFinish() > (earliestStart + r.getLength());
+
+        return  canStartStep <= r.getLatestStart();
     }
 
     public static int shortestUsingVehicle(Ride r1, Ride r2, Vehicle vehicle) {

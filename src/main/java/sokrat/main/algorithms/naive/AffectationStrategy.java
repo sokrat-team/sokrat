@@ -8,4 +8,5 @@ import java.util.Optional;
 public interface AffectationStrategy {
 
     public Optional<Ride> giveRideTo(Vehicle vehicle, int step);
+
 }

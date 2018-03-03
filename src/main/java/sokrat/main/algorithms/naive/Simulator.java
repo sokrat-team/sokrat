@@ -13,13 +13,15 @@ import java.util.Set;
 
 public abstract class Simulator {
 
+    private final RidesOrderingStrategy orderingStrategy;
     protected Rules rules;
     protected final Set<Vehicle> freeVehicles = new HashSet<>();
     protected final Set<Vehicle> busyVehicles = new HashSet<>();
 
 
-    public Simulator(Rules r ){
+    public Simulator(Rules r, RidesOrderingStrategy orderingStrategy ){
         this.rules = r;
+        this.orderingStrategy = orderingStrategy;
         addRides(r.getRides());
     }
 
@@ -47,14 +49,10 @@ public abstract class Simulator {
 
     public void addRides(List<Ride> rides) {
         unasssignedRides.addAll(rides);
-        unasssignedRides.sort((r1,r2)->compareRides(r1,r2));
+        unasssignedRides.sort(orderingStrategy);
     }
 
-    protected int compareRides(Ride r1, Ride r2){
-        int results = Integer.compare(r1.getEarliestStart(),r2.getEarliestStart());
-        if(results == 0 ) return Integer.compare(r1.getLength(),r2.getLength());
-        return results;
-    }
+
 
     public int getBonus() {
         return rules.getBonus();
@@ -64,8 +62,10 @@ public abstract class Simulator {
         int gain = 0;
         for (Vehicle v : getAllVehicles()){
             for( Ride r : v.getRides()){
-                gain+=r.getLength();
-                if(r.startedOnTime()) gain += rules.getBonus();
+                if(r.finishedOnTime()) {
+                    gain += r.getLength();
+                    if (r.startedOnTime()) gain += rules.getBonus();
+                }
 
             }
 

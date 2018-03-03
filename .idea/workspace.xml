@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b3d7a7e-fa47-4ed9-9fba-84f586c24ab1" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/NearbyRideAffectationStrategy.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/definition/Rules.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/model/RideTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out" />
       <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.genetic" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.genetic" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.naive" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.naive" />
       <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out" />
       <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.genetic" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.genetic" />
       <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.naive" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.naive" />
@@ -16,25 +17,14 @@
       <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out" />
       <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.genetic" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.genetic" />
       <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.naive" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.naive" />
-      <change beforePath="$PROJECT_DIR$/sokrat.iml" afterPath="$PROJECT_DIR$/sokrat.iml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/AffectationStrategy.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/AffectationStrategy.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/District.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/District.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/GeneticAlgorithm.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/genetic/GeneticAlgorithm.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Parser.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/definition/Parser.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/ParserExcception.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Position.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Ride.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/SimpleSimulator.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Simulator.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Solution.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Vehicle.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/DistrictTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/model/DistrictTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/AffectationStrategy.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/AffectationStrategy.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/District.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/District.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/NearbyRideAffectationStrategy.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/NearbyRideAffectationStrategy.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/ParserTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/definition/ParserTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/PositionTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/model/PositionTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/SimpleSimulatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/algorithms/naive/SimpleSimulatorTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/VehicleTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/model/VehicleTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,11 +36,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="88" column="54" lean-forward="true" selection-start-line="88" selection-start-column="54" selection-end-line="88" selection-end-column="54" />
+            <state relative-caret-position="476">
+              <caret line="83" column="47" lean-forward="false" selection-start-line="83" selection-start-column="47" selection-end-line="83" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="e#322#323#0" expanded="true" />
                 <element signature="e#354#355#0" expanded="true" />
@@ -72,43 +72,11 @@
       <file leaf-file-name="NearbyRideAffectationStrategy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/NearbyRideAffectationStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
-                <element signature="e#336#337#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/definition/Parser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="56" column="27" lean-forward="false" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DistrictTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/model/DistrictTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -116,8 +84,8 @@
       <file leaf-file-name="Simulator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state relative-caret-position="645">
+              <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -126,11 +94,23 @@
       <file leaf-file-name="Ride.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="86" column="4" lean-forward="false" selection-start-line="86" selection-start-column="4" selection-end-line="86" selection-end-column="4" />
+            <state relative-caret-position="551">
+              <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="29" />
               <folding>
-                <element signature="e#1865#1866#0" expanded="true" />
-                <element signature="e#1930#1931#0" expanded="true" />
+                <element signature="e#1861#1862#0" expanded="true" />
+                <element signature="e#1926#1927#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RideTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/model/RideTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,20 +120,20 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+              <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
               <folding>
-                <element signature="e#591#592#0" expanded="true" />
-                <element signature="e#654#655#0" expanded="true" />
-                <element signature="e#1085#1086#0" expanded="true" />
-                <element signature="e#1128#1129#0" expanded="true" />
-                <element signature="e#1174#1175#0" expanded="true" />
-                <element signature="e#1208#1209#0" expanded="true" />
-                <element signature="e#1783#1784#0" expanded="true" />
-                <element signature="e#1861#1862#0" expanded="true" />
-                <element signature="e#3437#3438#0" expanded="true" />
-                <element signature="e#3468#3469#0" expanded="true" />
-                <element signature="e#3529#3530#0" expanded="true" />
-                <element signature="e#3569#3570#0" expanded="true" />
+                <element signature="e#705#706#0" expanded="true" />
+                <element signature="e#768#769#0" expanded="true" />
+                <element signature="e#1199#1200#0" expanded="true" />
+                <element signature="e#1242#1243#0" expanded="true" />
+                <element signature="e#1288#1289#0" expanded="true" />
+                <element signature="e#1322#1323#0" expanded="true" />
+                <element signature="e#1897#1898#0" expanded="true" />
+                <element signature="e#1975#1976#0" expanded="true" />
+                <element signature="e#3459#3460#0" expanded="true" />
+                <element signature="e#3490#3491#0" expanded="true" />
+                <element signature="e#3551#3552#0" expanded="true" />
+                <element signature="e#3591#3592#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,8 +142,20 @@
       <file leaf-file-name="AffectationStrategy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/AffectationStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state relative-caret-position="165">
+              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RidesOrderingStrategy.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,9 +168,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -231,17 +223,20 @@
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/definition/ParserExcception.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/genetic/GeneticAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Solution.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" />
         <option value="$PROJECT_DIR$/src/test/java/sokrat/main/definition/ParserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/definition/Parser.java" />
         <option value="$PROJECT_DIR$/src/test/java/sokrat/main/model/DistrictTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/AffectationStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/NearbyRideAffectationStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/District.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/NearbyRideAffectationStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java" />
+        <option value="$PROJECT_DIR$/src/test/java/sokrat/main/model/RideTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/AffectationStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java" />
       </list>
     </option>
   </component>
@@ -445,6 +440,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="sokrat.main.model" />
       <recent name="sokrat.main" />
       <recent name="main" />
     </key>
@@ -542,6 +538,31 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="RideTest.testLatestStart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="sokrat.main.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="sokrat" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="sokrat.main.model" />
+      <option name="MAIN_CLASS_NAME" value="sokrat.main.model.RideTest" />
+      <option name="METHOD_NAME" value="testLatestStart" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -573,31 +594,6 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="sokrat.main" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="sokrat.main.definition in sokrat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="sokrat.main.definition.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="sokrat" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="sokrat.main.definition" />
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
@@ -678,19 +674,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.sokrat.main.definition in sokrat" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.sokrat.main.model in sokrat" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.sokrat.main in sokrat" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.sokrat.main.model in sokrat" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.sokrat.main in sokrat" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RideTest.testLatestStart" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.sokrat.main in sokrat" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.sokrat.main.model in sokrat" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.sokrat.main.definition in sokrat" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RideTest.testLatestStart" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.sokrat.main in sokrat" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.sokrat.main.model in sokrat" />
       </list>
     </recent_temporary>
   </component>
@@ -717,11 +713,11 @@
     <history-entry file="MainTest - 2018.03.03 at 09h 19m 00s.xml">
       <configuration name="MainTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimpleSimulatorTest_testAvailableToVehicle - 2018.03.02 at 16h 07m 23s.xml">
-      <configuration name="SimpleSimulatorTest.testAvailableToVehicle" configurationId="JUnit" />
+    <history-entry file="MainTest - 2018.03.03 at 09h 54m 15s.xml">
+      <configuration name="MainTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="sokrat_main_algorithms_naive_in_sokrat - 2018.03.03 at 09h 12m 17s.xml">
-      <configuration name="sokrat.main.algorithms.naive in sokrat" configurationId="JUnit" />
+    <history-entry file="RideTest_testLatestStart - 2018.03.03 at 09h 42m 35s.xml">
+      <configuration name="RideTest.testLatestStart" configurationId="JUnit" />
     </history-entry>
     <history-entry file="sokrat_main_definition_in_sokrat - 2018.03.03 at 09h 12m 27s.xml">
       <configuration name="sokrat.main.definition in sokrat" configurationId="JUnit" />
@@ -741,17 +737,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1928" height="1057" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32738718" sideWeight="0.49375" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32738718" sideWeight="0.4875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30325288" sideWeight="0.38645834" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30325288" sideWeight="0.39166668" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.221875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30325288" sideWeight="0.61354166" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30325288" sideWeight="0.60833335" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30588236" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -973,14 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/algorithms/naive/SimpleSimulatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/Assert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -1031,14 +1018,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/District.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/definition/ParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1063,80 +1042,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/District.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/AffectationStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state relative-caret-position="495">
+          <caret line="43" column="5" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="43" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="false" />
+            <element signature="e#1071#1072#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="86" column="4" lean-forward="false" selection-start-line="86" selection-start-column="4" selection-end-line="86" selection-end-column="4" />
-          <folding>
-            <element signature="e#1865#1866#0" expanded="true" />
-            <element signature="e#1930#1931#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/NearbyRideAffectationStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-          <folding>
-            <element signature="e#591#592#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#1085#1086#0" expanded="true" />
-            <element signature="e#1128#1129#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-            <element signature="e#1208#1209#0" expanded="true" />
-            <element signature="e#1783#1784#0" expanded="true" />
-            <element signature="e#1861#1862#0" expanded="true" />
-            <element signature="e#3437#3438#0" expanded="true" />
-            <element signature="e#3468#3469#0" expanded="true" />
-            <element signature="e#3529#3530#0" expanded="true" />
-            <element signature="e#3569#3570#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="e#322#323#0" expanded="true" />
             <element signature="e#354#355#0" expanded="true" />
@@ -1144,11 +1064,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/algorithms/naive/SimpleSimulatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/AffectationStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+          <folding>
+            <element signature="e#705#706#0" expanded="true" />
+            <element signature="e#768#769#0" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+            <element signature="e#1242#1243#0" expanded="true" />
+            <element signature="e#1288#1289#0" expanded="true" />
+            <element signature="e#1322#1323#0" expanded="true" />
+            <element signature="e#1897#1898#0" expanded="true" />
+            <element signature="e#1975#1976#0" expanded="true" />
+            <element signature="e#3459#3460#0" expanded="true" />
+            <element signature="e#3490#3491#0" expanded="true" />
+            <element signature="e#3551#3552#0" expanded="true" />
+            <element signature="e#3591#3592#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/NearbyRideAffectationStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="29" />
+          <folding>
+            <element signature="e#1861#1862#0" expanded="true" />
+            <element signature="e#1926#1927#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/model/RideTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="88" column="54" lean-forward="true" selection-start-line="88" selection-start-column="54" selection-end-line="88" selection-end-column="54" />
+        <state relative-caret-position="476">
+          <caret line="83" column="47" lean-forward="false" selection-start-line="83" selection-start-column="47" selection-end-line="83" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

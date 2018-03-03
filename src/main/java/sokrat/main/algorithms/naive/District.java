@@ -38,4 +38,8 @@ public class District {
     public  boolean sameDistrict(Position p1, Position p2){
             return districtNumber(p1) == districtNumber(p2);
     }
+
+    public static int maxSize(int nbRows, int nbColumns){
+        return Math.max(nbColumns,nbRows);
+    }
 }

@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sokrat.main.algorithms.Solution;
 import sokrat.main.algorithms.genetic.GeneticAlgorithm;
+import sokrat.main.algorithms.naive.RidesOrderingStrategy;
 import sokrat.main.algorithms.naive.SimpleSimulator;
 import sokrat.main.definition.Parser;
 import sokrat.main.algorithms.naive.Simulator;
@@ -69,24 +70,27 @@ public class Main {
 
         List<Solution> results = new ArrayList<>();
         results.add(proceedGenetic(r));
-        results.add(proceedNaive(new SimpleSimulator(r)));
+        results.add(proceedNaive(r, RidesOrderingStrategy.EARLIEST_START_FIRST,"EARLIEST_START_FIRST"));
+        results.add(proceedNaive(r, RidesOrderingStrategy.LATEST_START_LAST,"LATEST_START_LAST"));
+        results.add(proceedNaive(r, RidesOrderingStrategy.LATEST_START_FIRST,"LATEST_START_FIRST"));
 
         writeSolutionToFile(results.stream().sorted((s1,s2)->Integer.compare(s2.gain(),s1.gain())).findFirst().get(), outputFile);
 
 
     }
 
-    private Solution proceedNaive(Simulator simu) throws IOException {
+    private Solution proceedNaive(Rules r, RidesOrderingStrategy ordering,String name) throws IOException {
+        SimpleSimulator simu = new SimpleSimulator(r,ordering);
         Stopwatch timer = Stopwatch.createStarted();
         simu.runSimulation();
         Solution sol = simu.getSolution();
-        logger.info("Score naive: {}", NumberFormat.getIntegerInstance().format(sol.gain()));
 
-        sol.setGain(simu.calculateGain());
-        logger.info("Score naive (2): {}", NumberFormat.getIntegerInstance().format(sol.gain()));
+        sol.setGain(simu.calculateGain()); // because solution.gain() is bugged
+
+        logger.info("Score naive ({}): {}", name, NumberFormat.getIntegerInstance().format(sol.gain()));
 
         logger.info("Time naive (ms): {}", NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
-        writeSolutionToFile(sol, outputFile+".naive");
+        writeSolutionToFile(sol, outputFile+".naive."+name);
         return sol;
     }
 

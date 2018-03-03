@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static org.junit.Assert.*;
+import static sokrat.main.algorithms.naive.RidesOrderingStrategy.DEFAULT;
 
 public class MainTest {
 
@@ -37,14 +38,14 @@ public class MainTest {
     @Test
     public void testSimple() throws IOException, ParserException {
         File f = new File("input_files/a_example.in");
-        Simulator s = new SimpleSimulator(new Parser(f).getRules());
+        Simulator s = new SimpleSimulator(new Parser(f).getRules(),DEFAULT);
         s.runSimulation();
         System.out.println(s.getSolution().toString());
     }
 
     public void testShouldBeEasy() throws IOException, ParserException {
         File f = new File("input_files/b_should_be_easy.in");
-        Simulator s = new SimpleSimulator(new Parser(f).getRules());
+        Simulator s = new SimpleSimulator(new Parser(f).getRules(),DEFAULT);
         s.runSimulation();
         System.out.println(s.getSolution().toString());
         System.out.println("GAIN " + s.getSolution().gain());
@@ -53,7 +54,7 @@ public class MainTest {
 
     public void testNoHurry() throws IOException, ParserException {
         File f = new File("input_files/c_no_hurry.in");
-        Simulator s = new SimpleSimulator(new Parser(f).getRules());
+        Simulator s = new SimpleSimulator(new Parser(f).getRules(),DEFAULT);
         s.runSimulation();
         System.out.println(s.getSolution().toString());
         System.out.println("GAIN " + s.getSolution().gain());
@@ -62,7 +63,7 @@ public class MainTest {
 
     public void testHighBonus() throws IOException, ParserException {
         File f = new File("input_files/e_high_bonus.in");
-        Simulator s = new SimpleSimulator(new Parser(f).getRules());
+        Simulator s = new SimpleSimulator(new Parser(f).getRules(),DEFAULT);
         s.runSimulation();
         System.out.println(s.getSolution().toString());
         System.out.println("GAIN " + s.getSolution().gain());

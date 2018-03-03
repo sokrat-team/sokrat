@@ -84,8 +84,13 @@ public class Ride {
     public boolean startedOnTime() {
         return getActualStartTime() == getEarliestStart();
     }
-    
+
     public boolean finishedOnTime() {
         return getActualArrivalTime() < getLatestFinish();
+    }
+
+    public int getLatestStart(){
+        return latestFinish-getLength()-1;
+
     }
 }
