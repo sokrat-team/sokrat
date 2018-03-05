@@ -1,15 +1,22 @@
 package sokrat.main.algorithms.naive;
 
+import com.google.common.base.Stopwatch;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import sokrat.main.Main;
 import sokrat.main.definition.Rules;
 import sokrat.main.model.Ride;
 import sokrat.main.model.Vehicle;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class SimpleSimulator extends Simulator{
 
 
+    static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     private int currentStep;
 
@@ -36,26 +43,21 @@ public class SimpleSimulator extends Simulator{
 
     @Override
     public int runSimulation() {
-        this.initialize();
 
+
+        Stopwatch timer = Stopwatch.createStarted();
         for (currentStep = 0; currentStep < rules.getDuration(); currentStep++  ){
             this.cleanUndoableRides(currentStep);
             this.affectRides(currentStep);
             this.moveVehicles(currentStep);
             this.checkVehicles(currentStep);
+            if(timer.elapsed(TimeUnit.SECONDS) >= 10) {
+                logger.info("step: {}/{} {}ms",currentStep,rules.getDuration(), NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
+                timer.reset();
+                timer.start();
+            }
         }
         return calculateScore();
-    }
-
-
-
-    private int calculateScore() {
-        return getSolution().gain();
-    }
-
-    @Override
-    public void initialize() {
-        super.initialize();
     }
 
     private void moveVehicles(int currentStep) {
@@ -106,27 +108,18 @@ public class SimpleSimulator extends Simulator{
 
     private AffectationStrategy nextAvailableAndDoableRideStrategy = (vehicle, step) -> unasssignedRides.stream()
             .parallel()
-            .filter(r -> availableToVehicle(r,vehicle,step))
+            .filter(r -> canDoFullRide(r,vehicle,step))
             .findFirst();
 
 
     private void affectRideTo(Ride r, Vehicle vehicle, int currentStep) {
         unasssignedRides.remove(r);
-        vehicle.AffectRide(r, currentStep);
+        vehicle.goForRide(r, currentStep);
     }
 
 
 
-    public static boolean availableToVehicle(Ride r, Vehicle vehicle, int step) {
-        int canStartStep = step + r.getFrom().distanceTo(vehicle.getCurrentPosition());
 
-        return  canStartStep <= r.getLatestStart();
-    }
-
-    public static int shortestUsingVehicle(Ride r1, Ride r2, Vehicle vehicle) {
-        return Integer.compare(r1.getFrom().distanceTo(vehicle.getCurrentPosition()),
-                r2.getFrom().distanceTo(vehicle.getCurrentPosition()));
-    }
 
     public AffectationStrategy getStrategy() {
         return strategy;

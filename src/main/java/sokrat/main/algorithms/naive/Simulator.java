@@ -22,7 +22,9 @@ public abstract class Simulator {
     public Simulator(Rules r, RidesOrderingStrategy orderingStrategy ){
         this.rules = r;
         this.orderingStrategy = orderingStrategy;
+        initialize();
         addRides(r.getRides());
+
     }
 
 
@@ -76,5 +78,32 @@ public abstract class Simulator {
 
     public static boolean tooLateForARide(Ride r, int currentStep) {
         return (currentStep + r.getLength()) >= r.getLatestFinish();
+    }
+
+    public List<Ride> getUnasssignedRides() {
+        return unasssignedRides;
+    }
+
+    public static boolean canDoFullRide(Ride r, Vehicle vehicle, int step) {
+        int canStartStep = getCanStartStep(r, vehicle, step);
+
+        return  canStartStep <= r.getLatestStart();
+    }
+
+    private static int getCanStartStep(Ride r, Vehicle vehicle, int step) {
+        return step + r.getFrom().distanceTo(vehicle.getCurrentPosition());
+    }
+
+    public static int shortestUsingVehicle(Ride r1, Ride r2, Vehicle vehicle) {
+        return Integer.compare(r1.getFrom().distanceTo(vehicle.getCurrentPosition()),
+                r2.getFrom().distanceTo(vehicle.getCurrentPosition()));
+    }
+
+    public static boolean justInTimeForDeparture(Ride r, Vehicle v, int step) {
+        return getCanStartStep(r,v,step) == r.getEarliestStart();
+    }
+
+    public int calculateScore() {
+        return getSolution().gain();
     }
 }

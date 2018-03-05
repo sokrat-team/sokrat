@@ -93,4 +93,39 @@ public class Ride {
         return latestFinish-getLength()-1;
 
     }
+
+    public int distanceBetween(Ride that){
+        return to.distanceTo(that.getFrom());
+    }
+
+    public int minimalLostTimeTo(Ride that){
+        return that.getEarliestStart()-this.getLatestFinish();
+
+    }
+
+    public int TimeLostToNextEarlyStart(Ride that, int stepBeforeStart){
+        return Math.max(that.getEarliestStart(), stepBeforeStart+getLength()+distanceBetween(that))-this.getLatestFinish();
+    }
+    public int TimeLostToNextLateStart(Ride that, int stepBeforeStart){
+        return Math.max(that.getLatestStart(), stepBeforeStart+getLength()+distanceBetween(that))-this.getLatestFinish();
+    }
+
+    public int maximalLostTimeTo(Ride that){
+        return that.getLatestStart()-this.getEarliestFinish();
+
+    }
+
+    public double avgLostTimeBetween(Ride that){
+        return (maximalLostTimeTo(that)+minimalLostTimeTo(that))/2.0;
+    }
+
+    public int getEarliestFinish() {
+        return earliestStart+getLength();
+    }
+
+    public boolean missed(int step){
+        return step > getLatestStart();
+    }
+
+
 }

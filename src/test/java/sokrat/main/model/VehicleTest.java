@@ -1,9 +1,6 @@
 package sokrat.main.model;
 
 import org.junit.Test;
-import sokrat.main.model.Position;
-import sokrat.main.model.Ride;
-import sokrat.main.model.Vehicle;
 
 import static org.junit.Assert.*;
 
@@ -12,7 +9,7 @@ public class VehicleTest {
     @Test
     public void testVehicleShouldGoToDestinationIfAlreadyAtStart(){
         Vehicle v = new Vehicle(Position.INITIAL_POSITION);
-        v.AffectRide(new Ride(new Position(0,0), new Position(1,0),0,1,0),1);
+        v.goForRide(new Ride(new Position(0,0), new Position(1,0),0,1,0),1);
         assertEquals(Vehicle.Status.MOVING_TO_DESTINATION, v.getStatus() );
 
     }
@@ -20,7 +17,7 @@ public class VehicleTest {
     @Test
     public void testVehicleAvailableIfRideIsEmpty(){
         Vehicle v = new Vehicle(Position.INITIAL_POSITION);
-        v.AffectRide(new Ride(new Position(0,0), new Position(0,0),0,1,0),1);
+        v.goForRide(new Ride(new Position(0,0), new Position(0,0),0,1,0),1);
         assertEquals(Vehicle.Status.AVAILABLE, v.getStatus() );
 
     }
@@ -28,7 +25,7 @@ public class VehicleTest {
     @Test
     public void testVehicleMoveToRide(){
         Vehicle v = new Vehicle(Position.INITIAL_POSITION);
-        v.AffectRide(new Ride(new Position(1,0), new Position(1,2),0,10,0),1);
+        v.goForRide(new Ride(new Position(1,0), new Position(1,2),0,10,0),1);
         assertEquals(Vehicle.Status.MOVING_TO_RIDE_START, v.getStatus() );
         v.move(0);
         v.checkRide(0);

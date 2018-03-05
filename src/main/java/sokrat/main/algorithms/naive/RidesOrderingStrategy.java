@@ -15,6 +15,7 @@ public interface RidesOrderingStrategy extends Comparator<Ride> {
                 .compare(r2.getLength(),r1.getLength())
                 .result();
     };
+
     public static final RidesOrderingStrategy LATEST_START_LAST = (Ride r1, Ride r2) -> {
         return ComparisonChain.start()
                 .compare(r2.getLatestStart(),r1.getLatestStart())

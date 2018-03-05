@@ -83,7 +83,7 @@ public class Vehicle {
         this.rides = rides;
     }
 
-    public void AffectRide(Ride newRide, int step) {
+    public void goForRide(Ride newRide, int step) {
         this.currentRide = newRide;
         moveToRideStartIfNeeded(step);
     }
