@@ -1,0 +1,7 @@
+a_example.in: 10 (max 14)
+b_should_be_easy.in: 176 877 (max 180 798)
+c_no_hurry.in: 15 531 221 (max 16 750 973)
+d_metropolis.in: 9 485 291 (max 14 272 704)
+e_high_bonus.in: 21 461 975 (max 21 601 343)
+2018-03-06 08:01:26 INFO  Main:55 - TOTAL SCORE:46655374
+2018-03-06 08:01:26 INFO  Main:56 - max possible score?:52805832

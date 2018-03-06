@@ -3,8 +3,6 @@ package sokrat.main.algorithms.naive;
 import sokrat.main.model.Ride;
 import sokrat.main.model.Vehicle;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,17 +52,17 @@ public class ShortestPathToRidesStrategy implements AffectationStrategy {
     public static NextRideFinder DEFAULT_STRATEGY = (RideProvider provider, Vehicle vehicle, int step, Ride r ) -> provider.getRemainingRides().stream()
             .parallel()
             .filter(ride -> canDoFullRide(ride,vehicle,step+r.getLength()))
-            .sorted((r1, r2) -> Double.compare(r.TimeLostToNextEarlyStart(r1,step), r.TimeLostToNextEarlyStart(r2,step)))
+            .sorted((r1, r2) -> Double.compare(r.timeLostToNextEarlyStart(r1,step), r.timeLostToNextEarlyStart(r2,step)))
             .findFirst();
     public static NextRideFinder AVG_DISTANCE_STRATEGY = (RideProvider provider, Vehicle vehicle, int step, Ride r ) -> provider.getRemainingRides().stream()
             .parallel()
             .filter(ride -> canDoFullRide(ride,vehicle,step+r.getLength()))
-            .sorted((r1, r2) -> Double.compare(r.avgLostTimeBetween(r1), r.avgLostTimeBetween(r2)))
+            .sorted((r1, r2) -> Double.compare(r.avgLostTimeBetween(r1,step), r.avgLostTimeBetween(r2,step)))
             .findFirst();
     public static NextRideFinder LATEST_DISTANCE_STRATEGY = (RideProvider provider, Vehicle vehicle, int step, Ride r ) -> provider.getRemainingRides().stream()
             .parallel()
             .filter(ride -> canDoFullRide(ride,vehicle,step+r.getLength()))
-            .sorted((r1, r2) -> Double.compare(r.TimeLostToNextEarlyStart(r1,step), r.TimeLostToNextEarlyStart(r2,step)))
+            .sorted((r1, r2) -> Double.compare(r.timeLostToNextLateStart(r1,step), r.timeLostToNextLateStart(r2,step)))
             .findFirst();
 
 

@@ -103,10 +103,11 @@ public class Ride {
 
     }
 
-    public int TimeLostToNextEarlyStart(Ride that, int stepBeforeStart){
+
+    public int timeLostToNextEarlyStart(Ride that, int stepBeforeStart){
         return Math.max(that.getEarliestStart(), stepBeforeStart+getLength()+distanceBetween(that))-this.getLatestFinish();
     }
-    public int TimeLostToNextLateStart(Ride that, int stepBeforeStart){
+    public int timeLostToNextLateStart(Ride that, int stepBeforeStart){
         return Math.max(that.getLatestStart(), stepBeforeStart+getLength()+distanceBetween(that))-this.getLatestFinish();
     }
 
@@ -115,8 +116,8 @@ public class Ride {
 
     }
 
-    public double avgLostTimeBetween(Ride that){
-        return (maximalLostTimeTo(that)+minimalLostTimeTo(that))/2.0;
+    public double avgLostTimeBetween(Ride that, int stepBeforeStart){
+        return (timeLostToNextEarlyStart(that, stepBeforeStart)+timeLostToNextLateStart(that,stepBeforeStart))/2.0;
     }
 
     public int getEarliestFinish() {

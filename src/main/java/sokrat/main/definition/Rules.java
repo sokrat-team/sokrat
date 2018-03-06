@@ -4,6 +4,7 @@ import sokrat.main.model.Ride;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Rules {
     final int nbRows;
@@ -49,5 +50,10 @@ public class Rules {
 
     public void setRides(List<Ride> rides) {
         this.rides = rides;
+    }
+
+    public int getMaxPoints(){
+        return getRides().stream().mapToInt(r->r.getLength()).sum() + getRides().size()*bonus;
+
     }
 }

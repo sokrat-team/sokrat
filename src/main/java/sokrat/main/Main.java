@@ -30,6 +30,7 @@ public class Main {
     static final Logger logger = LoggerFactory.getLogger(Main.class);
     static String bestScoresStr ="";
     static int totalScore=0;
+    static int totalMAxPoints=0;
 
 
     public static void main(String[] args) {
@@ -52,6 +53,7 @@ public class Main {
         logger.info("------------------   Duration: {}  seconds",NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.SECONDS)));
         logger.info("BEST SCORES:" + bestScoresStr);
         logger.info("TOTAL SCORE:" + totalScore);
+        logger.info("max possible score?:" + totalMAxPoints);
         System.exit(0);
     }
 
@@ -72,10 +74,13 @@ public class Main {
 
     public void proceed() throws IOException, ParserException {
         Rules r = new Parser(inputFile).getRules();
+        logger.info("Doing " );
 
         List<Solution> results = new ArrayList<>();
         results.add(proceedGenetic(r));
         results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY));
+        results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_AVG", ShortestPathToRidesStrategy.AVG_DISTANCE_STRATEGY));
+        results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_LATESTART", ShortestPathToRidesStrategy.LATEST_DISTANCE_STRATEGY));
         //results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_AVG", ShortestPathToRidesStrategy.AVG_DISTANCE_STRATEGY));
         //results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_LAST_START", ShortestPathToRidesStrategy.LATEST_DISTANCE_STRATEGY));
         results.add(proceedNaive(r, RidesOrderingStrategy.EARLIEST_START_FIRST,"EARLIEST_START_FIRST"));
@@ -89,8 +94,9 @@ public class Main {
         results.add(proceedGenetic(r, new ArrayList<Solution>(results)));
 
         Solution bestSol = results.stream().sorted((s1, s2) -> Integer.compare(s2.gain(), s1.gain())).findFirst().get();
-        bestScoresStr = bestScoresStr +"\n"+inputFile.getName()+": "+NumberFormat.getIntegerInstance().format(bestSol.gain());
+        bestScoresStr = bestScoresStr +"\n"+inputFile.getName()+": "+NumberFormat.getIntegerInstance().format(bestSol.gain()) + " (max " + NumberFormat.getIntegerInstance().format(r.getMaxPoints())+")";
         totalScore+=bestSol.gain();
+        totalMAxPoints+=r.getMaxPoints();
         writeSolutionToFile(bestSol, new File("best_results",outputFile.getName()));
 
 
