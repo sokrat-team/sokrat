@@ -11,6 +11,7 @@ public class Solution {
     private List<Vehicle> vehicles;
     public int bonus = 20;
     int gain=-1;
+    private String name;
 
     public void setGain(int gain) {
         this.gain = gain;
@@ -91,5 +92,13 @@ public class Solution {
             solutionsString+="\n";
         }
         return solutionsString;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

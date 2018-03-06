@@ -10,14 +10,15 @@ import sokrat.main.algorithms.naive.*;
 import sokrat.main.definition.Parser;
 import sokrat.main.definition.ParserException;
 import sokrat.main.definition.Rules;
+import sokrat.main.model.Position;
+import sokrat.main.model.Ride;
+import sokrat.main.model.Vehicle;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -77,21 +78,19 @@ public class Main {
         logger.info("Doing " );
 
         List<Solution> results = new ArrayList<>();
-        results.add(proceedGenetic(r));
+        results.add(proceedGenetic(r,"genetic"));
         results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY));
         results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_AVG", ShortestPathToRidesStrategy.AVG_DISTANCE_STRATEGY));
         results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_LATESTART", ShortestPathToRidesStrategy.LATEST_DISTANCE_STRATEGY));
-        //results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_AVG", ShortestPathToRidesStrategy.AVG_DISTANCE_STRATEGY));
-        //results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_LAST_START", ShortestPathToRidesStrategy.LATEST_DISTANCE_STRATEGY));
         results.add(proceedNaive(r, RidesOrderingStrategy.EARLIEST_START_FIRST,"EARLIEST_START_FIRST"));
         results.add(proceedNaive(r, RidesOrderingStrategy.LATEST_START_LAST,"LATEST_START_LAST"));
         results.add(proceedNaive(r, RidesOrderingStrategy.LATEST_START_FIRST,"LATEST_START_FIRST"));
         results.add(proceedNaive(r, RidesOrderingStrategy.DEFAULT,"BY_INDEX"));
-        results.add(proceedByVehicle(r,""));
+        results.add(proceedByVehicle(r,"BV"));
         results.add(proceedNaive(r, new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.EARLIEST_START_FIRST),"NEARBY_EARLIEST_START_FIRST"));
         results.add(proceedNaive(r, new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.LATEST_START_LAST),"NEARBY_LATEST_START_LAST"));
 
-        results.add(proceedGenetic(r, new ArrayList<Solution>(results)));
+        results.add(proceedGenetic(r, new ArrayList<Solution>(results),"genetic2"));
 
         Solution bestSol = results.stream().sorted((s1, s2) -> Integer.compare(s2.gain(), s1.gain())).findFirst().get();
         bestScoresStr = bestScoresStr +"\n"+inputFile.getName()+": "+NumberFormat.getIntegerInstance().format(bestSol.gain()) + " (max " + NumberFormat.getIntegerInstance().format(r.getMaxPoints())+")";
@@ -105,83 +104,65 @@ public class Main {
     private Solution proceedShortestDistanceRides(Rules r, String name, ShortestPathToRidesStrategy.NextRideFinder strategy) throws IOException {
         SimpleSimulator simu = new SimpleSimulator(r,RidesOrderingStrategy.LATEST_START_LAST);
         simu.setStrategy(new ShortestPathToRidesStrategy( ()->simu.getUnasssignedRides(), strategy ));
+
+        return doSimulation(name, simu);
+    }
+
+    private Solution doSimulation(String name, Simulator simu) throws IOException {
         Stopwatch timer = Stopwatch.createStarted();
         simu.runSimulation();
         Solution sol = simu.getSolution();
+        sol.setName(name);
 
         sol.setGain(simu.calculateGain()); // because solution.gain() is bugged
 
-        logger.info("Score naive ({}): {}", name, NumberFormat.getIntegerInstance().format(sol.gain()));
-
-        logger.info("Time naive (ms): {}", NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
-        writeSolutionToFile(sol, outputFile+".naive."+name);
+        recordResults(name, timer, sol);
         return sol;
+    }
+
+    private void recordResults(String name, Stopwatch timer, Solution sol) throws IOException {
+        logger.info("Score {}: {}", name, NumberFormat.getIntegerInstance().format(sol.gain()));
+
+        logger.info("Time {} (ms): {}", name, NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
+        writeSolutionToFile(sol, outputFileName(name));
+    }
+
+    private String outputFileName(String name) {
+        return outputFile+"."+name;
     }
 
     private Solution proceedByVehicle(Rules r, String name) throws IOException {
         ByVehicleSimulator simu = new ByVehicleSimulator(r);
 
-        Stopwatch timer = Stopwatch.createStarted();
-        simu.runSimulation();
-        Solution sol = simu.getSolution();
-
-        sol.setGain(simu.calculateGain()); // because solution.gain() is bugged
-
-        logger.info("Score BV ({}): {}", name, NumberFormat.getIntegerInstance().format(sol.gain()));
-
-        logger.info("Time BV (ms): {}", NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
-        writeSolutionToFile(sol, outputFile+".bv."+name);
-        return sol;
+        return doSimulation(name, simu);
     }
 
     private Solution proceedNaive(Rules r, AffectationStrategy strategy, String name) throws IOException {
         SimpleSimulator simu = new SimpleSimulator(r,RidesOrderingStrategy.DEFAULT);
         simu.setStrategy(strategy);
-        Stopwatch timer = Stopwatch.createStarted();
-        simu.runSimulation();
-        Solution sol = simu.getSolution();
 
-        sol.setGain(simu.calculateGain()); // because solution.gain() is bugged
-
-        logger.info("Score naive ({}): {}", name, NumberFormat.getIntegerInstance().format(sol.gain()));
-
-        logger.info("Time naive (ms): {}", NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
-        writeSolutionToFile(sol, outputFile+".naive."+name);
-        return sol;
+        return doSimulation(name, simu);
     }
 
     private Solution proceedNaive(Rules r, RidesOrderingStrategy ordering,String name) throws IOException {
         SimpleSimulator simu = new SimpleSimulator(r,ordering);
-        Stopwatch timer = Stopwatch.createStarted();
-        simu.runSimulation();
-        Solution sol = simu.getSolution();
 
-        sol.setGain(simu.calculateGain()); // because solution.gain() is bugged
-
-        logger.info("Score naive ({}): {}", name, NumberFormat.getIntegerInstance().format(sol.gain()));
-
-        logger.info("Time naive (ms): {}", NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
-        writeSolutionToFile(sol, outputFile+".naive."+name);
-        return sol;
+        return doSimulation(name, simu);
     }
 
-    private Solution proceedGenetic(Rules rules) throws IOException {
+    private Solution proceedGenetic(Rules rules, String name) throws IOException {
         Stopwatch timer = Stopwatch.createStarted();
         GeneticAlgorithm g = createGenetic(rules);
         Solution sol = g.solveWithRandomInitialSet();
-        logger.info("Score genetic: {}", NumberFormat.getIntegerInstance().format(sol.gain()));
-        logger.info("Time genetic (ms): {}", NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
-        writeSolutionToFile(sol,outputFile+".genetic");
+        recordResults(name, timer, sol);
         return sol;
     }
 
-    private Solution proceedGenetic(Rules rules, List<Solution> solutions) throws IOException {
+    private Solution proceedGenetic(Rules rules, List<Solution> solutions, String name) throws IOException {
         Stopwatch timer = Stopwatch.createStarted();
         GeneticAlgorithm g = createGenetic(rules);
         Solution sol = g.solveWith(solutions);
-        logger.info("Score genetic with best sol: {}", NumberFormat.getIntegerInstance().format(sol.gain()));
-        logger.info("Time genetic with best sol (ms): {}", NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
-        writeSolutionToFile(sol,outputFile+".genetic2");
+        recordResults(name, timer, sol);
         return sol;
     }
 
@@ -196,5 +177,46 @@ public class Main {
         FileWriter w = new FileWriter(file);
         w.write(sol.toString());
         w.close();
+    }
+
+    public Solution calculateSolutionIfNeeded(String name, SolutionFinder f, Rules r) throws IOException {
+        File solFile = new File(outputFileName(name));
+        if(solFile.exists() ){
+            return loadSolution(outputFile, name, r);
+        }else{
+            return f.proceeed(r);
+        }
+    }
+
+    private Solution loadSolution(File outputFile, String name, Rules r) throws IOException {
+        List<Vehicle> vehicules = new ArrayList<>();
+        try(BufferedReader reader = new BufferedReader(new FileReader(outputFile))){
+            String line = reader.readLine();
+            while( line != null){
+                loadVehicle(line, r).ifPresent(vehicules::add);
+            }
+
+        }
+        Solution s = Solution.generateSolution(vehicules, r.getBonus());
+        s.setName(name);
+        return s;
+    }
+
+    private Optional<Vehicle> loadVehicle(String line, Rules rules) {
+        String[] rides = line.split("\\s");
+        Vehicle results = new Vehicle(Position.INITIAL_POSITION);
+        int  step = 0;
+        for( String s : rides){
+            Ride r = rules.getRides().get(Integer.parseInt(s));
+            results.goForRide(r, step);
+            step+=results.getCurrentPosition().distanceTo(r.getFrom());
+            step+=r.getLength();
+            results.endRide(step);
+        }
+        return Optional.of(results);
+    }
+
+    public abstract interface SolutionFinder{
+        public Solution proceeed(Rules r);
     }
 }

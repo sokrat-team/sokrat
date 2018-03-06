@@ -11,6 +11,8 @@ public class Vehicle {
     private Status status;
     private int timeAtTopOfRideStack;
 
+
+
     public void checkRide(int step) {
         switch(status){
             case MOVING_TO_RIDE_START:
