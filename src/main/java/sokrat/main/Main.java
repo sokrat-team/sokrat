@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
+import static sokrat.main.SolutionLoader.loadSolution;
+
 public class Main {
 
     private File inputFile;
@@ -74,95 +76,94 @@ public class Main {
     }
 
     public void proceed() throws IOException, ParserException {
-        Rules r = new Parser(inputFile).getRules();
+        Rules rules = new Parser(inputFile).getRules();
         logger.info("Doing " );
 
         List<Solution> results = new ArrayList<>();
-        results.add(proceedGenetic(r,"genetic"));
-        results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY));
-        results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_AVG", ShortestPathToRidesStrategy.AVG_DISTANCE_STRATEGY));
-        results.add(proceedShortestDistanceRides(r,"MOVE_TO_SHORTEST_LATESTART", ShortestPathToRidesStrategy.LATEST_DISTANCE_STRATEGY));
-        results.add(proceedNaive(r, RidesOrderingStrategy.EARLIEST_START_FIRST,"EARLIEST_START_FIRST"));
-        results.add(proceedNaive(r, RidesOrderingStrategy.LATEST_START_LAST,"LATEST_START_LAST"));
-        results.add(proceedNaive(r, RidesOrderingStrategy.LATEST_START_FIRST,"LATEST_START_FIRST"));
-        results.add(proceedNaive(r, RidesOrderingStrategy.DEFAULT,"BY_INDEX"));
-        results.add(proceedByVehicle(r,"BV"));
-        results.add(proceedNaive(r, new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.EARLIEST_START_FIRST),"NEARBY_EARLIEST_START_FIRST"));
-        results.add(proceedNaive(r, new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.LATEST_START_LAST),"NEARBY_LATEST_START_LAST"));
 
-        results.add(proceedGenetic(r, new ArrayList<Solution>(results),"genetic2"));
+        results.add(calculateSolutionIfNeeded("genetic",rules,(r)->proceedGenetic(r,"genetic")));
+        results.add(calculateSolutionIfNeeded("MOVE_TO_SHORTEST_EARLY",rules,(r)->proceedShortestDistanceRides(rules,"MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY)));
+        results.add(calculateSolutionIfNeeded("MOVE_TO_SHORTEST_AVG",rules,(r)->proceedShortestDistanceRides(rules,"MOVE_TO_SHORTEST_AVG", ShortestPathToRidesStrategy.AVG_DISTANCE_STRATEGY)));
+        results.add(calculateSolutionIfNeeded("MOVE_TO_SHORTEST_LATESTART",rules,(r)->proceedShortestDistanceRides(rules,"MOVE_TO_SHORTEST_LATESTART", ShortestPathToRidesStrategy.LATEST_DISTANCE_STRATEGY)));
+        results.add(calculateSolutionIfNeeded("NAIVE_EARLIEST_START_FIRST",rules,(r)->proceedNaive(rules, RidesOrderingStrategy.EARLIEST_START_FIRST,"EARLIEST_START_FIRST")));
+        results.add(calculateSolutionIfNeeded("NAIVE_LATEST_START_LAST",rules,(r)->proceedNaive(rules, RidesOrderingStrategy.LATEST_START_LAST,"LATEST_START_LAST")));
+        results.add(calculateSolutionIfNeeded("NAIVE_LATEST_START_FIRST",rules,(r)->proceedNaive(rules, RidesOrderingStrategy.LATEST_START_FIRST,"LATEST_START_FIRST")));
+        results.add(calculateSolutionIfNeeded("BY_INDEX",rules,(r)->proceedNaive(rules, RidesOrderingStrategy.DEFAULT,"BY_INDEX")));
+        results.add(calculateSolutionIfNeeded("BY_VEHICULE_BASIC",rules,(r)->proceedByVehicle(rules,"BY_VEHICULE_BASIC")));
+        results.add(calculateSolutionIfNeeded("NEARBY_EARLIEST_START_FIRST",rules,(r)->proceedNaive(rules,new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.EARLIEST_START_FIRST),"NEARBY_EARLIEST_START_FIRST")));
+        results.add(calculateSolutionIfNeeded("NEARBY_LATEST_START_LAST",rules,(r)->proceedNaive(rules, new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.LATEST_START_LAST),"NEARBY_LATEST_START_LAST")));
+        results.add(calculateSolutionIfNeeded("genetic2",rules,(r)->proceedGenetic(rules, new ArrayList<Solution>(results),"genetic2")));
+
 
         Solution bestSol = results.stream().sorted((s1, s2) -> Integer.compare(s2.gain(), s1.gain())).findFirst().get();
-        bestScoresStr = bestScoresStr +"\n"+inputFile.getName()+": "+NumberFormat.getIntegerInstance().format(bestSol.gain()) + " (max " + NumberFormat.getIntegerInstance().format(r.getMaxPoints())+")";
+        bestScoresStr = bestScoresStr +"\n"+inputFile.getName()+": "+NumberFormat.getIntegerInstance().format(bestSol.gain()) + " (max " + NumberFormat.getIntegerInstance().format(rules.getMaxPoints())+")";
         totalScore+=bestSol.gain();
-        totalMAxPoints+=r.getMaxPoints();
+        totalMAxPoints+=rules.getMaxPoints();
         writeSolutionToFile(bestSol, new File("best_results",outputFile.getName()));
 
 
     }
 
-    private Solution proceedShortestDistanceRides(Rules r, String name, ShortestPathToRidesStrategy.NextRideFinder strategy) throws IOException {
+    private Solution proceedShortestDistanceRides(Rules r, String name, ShortestPathToRidesStrategy.NextRideFinder strategy) {
         SimpleSimulator simu = new SimpleSimulator(r,RidesOrderingStrategy.LATEST_START_LAST);
         simu.setStrategy(new ShortestPathToRidesStrategy( ()->simu.getUnasssignedRides(), strategy ));
 
         return doSimulation(name, simu);
     }
 
-    private Solution doSimulation(String name, Simulator simu) throws IOException {
-        Stopwatch timer = Stopwatch.createStarted();
+    private Solution doSimulation(String name, Simulator simu){
         simu.runSimulation();
         Solution sol = simu.getSolution();
         sol.setName(name);
 
         sol.setGain(simu.calculateGain()); // because solution.gain() is bugged
 
-        recordResults(name, timer, sol);
         return sol;
     }
 
-    private void recordResults(String name, Stopwatch timer, Solution sol) throws IOException {
+    private void recordResults(String name, Stopwatch timer, Solution sol)  {
         logger.info("Score {}: {}", name, NumberFormat.getIntegerInstance().format(sol.gain()));
 
         logger.info("Time {} (ms): {}", name, NumberFormat.getIntegerInstance().format(timer.elapsed(TimeUnit.MILLISECONDS)));
-        writeSolutionToFile(sol, outputFileName(name));
+        try {
+            writeSolutionToFile(sol, outputFileName(name));
+        } catch (IOException e) {
+            logger.error("Cannot write solution to file", e);
+        }
     }
 
     private String outputFileName(String name) {
         return outputFile+"."+name;
     }
 
-    private Solution proceedByVehicle(Rules r, String name) throws IOException {
+    private Solution proceedByVehicle(Rules r, String name) {
         ByVehicleSimulator simu = new ByVehicleSimulator(r);
 
         return doSimulation(name, simu);
     }
 
-    private Solution proceedNaive(Rules r, AffectationStrategy strategy, String name) throws IOException {
+    private Solution proceedNaive(Rules r, AffectationStrategy strategy, String name)  {
         SimpleSimulator simu = new SimpleSimulator(r,RidesOrderingStrategy.DEFAULT);
         simu.setStrategy(strategy);
 
         return doSimulation(name, simu);
     }
 
-    private Solution proceedNaive(Rules r, RidesOrderingStrategy ordering,String name) throws IOException {
+    private Solution proceedNaive(Rules r, RidesOrderingStrategy ordering,String name) {
         SimpleSimulator simu = new SimpleSimulator(r,ordering);
 
         return doSimulation(name, simu);
     }
 
-    private Solution proceedGenetic(Rules rules, String name) throws IOException {
-        Stopwatch timer = Stopwatch.createStarted();
+    private Solution proceedGenetic(Rules rules, String name)  {
         GeneticAlgorithm g = createGenetic(rules);
         Solution sol = g.solveWithRandomInitialSet();
-        recordResults(name, timer, sol);
         return sol;
     }
 
-    private Solution proceedGenetic(Rules rules, List<Solution> solutions, String name) throws IOException {
-        Stopwatch timer = Stopwatch.createStarted();
+    private Solution proceedGenetic(Rules rules, List<Solution> solutions, String name)  {
         GeneticAlgorithm g = createGenetic(rules);
         Solution sol = g.solveWith(solutions);
-        recordResults(name, timer, sol);
         return sol;
     }
 
@@ -179,42 +180,27 @@ public class Main {
         w.close();
     }
 
-    public Solution calculateSolutionIfNeeded(String name, SolutionFinder f, Rules r) throws IOException {
+    public Solution calculateSolutionIfNeeded(String name, Rules r, SolutionFinder f) {
+        Stopwatch timer = Stopwatch.createStarted();
+        Solution sol = calculateSolutionIfNeeded(name, r, f, timer);
+        recordResults(name, timer, sol);
+        return sol;
+    }
+
+    public Solution calculateSolutionIfNeeded(String name, Rules r, SolutionFinder f, Stopwatch timer) {
         File solFile = new File(outputFileName(name));
-        if(solFile.exists() ){
-            return loadSolution(outputFile, name, r);
-        }else{
-            return f.proceeed(r);
-        }
-    }
-
-    private Solution loadSolution(File outputFile, String name, Rules r) throws IOException {
-        List<Vehicle> vehicules = new ArrayList<>();
-        try(BufferedReader reader = new BufferedReader(new FileReader(outputFile))){
-            String line = reader.readLine();
-            while( line != null){
-                loadVehicle(line, r).ifPresent(vehicules::add);
+        try{
+            if(solFile.exists() ){
+                logger.info("Do not need to compute {}, loading from file: {}",name, solFile);
+                return loadSolution(solFile, name, r);
             }
-
+        }catch (Exception e){
+            logger.error("IOException ", e);
         }
-        Solution s = Solution.generateSolution(vehicules, r.getBonus());
-        s.setName(name);
-        return s;
+        return f.proceeed(r);
     }
 
-    private Optional<Vehicle> loadVehicle(String line, Rules rules) {
-        String[] rides = line.split("\\s");
-        Vehicle results = new Vehicle(Position.INITIAL_POSITION);
-        int  step = 0;
-        for( String s : rides){
-            Ride r = rules.getRides().get(Integer.parseInt(s));
-            results.goForRide(r, step);
-            step+=results.getCurrentPosition().distanceTo(r.getFrom());
-            step+=r.getLength();
-            results.endRide(step);
-        }
-        return Optional.of(results);
-    }
+
 
     public abstract interface SolutionFinder{
         public Solution proceeed(Rules r);

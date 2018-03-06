@@ -6,6 +6,7 @@ import sokrat.main.model.Vehicle;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Solution {
     private List<Vehicle> vehicles;
@@ -100,5 +101,16 @@ public class Solution {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return this.toString().equals(o.toString());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(vehicles, bonus, gain, name);
     }
 }
