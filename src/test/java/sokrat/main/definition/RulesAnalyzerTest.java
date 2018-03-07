@@ -27,4 +27,21 @@ public class RulesAnalyzerTest {
 
         System.out.println(new RulesAnalyzer(rules, new int[]{600}).toString());
     }
+
+    @Test
+    public void testAnalyzeReducedSet() throws IOException, ParserException {
+        File f = new File("input_files/d_metropolis.in");
+        Rules rules = new Parser(f).getRules().eliminateShortestRides(0.2);
+
+        System.out.println(new RulesAnalyzer(rules, new int[]{600}).toString());
+    }
+
+    @Test
+    public void testAnalyzeReducedSet2() throws IOException, ParserException {
+        File f = new File("input_files/d_metropolis.in");
+        Rules rules = new Parser(f).getRules().eliminateShortestRides(0.1);
+        System.out.println(rules.getMaxPoints());
+
+        System.out.println(new RulesAnalyzer(rules, new int[]{1000,2000,4000}).toString());
+    }
 }

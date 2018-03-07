@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RulesAnalyzer {
+    private final Stats distanceStats;
     Stats lengthStats;
     Stats earlyStartStats;
     Stats lateStartStats;
@@ -25,6 +26,7 @@ public class RulesAnalyzer {
         lengthStats=Stats.of(rules.getRides().stream().map(ride->ride.getLength()).iterator());
         earlyStartStats=Stats.of(rules.getRides().stream().map(ride->ride.getEarliestStart()).iterator());
         lateStartStats=Stats.of(rules.getRides().stream().map(ride->ride.getLatestStart()).iterator());
+        distanceStats=Stats.of(rules.computeMinDistancesBetweenRides().values());
         int prevSize = 0;
         int i=0;
         for( int size : buckets){
@@ -50,6 +52,7 @@ public class RulesAnalyzer {
         dumpStats("length",lengthStats, sb);
         dumpStats("earliest start",earlyStartStats, sb);
         dumpStats("latest start",lateStartStats, sb);
+        dumpStats("distances",distanceStats, sb);
         for(int i = 0; i < buckets.length+1; i++){
             dumpStats(bucketNames[i],bucketStats[i], sb);
         }

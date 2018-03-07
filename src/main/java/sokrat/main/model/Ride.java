@@ -95,7 +95,13 @@ public class Ride {
     }
 
     public int distanceBetween(Ride that){
-        return to.distanceTo(that.getFrom());
+        int distance = to.distanceTo(that.getFrom());
+        int maxArrivalStep = latestFinish+distance;
+        if (that.getEarliestStart() > maxArrivalStep ) {
+            distance += that.getEarliestStart() - maxArrivalStep;
+        }
+        return distance;
+
     }
 
     public int minimalLostTimeTo(Ride that){
@@ -129,4 +135,7 @@ public class Ride {
     }
 
 
+    public boolean canBeBefore(Ride r2) {
+        return (getEarliestFinish() + distanceBetween(r2)) <= r2.getLatestStart();
+    }
 }
