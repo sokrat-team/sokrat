@@ -97,10 +97,10 @@ public class Main {
 
         Rules newRules = rules.eliminateShortestRides(.2);
         results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_EARLY",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY)));
-        results.add(calculateSolutionIfNeeded("FILTERED_NEARBY_EARLIEST_START_FIRST",newRules,(r)->proceedNaive(r,new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.EARLIEST_START_FIRST),"FILTERED_NEARBY_EARLIEST_START_FIRST")));
-        results.add(calculateSolutionIfNeeded("FILTERED_NEARBY_DEFAULT",newRules,(r)->proceedNaive(r,new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.DEFAULT),"FILTERED_NEARBY_DEFAULT")));
-        results.add(calculateSolutionIfNeeded("FILTERED_NEARBY_LATEST_START_FIRST",newRules,(r)->proceedNaive(r,new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.LATEST_START_FIRST),"FILTERED_NEARBY_LATEST_START_FIRST")));
-        results.add(calculateSolutionIfNeeded("FILTERED_NEARBY_LATEST_START_LAST",newRules,(r)->proceedNaive(r, new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.LATEST_START_LAST),"FILTERED_NEARBY_LATEST_START_LAST")));
+        results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_EARLY",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY)));
+        results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_AVG",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_AVG", ShortestPathToRidesStrategy.AVG_DISTANCE_STRATEGY)));
+        //results.add(calculateSolutionIfNeeded("FILTERED_NEARBY_EARLIEST_START_FIRST",newRules,(r)->proceedNaive(r,new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.EARLIEST_START_FIRST),"FILTERED_NEARBY_EARLIEST_START_FIRST")));
+        //results.add(calculateSolutionIfNeeded("FILTERED_NEARBY_DEFAULT",newRules,(r)->proceedNaive(r,new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.DEFAULT),"FILTERED_NEARBY_DEFAULT")));
 
         Solution bestSol = results.stream().sorted((s1, s2) -> Integer.compare(s2.gain(), s1.gain())).findFirst().get();
         bestScoresStr = bestScoresStr +"\n"+inputFile.getName()+": "+NumberFormat.getIntegerInstance().format(bestSol.gain()) + " (max " + NumberFormat.getIntegerInstance().format(rules.getMaxPoints())+")";

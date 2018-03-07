@@ -45,7 +45,7 @@ public class SolutionLoader {
         for( String s : Arrays.copyOfRange(rides,1,rides.length)){
 
             if(!s.trim().equals("")) {
-                Ride r = rules.getRides().get(Integer.parseInt(s));
+                Ride r = rules.getRidesByID(Integer.parseInt(s));
                 results.goForRide(r, step);
                 step += results.getCurrentPosition().distanceTo(r.getFrom());
                 step += r.getLength();

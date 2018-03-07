@@ -67,4 +67,11 @@ public class Rules {
         return results;
 
     }
+
+    public Ride getRidesByID(int id) {
+        for(Ride r : rides){
+            if (r.getIndex() == id) return r;
+        }
+        return null;
+    }
 }
