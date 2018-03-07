@@ -91,9 +91,16 @@ public class Main {
         results.add(calculateSolutionIfNeeded("BY_INDEX",rules,(r)->proceedNaive(rules, RidesOrderingStrategy.DEFAULT,"BY_INDEX")));
         results.add(calculateSolutionIfNeeded("BY_VEHICULE_BASIC",rules,(r)->proceedByVehicle(rules,"BY_VEHICULE_BASIC")));
         results.add(calculateSolutionIfNeeded("NEARBY_EARLIEST_START_FIRST",rules,(r)->proceedNaive(rules,new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.EARLIEST_START_FIRST),"NEARBY_EARLIEST_START_FIRST")));
+        results.add(calculateSolutionIfNeeded("NEARBY_DEFAULT",rules,(r)->proceedNaive(rules,new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.DEFAULT),"NEARBY_DEFAULT")));
+        results.add(calculateSolutionIfNeeded("NEARBY_LATEST_START_FIRST",rules,(r)->proceedNaive(rules,new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.LATEST_START_FIRST),"NEARBY_LATEST_START_FIRST")));
         results.add(calculateSolutionIfNeeded("NEARBY_LATEST_START_LAST",rules,(r)->proceedNaive(rules, new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.LATEST_START_LAST),"NEARBY_LATEST_START_LAST")));
-        results.add(calculateSolutionIfNeeded("genetic2",rules,(r)->proceedGenetic(rules, new ArrayList<Solution>(results),"genetic2")));
 
+        Rules newRules = rules.eliminateShortestRides(.2);
+        results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_EARLY",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY)));
+        results.add(calculateSolutionIfNeeded("FILTERED_NEARBY_EARLIEST_START_FIRST",newRules,(r)->proceedNaive(r,new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.EARLIEST_START_FIRST),"FILTERED_NEARBY_EARLIEST_START_FIRST")));
+        results.add(calculateSolutionIfNeeded("FILTERED_NEARBY_DEFAULT",newRules,(r)->proceedNaive(r,new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.DEFAULT),"FILTERED_NEARBY_DEFAULT")));
+        results.add(calculateSolutionIfNeeded("FILTERED_NEARBY_LATEST_START_FIRST",newRules,(r)->proceedNaive(r,new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.LATEST_START_FIRST),"FILTERED_NEARBY_LATEST_START_FIRST")));
+        results.add(calculateSolutionIfNeeded("FILTERED_NEARBY_LATEST_START_LAST",newRules,(r)->proceedNaive(r, new NearbyRideAffectationStrategy(r,20,RidesOrderingStrategy.LATEST_START_LAST),"FILTERED_NEARBY_LATEST_START_LAST")));
 
         Solution bestSol = results.stream().sorted((s1, s2) -> Integer.compare(s2.gain(), s1.gain())).findFirst().get();
         bestScoresStr = bestScoresStr +"\n"+inputFile.getName()+": "+NumberFormat.getIntegerInstance().format(bestSol.gain()) + " (max " + NumberFormat.getIntegerInstance().format(rules.getMaxPoints())+")";

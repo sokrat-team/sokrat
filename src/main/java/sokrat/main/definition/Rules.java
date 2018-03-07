@@ -56,4 +56,15 @@ public class Rules {
         return getRides().stream().mapToInt(r->r.getLength()).sum() + getRides().size()*bonus;
 
     }
+
+    public Rules eliminateShortestRides(double eliminatedRatio) {
+        Rules results = new Rules(nbRows,nbColumns,duration,nbVehicles,bonus);
+
+        int skipNumber = (int) Math.ceil(getRides().size() * eliminatedRatio);
+
+        results.setRides( rides.stream().sorted((r1,r2)->Integer.compare(r1.getLength(), r2.getLength())).skip(skipNumber).collect(Collectors.toList()) );
+
+        return results;
+
+    }
 }
