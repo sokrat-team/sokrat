@@ -3,64 +3,69 @@
   <component name="ChangeListManager">
     <list default="true" id="2b3d7a7e-fa47-4ed9-9fba-84f586c24ab1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/best_results/b_should_be_easy.out" afterPath="$PROJECT_DIR$/best_results/b_should_be_easy.out" />
-      <change beforePath="$PROJECT_DIR$/best_results/c_no_hurry.out" afterPath="$PROJECT_DIR$/best_results/c_no_hurry.out" />
+      <change beforePath="$PROJECT_DIR$/best_results/a_example.out" afterPath="$PROJECT_DIR$/best_results/a_example.out" />
       <change beforePath="$PROJECT_DIR$/best_results/d_metropolis.out" afterPath="$PROJECT_DIR$/best_results/d_metropolis.out" />
-      <change beforePath="$PROJECT_DIR$/best_results/e_high_bonus.out" afterPath="$PROJECT_DIR$/best_results/e_high_bonus.out" />
-      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.BY_INDEX" afterPath="$PROJECT_DIR$/output_files/a_example.out.BY_INDEX" />
-      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.EARLIEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.FILTERED_NEARBY_DEFAULT" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.FILTERED_NEARBY_EARLIEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.FILTERED_NEARBY_LATEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.FILTERED_NEARBY_LATEST_START_LAST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.LATEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.LATEST_START_LAST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.genetic2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.BY_INDEX" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.BY_INDEX" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.EARLIEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_AVG" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_AVG" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_EARLY" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_EARLY" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_NEARBY_DEFAULT" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_NEARBY_EARLIEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_NEARBY_LATEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_NEARBY_LATEST_START_LAST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.LATEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.LATEST_START_LAST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.MOVE_TO_SHORTEST_AVG" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.MOVE_TO_SHORTEST_AVG" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.MOVE_TO_SHORTEST_EARLY" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.MOVE_TO_SHORTEST_EARLY" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.MOVE_TO_SHORTEST_LATESTART" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.MOVE_TO_SHORTEST_LATESTART" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NAIVE_EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NAIVE_EARLIEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NAIVE_LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NAIVE_LATEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NAIVE_LATEST_START_LAST" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NAIVE_LATEST_START_LAST" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_DEFAULT" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_DEFAULT" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_EARLIEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_LATEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_LATEST_START_LAST" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_LATEST_START_LAST" />
-      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.genetic2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.BY_INDEX" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.BY_INDEX" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.EARLIEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_MOVE_TO_SHORTEST_AVG" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_MOVE_TO_SHORTEST_AVG" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_MOVE_TO_SHORTEST_EARLY" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_MOVE_TO_SHORTEST_EARLY" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_NEARBY_DEFAULT" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_NEARBY_EARLIEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_NEARBY_LATEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_NEARBY_LATEST_START_LAST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.LATEST_START_FIRST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.LATEST_START_LAST" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.MOVE_TO_SHORTEST_AVG" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.MOVE_TO_SHORTEST_AVG" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.MOVE_TO_SHORTEST_EARLY" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.MOVE_TO_SHORTEST_EARLY" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.MOVE_TO_SHORTEST_LATESTART" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.MOVE_TO_SHORTEST_LATESTART" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NAIVE_EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.NAIVE_EARLIEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NAIVE_LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.NAIVE_LATEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NAIVE_LATEST_START_LAST" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.NAIVE_LATEST_START_LAST" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_DEFAULT" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_DEFAULT" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_EARLIEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_LATEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_LATEST_START_LAST" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_LATEST_START_LAST" />
-      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.genetic2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.BY_INDEX" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.BY_INDEX" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.BY_INDEX" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.BY_VEHICULE_BASIC" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.FILTERED_MOVE_TO_SHORTEST_AVG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.FILTERED_MOVE_TO_SHORTEST_EARLY" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.FILTERED_MOVE_TO_SHORTEST_LATESTART" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.FILTERED_NAIVE_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.FILTERED_NAIVE_NAIVE_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.MOVE_TO_SHORTEST_AVG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.MOVE_TO_SHORTEST_EARLY" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.MOVE_TO_SHORTEST_LATESTART" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.NAIVE_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.NAIVE_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.NAIVE_LATEST_START_LAST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.NEARBY_DEFAULT" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.NEARBY_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.NEARBY_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.NEARBY_LATEST_START_LAST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/a_example.out.genetic" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.BY_INDEX" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.BY_VEHICULE_BASIC" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_AVG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_EARLY" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_LATESTART" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_NAIVE_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_NAIVE_NAIVE_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.MOVE_TO_SHORTEST_AVG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.MOVE_TO_SHORTEST_EARLY" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.MOVE_TO_SHORTEST_LATESTART" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NAIVE_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NAIVE_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NAIVE_LATEST_START_LAST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_DEFAULT" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.NEARBY_LATEST_START_LAST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.genetic" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.BY_INDEX" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.BY_VEHICULE_BASIC" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_MOVE_TO_SHORTEST_AVG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_MOVE_TO_SHORTEST_EARLY" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_MOVE_TO_SHORTEST_LATESTART" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_NAIVE_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.FILTERED_NAIVE_NAIVE_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.MOVE_TO_SHORTEST_AVG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.MOVE_TO_SHORTEST_EARLY" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.MOVE_TO_SHORTEST_LATESTART" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NAIVE_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NAIVE_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NAIVE_LATEST_START_LAST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_DEFAULT" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.NEARBY_LATEST_START_LAST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.genetic" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.BY_INDEX" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.BY_VEHICULE_BASIC" afterPath="" />
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.FILTERED_MOVE_TO_SHORTEST_AVG" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.FILTERED_MOVE_TO_SHORTEST_AVG" />
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.FILTERED_MOVE_TO_SHORTEST_EARLY" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.FILTERED_MOVE_TO_SHORTEST_EARLY" />
+      <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.FILTERED_MOVE_TO_SHORTEST_LATESTART" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.FILTERED_MOVE_TO_SHORTEST_LATESTART" />
+      <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.FILTERED_NAIVE_EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.FILTERED_NAIVE_EARLIEST_START_FIRST" />
+      <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.FILTERED_NAIVE_NAIVE_LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.FILTERED_NAIVE_NAIVE_LATEST_START_FIRST" />
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.MOVE_TO_SHORTEST_AVG" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.MOVE_TO_SHORTEST_AVG" />
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.MOVE_TO_SHORTEST_EARLY" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.MOVE_TO_SHORTEST_EARLY" />
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.MOVE_TO_SHORTEST_LATESTART" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.MOVE_TO_SHORTEST_LATESTART" />
@@ -71,26 +76,28 @@
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.NEARBY_EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.NEARBY_EARLIEST_START_FIRST" />
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.NEARBY_LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.NEARBY_LATEST_START_FIRST" />
       <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.NEARBY_LATEST_START_LAST" afterPath="$PROJECT_DIR$/output_files/d_metropolis.out.NEARBY_LATEST_START_LAST" />
-      <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.genetic2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.BY_INDEX" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.BY_INDEX" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.FILTERED_MOVE_TO_SHORTEST_AVG" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.FILTERED_MOVE_TO_SHORTEST_AVG" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.FILTERED_MOVE_TO_SHORTEST_EARLY" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.FILTERED_MOVE_TO_SHORTEST_EARLY" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.MOVE_TO_SHORTEST_AVG" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.MOVE_TO_SHORTEST_AVG" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.MOVE_TO_SHORTEST_EARLY" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.MOVE_TO_SHORTEST_EARLY" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.MOVE_TO_SHORTEST_LATESTART" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.MOVE_TO_SHORTEST_LATESTART" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NAIVE_EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.NAIVE_EARLIEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NAIVE_LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.NAIVE_LATEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NAIVE_LATEST_START_LAST" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.NAIVE_LATEST_START_LAST" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_DEFAULT" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_DEFAULT" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_EARLIEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_LATEST_START_FIRST" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_LATEST_START_LAST" afterPath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_LATEST_START_LAST" />
-      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.genetic2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/d_metropolis.out.genetic" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.BY_INDEX" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.BY_VEHICULE_BASIC" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.FILTERED_MOVE_TO_SHORTEST_AVG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.FILTERED_MOVE_TO_SHORTEST_EARLY" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.FILTERED_MOVE_TO_SHORTEST_LATESTART" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.FILTERED_NAIVE_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.FILTERED_NAIVE_NAIVE_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.MOVE_TO_SHORTEST_AVG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.MOVE_TO_SHORTEST_EARLY" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.MOVE_TO_SHORTEST_LATESTART" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NAIVE_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NAIVE_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NAIVE_LATEST_START_LAST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_DEFAULT" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_EARLIEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_LATEST_START_FIRST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.NEARBY_LATEST_START_LAST" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output_files/e_high_bonus.out.genetic" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/definition/Rules.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/definition/Rules.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/definition/RulesAnalyzer.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/definition/RulesAnalyzer.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/definition/RulesAnalyzerTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/definition/RulesAnalyzerTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,24 +112,14 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="98" column="54" lean-forward="false" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
+            <state relative-caret-position="235">
+              <caret line="93" column="101" lean-forward="false" selection-start-line="93" selection-start-column="101" selection-end-line="93" selection-end-column="101" />
               <folding>
-                <element signature="e#8095#8096#0" expanded="true" />
-                <element signature="e#8137#8138#0" expanded="true" />
-                <element signature="e#9242#9243#0" expanded="true" />
-                <element signature="e#9300#9301#0" expanded="true" />
+                <element signature="e#8405#8406#0" expanded="true" />
+                <element signature="e#8447#8448#0" expanded="true" />
+                <element signature="e#9552#9553#0" expanded="true" />
+                <element signature="e#9610#9611#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NearbyRideAffectationStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/NearbyRideAffectationStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="119" column="5" lean-forward="false" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -164,11 +161,44 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ShortestPathToRidesStrategy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/ShortestPathToRidesStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+              <folding>
+                <element signature="e#408#409#0" expanded="true" />
+                <element signature="e#441#442#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="RulesAnalyzerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/definition/RulesAnalyzerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleSimulator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Simulator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="961">
+              <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -190,35 +220,6 @@
             <state relative-caret-position="484">
               <caret line="68" column="61" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="68" selection-end-column="61" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="92" column="34" lean-forward="false" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
-              <folding>
-                <element signature="e#2626#2627#0" expanded="true" />
-                <element signature="e#2658#2659#0" expanded="true" />
-                <element signature="e#2698#2699#0" expanded="true" />
-                <element signature="e#2730#2731#0" expanded="true" />
-                <element signature="e#2783#2784#0" expanded="true" />
-                <element signature="e#2842#2843#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SolutionLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/SolutionLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="47" column="42" lean-forward="false" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -290,13 +291,11 @@
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/genetic/GeneticAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/AffectationStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/NearbyRideAffectationStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/ByVehicleSimulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/ShortesPathToRidesSelector.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RideProvider.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/ShortestPathToRidesSelector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/ShortestPathToRidesStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/model/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java" />
@@ -306,7 +305,9 @@
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/model/Ride.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/definition/RulesAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/definition/Rules.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" />
       </list>
     </option>
   </component>
@@ -544,7 +545,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RulesAnalyzerTest.testAnalyze">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -754,8 +755,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.RulesAnalyzerTest.testAnalyze" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RulesAnalyzerTest.testAnalyze" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.RulesAnalyzerTest.testAnalyzeReducedSet2" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.RulesAnalyzerTest.testAnalyzeReducedSet" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.RulesAnalyzerTest.testAnalyze2" />
@@ -865,10 +866,10 @@
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#8095#8096#0" expanded="true" />
-            <element signature="e#8137#8138#0" expanded="true" />
-            <element signature="e#9242#9243#0" expanded="true" />
-            <element signature="e#9300#9301#0" expanded="true" />
+            <element signature="e#8405#8406#0" expanded="true" />
+            <element signature="e#8447#8448#0" expanded="true" />
+            <element signature="e#9552#9553#0" expanded="true" />
+            <element signature="e#9610#9611#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -886,10 +887,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#8095#8096#0" expanded="true" />
-            <element signature="e#8137#8138#0" expanded="true" />
-            <element signature="e#9242#9243#0" expanded="true" />
-            <element signature="e#9300#9301#0" expanded="true" />
+            <element signature="e#8405#8406#0" expanded="true" />
+            <element signature="e#8447#8448#0" expanded="true" />
+            <element signature="e#9552#9553#0" expanded="true" />
+            <element signature="e#9610#9611#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -938,10 +939,10 @@
         <state relative-caret-position="372">
           <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
           <folding>
-            <element signature="e#8095#8096#0" expanded="true" />
-            <element signature="e#8137#8138#0" expanded="true" />
-            <element signature="e#9242#9243#0" expanded="true" />
-            <element signature="e#9300#9301#0" expanded="true" />
+            <element signature="e#8405#8406#0" expanded="true" />
+            <element signature="e#8447#8448#0" expanded="true" />
+            <element signature="e#9552#9553#0" expanded="true" />
+            <element signature="e#9610#9611#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -959,10 +960,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#8095#8096#0" expanded="true" />
-            <element signature="e#8137#8138#0" expanded="true" />
-            <element signature="e#9242#9243#0" expanded="true" />
-            <element signature="e#9300#9301#0" expanded="true" />
+            <element signature="e#8405#8406#0" expanded="true" />
+            <element signature="e#8447#8448#0" expanded="true" />
+            <element signature="e#9552#9553#0" expanded="true" />
+            <element signature="e#9610#9611#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1139,27 +1140,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="109" column="23" lean-forward="false" selection-start-line="108" selection-start-column="113" selection-end-line="110" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-          <folding>
-            <element signature="e#2157#2158#0" expanded="false" />
-            <element signature="e#2196#2197#0" expanded="false" />
-            <element signature="e#2987#2988#0" expanded="false" />
-            <element signature="e#3030#3031#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/model/Vehicle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1205,12 +1185,12 @@
         <state relative-caret-position="720">
           <caret line="92" column="34" lean-forward="false" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
           <folding>
-            <element signature="e#2626#2627#0" expanded="true" />
-            <element signature="e#2658#2659#0" expanded="true" />
-            <element signature="e#2698#2699#0" expanded="true" />
-            <element signature="e#2730#2731#0" expanded="true" />
-            <element signature="e#2783#2784#0" expanded="true" />
-            <element signature="e#2842#2843#0" expanded="true" />
+            <element signature="e#2626#2627#0" expanded="false" />
+            <element signature="e#2658#2659#0" expanded="false" />
+            <element signature="e#2698#2699#0" expanded="false" />
+            <element signature="e#2730#2731#0" expanded="false" />
+            <element signature="e#2783#2784#0" expanded="false" />
+            <element signature="e#2842#2843#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1220,24 +1200,8 @@
         <state relative-caret-position="151">
           <caret line="47" column="42" lean-forward="false" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/ShortestPathToRidesStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="59" column="109" lean-forward="false" selection-start-line="59" selection-start-column="109" selection-end-line="59" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1288,15 +1252,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/ShortestPathToRidesStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="961">
+          <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="98" column="54" lean-forward="false" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
+        <state relative-caret-position="235">
+          <caret line="93" column="101" lean-forward="false" selection-start-line="93" selection-start-column="101" selection-end-line="93" selection-end-column="101" />
           <folding>
-            <element signature="e#8095#8096#0" expanded="true" />
-            <element signature="e#8137#8138#0" expanded="true" />
-            <element signature="e#9242#9243#0" expanded="true" />
-            <element signature="e#9300#9301#0" expanded="true" />
+            <element signature="e#8405#8406#0" expanded="true" />
+            <element signature="e#8447#8448#0" expanded="true" />
+            <element signature="e#9552#9553#0" expanded="true" />
+            <element signature="e#9610#9611#0" expanded="true" />
           </folding>
         </state>
       </provider>

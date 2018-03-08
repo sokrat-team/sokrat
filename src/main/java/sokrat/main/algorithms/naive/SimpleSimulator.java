@@ -11,6 +11,7 @@ import sokrat.main.model.Vehicle;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 
 public class SimpleSimulator extends Simulator{
@@ -25,6 +26,7 @@ public class SimpleSimulator extends Simulator{
     public SimpleSimulator(Rules rules, RidesOrderingStrategy orderingStrategy) {
         super(rules,orderingStrategy);
         initializeStrategy();
+
     }
 
     private AffectationStrategy strategy;
@@ -86,7 +88,6 @@ public class SimpleSimulator extends Simulator{
 
 
     private void affectRides(int currentStep){
-
         for(Vehicle vehicle : freeVehicles){
             affectRideTo(vehicle, currentStep);
         }

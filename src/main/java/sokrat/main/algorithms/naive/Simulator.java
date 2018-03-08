@@ -90,6 +90,13 @@ public abstract class Simulator {
         return  canStartStep <= r.getLatestStart();
     }
 
+    public static boolean canDoFullRide(Ride r, Vehicle vehicle, int step, Rules rules) {
+        int canStartStep = getCanStartStep(r, vehicle, step);
+        int canFinishStep = canStartStep+r.getLength();
+
+        return  canStartStep <= r.getLatestStart() && canFinishStep <= rules.getDuration();
+    }
+
     private static int getCanStartStep(Ride r, Vehicle vehicle, int step) {
         return step + r.getFrom().distanceTo(vehicle.getCurrentPosition());
     }

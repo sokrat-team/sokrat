@@ -25,6 +25,7 @@ import static sokrat.main.SolutionLoader.loadSolution;
 
 public class Main {
 
+    public static final int NUMBER_OF_DISTRICTS = 20;
     private File inputFile;
 
 
@@ -38,8 +39,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String[] files={"a_example","b_should_be_easy","c_no_hurry","d_metropolis","e_high_bonus"};
-        //String[] files={"d_metropolis"};
+        //String[] files={"a_example","b_should_be_easy","c_no_hurry","d_metropolis","e_high_bonus"};
+        String[] files={"d_metropolis"};
         new File("output_files").mkdirs();
         new File("best_results").mkdirs();
 
@@ -82,26 +83,27 @@ public class Main {
 
         List<Solution> results = new ArrayList<>();
 
-        results.add(calculateSolutionIfNeeded("genetic",rules,(r)->proceedGenetic(r,"genetic")));
+        //results.add(calculateSolutionIfNeeded("genetic",rules,(r)->proceedGenetic(r,"genetic")));
         results.add(calculateSolutionIfNeeded("MOVE_TO_SHORTEST_EARLY",rules,(r)->proceedShortestDistanceRides(rules,"MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY)));
         results.add(calculateSolutionIfNeeded("MOVE_TO_SHORTEST_AVG",rules,(r)->proceedShortestDistanceRides(rules,"MOVE_TO_SHORTEST_AVG", ShortestPathToRidesStrategy.AVG_DISTANCE_STRATEGY)));
         results.add(calculateSolutionIfNeeded("MOVE_TO_SHORTEST_LATESTART",rules,(r)->proceedShortestDistanceRides(rules,"MOVE_TO_SHORTEST_LATESTART", ShortestPathToRidesStrategy.LATEST_DISTANCE_STRATEGY)));
         results.add(calculateSolutionIfNeeded("NAIVE_EARLIEST_START_FIRST",rules,(r)->proceedNaive(rules, RidesOrderingStrategy.EARLIEST_START_FIRST,"EARLIEST_START_FIRST")));
         results.add(calculateSolutionIfNeeded("NAIVE_LATEST_START_LAST",rules,(r)->proceedNaive(rules, RidesOrderingStrategy.LATEST_START_LAST,"LATEST_START_LAST")));
         results.add(calculateSolutionIfNeeded("NAIVE_LATEST_START_FIRST",rules,(r)->proceedNaive(rules, RidesOrderingStrategy.LATEST_START_FIRST,"LATEST_START_FIRST")));
-        results.add(calculateSolutionIfNeeded("BY_INDEX",rules,(r)->proceedNaive(rules, RidesOrderingStrategy.DEFAULT,"BY_INDEX")));
-        results.add(calculateSolutionIfNeeded("BY_VEHICULE_BASIC",rules,(r)->proceedByVehicle(rules,"BY_VEHICULE_BASIC")));
-        results.add(calculateSolutionIfNeeded("NEARBY_EARLIEST_START_FIRST",rules,(r)->proceedNaive(rules,new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.EARLIEST_START_FIRST),"NEARBY_EARLIEST_START_FIRST")));
+//        results.add(calculateSolutionIfNeeded("BY_INDEX",rules,(r)->proceedNaive(rules, RidesOrderingStrategy.DEFAULT,"BY_INDEX")));
+//        results.add(calculateSolutionIfNeeded("BY_VEHICULE_BASIC",rules,(r)->proceedByVehicle(rules,"BY_VEHICULE_BASIC")));
+        results.add(calculateSolutionIfNeeded("NEARBY_EARLIEST_START_FIRST",rules,(r)->proceedNaive(rules,new NearbyRideAffectationStrategy(rules, NUMBER_OF_DISTRICTS,RidesOrderingStrategy.EARLIEST_START_FIRST),"NEARBY_EARLIEST_START_FIRST")));
         results.add(calculateSolutionIfNeeded("NEARBY_DEFAULT",rules,(r)->proceedNaive(rules,new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.DEFAULT),"NEARBY_DEFAULT")));
         results.add(calculateSolutionIfNeeded("NEARBY_LATEST_START_FIRST",rules,(r)->proceedNaive(rules,new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.LATEST_START_FIRST),"NEARBY_LATEST_START_FIRST")));
         results.add(calculateSolutionIfNeeded("NEARBY_LATEST_START_LAST",rules,(r)->proceedNaive(rules, new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.LATEST_START_LAST),"NEARBY_LATEST_START_LAST")));
 
-        Rules newRules = rules.eliminateFarthestRides(.1);
+        Rules newRules = rules.eliminateShortestRides(0.05).eliminateFarthestRides(.05);
         results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_EARLY",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY)));
         results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_LATESTART",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_LATESTART", ShortestPathToRidesStrategy.LATEST_DISTANCE_STRATEGY)));
         results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_AVG",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_AVG", ShortestPathToRidesStrategy.AVG_DISTANCE_STRATEGY)));
         results.add(calculateSolutionIfNeeded("FILTERED_NAIVE_EARLIEST_START_FIRST",newRules,(r)->proceedNaive(r, RidesOrderingStrategy.EARLIEST_START_FIRST,"FILTERED_EARLIEST_START_FIRST")));
         results.add(calculateSolutionIfNeeded("FILTERED_NAIVE_NAIVE_LATEST_START_FIRST",newRules,(r)->proceedNaive(r, RidesOrderingStrategy.LATEST_START_FIRST,"FILTERED_NAIVE_NAIVE_LATEST_START_FIRST")));
+        results.add(calculateSolutionIfNeeded("FILTERED_NAIVE_NAIVE_LATEST_START_LAST",newRules,(r)->proceedNaive(r, RidesOrderingStrategy.LATEST_START_LAST,"FILTERED_NAIVE_NAIVE_LATEST_START_LAST")));
 
         Solution bestSol = results.stream().sorted((s1, s2) -> Integer.compare(s2.gain(), s1.gain())).findFirst().get();
         bestScoresStr = bestScoresStr +"\n"+inputFile.getName()+": " + bestSol.getName() + " with "+NumberFormat.getIntegerInstance().format(bestSol.gain()) + " (max " + NumberFormat.getIntegerInstance().format(rules.getMaxPoints())+")";
