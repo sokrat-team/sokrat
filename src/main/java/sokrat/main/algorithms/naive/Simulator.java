@@ -6,16 +6,13 @@ import sokrat.main.model.Position;
 import sokrat.main.model.Ride;
 import sokrat.main.model.Vehicle;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class Simulator {
 
     private final RidesOrderingStrategy orderingStrategy;
     protected Rules rules;
-    protected final Set<Vehicle> freeVehicles = new HashSet<>();
+    protected final List<Vehicle> freeVehicles = new ArrayList<>();
     protected final Set<Vehicle> busyVehicles = new HashSet<>();
 
 

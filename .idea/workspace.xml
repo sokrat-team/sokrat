@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b3d7a7e-fa47-4ed9-9fba-84f586c24ab1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_AVG" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_AVG" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_EARLY" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_EARLY" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_LATESTART" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_MOVE_TO_SHORTEST_LATESTART" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_NAIVE_EARLIEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_NAIVE_EARLIEST_START_FIRST" />
+      <change beforePath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_NAIVE_NAIVE_LATEST_START_FIRST" afterPath="$PROJECT_DIR$/output_files/b_should_be_easy.out.FILTERED_NAIVE_NAIVE_LATEST_START_FIRST" />
+      <change beforePath="$PROJECT_DIR$/output_files/c_no_hurry.out.MOVE_TO_SHORTEST_EARLY" afterPath="$PROJECT_DIR$/output_files/c_no_hurry.out.MOVE_TO_SHORTEST_EARLY" />
       <change beforePath="$PROJECT_DIR$/src.tgz" afterPath="$PROJECT_DIR$/src.tgz" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" afterPath="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" afterPath="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" />
+      <change beforePath="$PROJECT_DIR$/test_metropolis.out" afterPath="$PROJECT_DIR$/test_metropolis.out" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,13 +28,13 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="118" column="46" lean-forward="true" selection-start-line="118" selection-start-column="46" selection-end-line="118" selection-end-column="46" />
+            <state relative-caret-position="467">
+              <caret line="107" column="35" lean-forward="false" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
               <folding>
-                <element signature="e#8524#8525#0" expanded="true" />
-                <element signature="e#8566#8567#0" expanded="true" />
-                <element signature="e#9667#9668#0" expanded="true" />
-                <element signature="e#9725#9726#0" expanded="true" />
+                <element signature="e#8535#8536#0" expanded="true" />
+                <element signature="e#8577#8578#0" expanded="true" />
+                <element signature="e#9678#9679#0" expanded="true" />
+                <element signature="e#9736#9737#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +90,8 @@
       <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="105" column="39" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+            <state relative-caret-position="826">
+              <caret line="127" column="29" lean-forward="false" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -94,27 +100,41 @@
       <file leaf-file-name="SimpleSimulator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="246" column="0" lean-forward="true" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+            <state relative-caret-position="405">
+              <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding>
-                <element signature="e#3422#3423#0" expanded="true" />
-                <element signature="e#3487#3488#0" expanded="true" />
-                <element signature="e#3543#3544#0" expanded="true" />
-                <element signature="e#3613#3614#0" expanded="true" />
-                <element signature="e#3984#3985#0" expanded="true" />
-                <element signature="e#4043#4044#0" expanded="true" />
-                <element signature="e#4111#4112#0" expanded="true" />
-                <element signature="e#4173#4174#0" expanded="true" />
-                <element signature="e#7006#7007#0" expanded="true" />
-                <element signature="e#7058#7059#0" expanded="true" />
-                <element signature="e#8196#8197#0" expanded="true" />
-                <element signature="e#8248#8249#0" expanded="true" />
-                <element signature="e#9147#9148#0" expanded="true" />
-                <element signature="e#9199#9200#0" expanded="true" />
-                <element signature="e#12394#12395#0" expanded="true" />
-                <element signature="e#12446#12447#0" expanded="true" />
-                <marker date="1520636344803" expanded="true" signature="2487:2670" ph="{...}" />
+                <element signature="e#3664#3665#0" expanded="true" />
+                <element signature="e#3729#3730#0" expanded="true" />
+                <element signature="e#3785#3786#0" expanded="true" />
+                <element signature="e#3855#3856#0" expanded="true" />
+                <element signature="e#4226#4227#0" expanded="true" />
+                <element signature="e#4285#4286#0" expanded="true" />
+                <element signature="e#4345#4346#0" expanded="true" />
+                <element signature="e#4405#4406#0" expanded="true" />
+                <element signature="e#4473#4474#0" expanded="true" />
+                <element signature="e#4535#4536#0" expanded="true" />
+                <element signature="e#7368#7369#0" expanded="true" />
+                <element signature="e#7420#7421#0" expanded="true" />
+                <element signature="e#8367#8368#0" expanded="true" />
+                <element signature="e#8419#8420#0" expanded="true" />
+                <element signature="e#10335#10336#0" expanded="true" />
+                <element signature="e#10387#10388#0" expanded="true" />
+                <element signature="e#11286#11287#0" expanded="true" />
+                <element signature="e#11338#11339#0" expanded="true" />
+                <element signature="e#14533#14534#0" expanded="true" />
+                <element signature="e#14585#14586#0" expanded="true" />
+                <marker date="1520638212468" expanded="true" signature="2729:2912" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Simulator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -208,7 +228,6 @@
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/ShortesPathToRidesSelector.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RideProvider.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/ShortestPathToRidesSelector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/ShortestPathToRidesStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/model/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/Solution.java" />
@@ -220,6 +239,7 @@
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/definition/Rules.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/RidesOrderingStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/AnotherSimulator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java" />
         <option value="$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/sokrat/main/Main.java" />
@@ -453,7 +473,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MainTest.testMetropolisBestCase">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -663,11 +683,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest.testMetropolisBestCase" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest.testExampleBestCase" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.testMetropolis" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RulesAnalyzerTest.testAnalyze" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest.testMetropolisBestCase" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.testExampleBestCase" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest.testMetropolis" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RulesAnalyzerTest.testAnalyze" />
       </list>
     </recent_temporary>
   </component>
@@ -685,18 +705,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MainTest_testMetropolisBestCase - 2018.03.09 at 23h 46m 03s.xml">
-      <configuration name="MainTest.testMetropolisBestCase" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainTest_testMetropolisBestCase - 2018.03.09 at 23h 54m 11s.xml">
-      <configuration name="MainTest.testMetropolisBestCase" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainTest_testMetropolisBestCase - 2018.03.09 at 23h 56m 30s.xml">
-      <configuration name="MainTest.testMetropolisBestCase" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainTest_testMetropolisBestCase - 2018.03.09 at 23h 59m 34s.xml">
-      <configuration name="MainTest.testMetropolisBestCase" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MainTest_testMetropolisBestCase - 2018.03.10 at 00h 00m 24s.xml">
       <configuration name="MainTest.testMetropolisBestCase" configurationId="JUnit" />
     </history-entry>
@@ -715,6 +723,18 @@
     <history-entry file="MainTest_testMetropolisBestCase - 2018.03.10 at 00h 05m 35s.xml">
       <configuration name="MainTest.testMetropolisBestCase" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MainTest_testMetropolisBestCase - 2018.03.10 at 00h 17m 15s.xml">
+      <configuration name="MainTest.testMetropolisBestCase" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainTest_testMetropolisBestCase - 2018.03.10 at 00h 20m 45s.xml">
+      <configuration name="MainTest.testMetropolisBestCase" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainTest_testMetropolisBestCase - 2018.03.10 at 00h 22m 29s.xml">
+      <configuration name="MainTest.testMetropolisBestCase" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainTest_testMetropolisBestCase - 2018.03.10 at 00h 30m 50s.xml">
+      <configuration name="MainTest.testMetropolisBestCase" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="130" y="83" width="1928" height="1057" extended-state="6" />
@@ -729,7 +749,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53410286" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.159375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30588236" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.53410286" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26128018" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -775,7 +795,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -785,10 +805,10 @@
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#8524#8525#0" expanded="true" />
-            <element signature="e#8566#8567#0" expanded="true" />
-            <element signature="e#9667#9668#0" expanded="true" />
-            <element signature="e#9725#9726#0" expanded="true" />
+            <element signature="e#8535#8536#0" expanded="true" />
+            <element signature="e#8577#8578#0" expanded="true" />
+            <element signature="e#9678#9679#0" expanded="true" />
+            <element signature="e#9736#9737#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -806,10 +826,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#8524#8525#0" expanded="true" />
-            <element signature="e#8566#8567#0" expanded="true" />
-            <element signature="e#9667#9668#0" expanded="true" />
-            <element signature="e#9725#9726#0" expanded="true" />
+            <element signature="e#8535#8536#0" expanded="true" />
+            <element signature="e#8577#8578#0" expanded="true" />
+            <element signature="e#9678#9679#0" expanded="true" />
+            <element signature="e#9736#9737#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -858,10 +878,10 @@
         <state relative-caret-position="372">
           <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
           <folding>
-            <element signature="e#8524#8525#0" expanded="true" />
-            <element signature="e#8566#8567#0" expanded="true" />
-            <element signature="e#9667#9668#0" expanded="true" />
-            <element signature="e#9725#9726#0" expanded="true" />
+            <element signature="e#8535#8536#0" expanded="true" />
+            <element signature="e#8577#8578#0" expanded="true" />
+            <element signature="e#9678#9679#0" expanded="true" />
+            <element signature="e#9736#9737#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -879,10 +899,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#8524#8525#0" expanded="true" />
-            <element signature="e#8566#8567#0" expanded="true" />
-            <element signature="e#9667#9668#0" expanded="true" />
-            <element signature="e#9725#9726#0" expanded="true" />
+            <element signature="e#8535#8536#0" expanded="true" />
+            <element signature="e#8577#8578#0" expanded="true" />
+            <element signature="e#9678#9679#0" expanded="true" />
+            <element signature="e#9736#9737#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1051,18 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-          <folding>
-            <marker date="1520627250509" expanded="true" signature="2472:2555" ph="{...}" />
-            <marker date="1520627250509" expanded="true" signature="2635:2800" ph="{...}" />
-            <marker date="1520627250509" expanded="true" signature="2880:2953" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/model/Vehicle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1202,49 +1210,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/Simulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/algorithms/naive/SimpleSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="246" column="0" lean-forward="true" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+        <state relative-caret-position="405">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding>
-            <element signature="e#3422#3423#0" expanded="true" />
-            <element signature="e#3487#3488#0" expanded="true" />
-            <element signature="e#3543#3544#0" expanded="true" />
-            <element signature="e#3613#3614#0" expanded="true" />
-            <element signature="e#3984#3985#0" expanded="true" />
-            <element signature="e#4043#4044#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4173#4174#0" expanded="true" />
-            <element signature="e#7006#7007#0" expanded="true" />
-            <element signature="e#7058#7059#0" expanded="true" />
-            <element signature="e#8196#8197#0" expanded="true" />
-            <element signature="e#8248#8249#0" expanded="true" />
-            <element signature="e#9147#9148#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#12394#12395#0" expanded="true" />
-            <element signature="e#12446#12447#0" expanded="true" />
-            <marker date="1520636344803" expanded="true" signature="2487:2670" ph="{...}" />
+            <element signature="e#3664#3665#0" expanded="true" />
+            <element signature="e#3729#3730#0" expanded="true" />
+            <element signature="e#3785#3786#0" expanded="true" />
+            <element signature="e#3855#3856#0" expanded="true" />
+            <element signature="e#4226#4227#0" expanded="true" />
+            <element signature="e#4285#4286#0" expanded="true" />
+            <element signature="e#4345#4346#0" expanded="true" />
+            <element signature="e#4405#4406#0" expanded="true" />
+            <element signature="e#4473#4474#0" expanded="true" />
+            <element signature="e#4535#4536#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
+            <element signature="e#7420#7421#0" expanded="true" />
+            <element signature="e#8367#8368#0" expanded="true" />
+            <element signature="e#8419#8420#0" expanded="true" />
+            <element signature="e#10335#10336#0" expanded="true" />
+            <element signature="e#10387#10388#0" expanded="true" />
+            <element signature="e#11286#11287#0" expanded="true" />
+            <element signature="e#11338#11339#0" expanded="true" />
+            <element signature="e#14533#14534#0" expanded="true" />
+            <element signature="e#14585#14586#0" expanded="true" />
+            <marker date="1520638212468" expanded="true" signature="2729:2912" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sokrat/main/MainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="105" column="39" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+        <state relative-caret-position="826">
+          <caret line="127" column="29" lean-forward="false" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sokrat/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="118" column="46" lean-forward="true" selection-start-line="118" selection-start-column="46" selection-end-line="118" selection-end-column="46" />
+        <state relative-caret-position="467">
+          <caret line="107" column="35" lean-forward="false" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
           <folding>
-            <element signature="e#8524#8525#0" expanded="true" />
-            <element signature="e#8566#8567#0" expanded="true" />
-            <element signature="e#9667#9668#0" expanded="true" />
-            <element signature="e#9725#9726#0" expanded="true" />
+            <element signature="e#8535#8536#0" expanded="true" />
+            <element signature="e#8577#8578#0" expanded="true" />
+            <element signature="e#9678#9679#0" expanded="true" />
+            <element signature="e#9736#9737#0" expanded="true" />
           </folding>
         </state>
       </provider>

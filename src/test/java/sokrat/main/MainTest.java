@@ -97,13 +97,13 @@ public class MainTest {
         File f = new File("input_files/d_metropolis.in");
         Rules rules = new Parser(f).getRules();
 
-        int bestScore = 11774348; // LATEST_START_FIRST_SHORT_PRIO  && simu.allocateIAmCloserStrategy(1000);
+        int bestScore = 11790470; // LATEST_START_FIRST_SHORT_PRIO  && simu.allocateIAmCloserStrategy(10000);
 
         //Rules newRules = rules.eliminateFarthestRides(.01).eliminateShortestRides(0.01);
 
         SimpleSimulator simu = new SimpleSimulator(rules, RidesOrderingStrategy.LATEST_START_FIRST_SHORT_PRIO);
         //simu.allocateStrategyPool(50, new Position(rules.getNbColumns()/2, rules.getNbRows()/2), rules, 123456778912104L);
-        simu.allocateIAmCloserStrategy(10000);
+        simu.allocateIAmClosestStrategy(10000);
         simu.runSimulation();
         Solution sol = simu.getSolution();
         String better = sol.gain() > bestScore ? "WHOOHOOOOO !!! " : "Duh!";

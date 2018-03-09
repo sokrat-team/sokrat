@@ -98,11 +98,11 @@ public class Main {
         results.add(calculateSolutionIfNeeded("IAMCLOSER_WITH_LATEST_START",rules,(r)->proceedIamCloser(rules,"IAMCLOSER_WITH_LATEST_START")));
 
         Rules newRules = rules.eliminateFarthestRides(.1);
-        results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_EARLY",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY)));
-        results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_LATESTART",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_LATESTART", ShortestPathToRidesStrategy.LATEST_DISTANCE_STRATEGY)));
-        results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_AVG",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_AVG", ShortestPathToRidesStrategy.AVG_DISTANCE_STRATEGY)));
-        results.add(calculateSolutionIfNeeded("FILTERED_NAIVE_EARLIEST_START_FIRST",newRules,(r)->proceedNaive(r, RidesOrderingStrategy.EARLIEST_START_FIRST,"FILTERED_EARLIEST_START_FIRST")));
-        results.add(calculateSolutionIfNeeded("FILTERED_NAIVE_NAIVE_LATEST_START_FIRST",newRules,(r)->proceedNaive(r, RidesOrderingStrategy.LATEST_START_FIRST,"FILTERED_NAIVE_NAIVE_LATEST_START_FIRST")));
+//        results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_EARLY",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY)));
+//        results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_LATESTART",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_LATESTART", ShortestPathToRidesStrategy.LATEST_DISTANCE_STRATEGY)));
+//        results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_AVG",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_AVG", ShortestPathToRidesStrategy.AVG_DISTANCE_STRATEGY)));
+//        results.add(calculateSolutionIfNeeded("FILTERED_NAIVE_EARLIEST_START_FIRST",newRules,(r)->proceedNaive(r, RidesOrderingStrategy.EARLIEST_START_FIRST,"FILTERED_EARLIEST_START_FIRST")));
+//        results.add(calculateSolutionIfNeeded("FILTERED_NAIVE_NAIVE_LATEST_START_FIRST",newRules,(r)->proceedNaive(r, RidesOrderingStrategy.LATEST_START_FIRST,"FILTERED_NAIVE_NAIVE_LATEST_START_FIRST")));
 
         Solution bestSol = results.stream().sorted((s1, s2) -> Integer.compare(s2.gain(), s1.gain())).findFirst().get();
         bestScoresStr = bestScoresStr +"\n"+inputFile.getName()+": " + bestSol.getName() + " with "+NumberFormat.getIntegerInstance().format(bestSol.gain()) + " (max " + NumberFormat.getIntegerInstance().format(rules.getMaxPoints())+")";
@@ -116,7 +116,7 @@ public class Main {
     private Solution proceedIamCloser(Rules rules, String name) {
 
         SimpleSimulator simu = new SimpleSimulator(rules,RidesOrderingStrategy.LATEST_START_FIRST_SHORT_PRIO);
-        simu.allocateIAmCloserStrategy(10000);
+        simu.allocateIAmClosestStrategy(10000);
 
         return doSimulation(name, simu);
     }

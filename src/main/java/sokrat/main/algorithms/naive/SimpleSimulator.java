@@ -88,6 +88,9 @@ public class SimpleSimulator extends Simulator{
 
     private void affectRides(int currentStep){
 
+        Position center = new Position(rules.getNbColumns()/2, rules.getNbRows()/2);
+        Collections.sort(freeVehicles, (v1,v2) -> Integer.compare(v2.getCurrentPosition().distanceTo(center), v1.getCurrentPosition().distanceTo(center)));
+
         for(Vehicle vehicle : freeVehicles){
             affectRideTo(vehicle, currentStep);
         }
@@ -131,6 +134,11 @@ public class SimpleSimulator extends Simulator{
 
     public void allocateIAmCloserStrategy(int maxSkip) {
         setStrategy(new IAmCloserStrategy(maxSkip));
+    }
+
+
+    public void allocateIAmClosestStrategy(int maxSkip) {
+        setStrategy(new IAmClosestStrategy(maxSkip));
     }
 
 
@@ -224,19 +232,78 @@ public class SimpleSimulator extends Simulator{
 
             Ride selected = null;
             int minDistance = Integer.MAX_VALUE;
+
             for(Ride ride: ridesPool){
-                int distance = vehicle.getCurrentPosition().distanceTo(ride.getFrom());
-                if ( ride.getEarliestStart() > currentStep+distance) {
-                    distance = ride.getEarliestStart() - currentStep;
-                }
+                int distance = calculateRealDistanceToRide(vehicle, ride);
                 if(distance < minDistance){
                     selected = ride;
                     minDistance=distance;
                 }
 
             }
+
+
             return Optional.ofNullable(selected);
         }
+    }
+
+
+    public class IAmClosestStrategy implements AffectationStrategy{
+
+        private final int maxSkipped;
+
+        public IAmClosestStrategy( int maxSkipped){
+            this.maxSkipped = maxSkipped;
+        }
+
+        @Override
+        public Optional<Ride> giveRideTo(Vehicle vehicle, int step) {
+
+            List<Ride> ridesPool = unasssignedRides.stream()
+                    .parallel()
+                    .filter(r -> canDoFullRide(r, vehicle, step))
+                    .limit(freeVehicles.size() + maxSkipped )
+                    .collect(Collectors.toList());
+
+            Ride selected = null;
+            int minDistance = Integer.MAX_VALUE;
+
+            Queue<Ride> rides = new ArrayDeque<>();
+
+            for(Ride ride: ridesPool){
+                int distance = calculateRealDistanceToRide(vehicle, ride);
+                if(distance < minDistance){
+                    minDistance=distance;
+                    if(anotherVehicleIsCloser(ride,distance)){
+                        rides.add(ride);
+                    }
+                    else{
+                        selected = ride;
+                    }
+                }
+            }
+            if (selected == null && !rides.isEmpty()){
+                selected = rides.poll();
+            }
+            return Optional.ofNullable(selected);
+        }
+
+        private boolean anotherVehicleIsCloser(Ride ride,int distance) {
+            for (Vehicle v : freeVehicles){
+                if(calculateRealDistanceToRide(v,ride) < distance) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    private int calculateRealDistanceToRide(Vehicle vehicle, Ride ride) {
+        int distance = vehicle.getCurrentPosition().distanceTo(ride.getFrom());
+        if ( ride.getEarliestStart() > currentStep+distance) {
+            distance = ride.getEarliestStart() - currentStep;
+        }
+        return distance;
     }
 
 
