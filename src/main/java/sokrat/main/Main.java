@@ -95,6 +95,7 @@ public class Main {
         results.add(calculateSolutionIfNeeded("NEARBY_DEFAULT",rules,(r)->proceedNaive(rules,new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.DEFAULT),"NEARBY_DEFAULT")));
         results.add(calculateSolutionIfNeeded("NEARBY_LATEST_START_FIRST",rules,(r)->proceedNaive(rules,new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.LATEST_START_FIRST),"NEARBY_LATEST_START_FIRST")));
         results.add(calculateSolutionIfNeeded("NEARBY_LATEST_START_LAST",rules,(r)->proceedNaive(rules, new NearbyRideAffectationStrategy(rules,20,RidesOrderingStrategy.LATEST_START_LAST),"NEARBY_LATEST_START_LAST")));
+        results.add(calculateSolutionIfNeeded("IAMCLOSER_WITH_LATEST_START",rules,(r)->proceedIamCloser(rules,"IAMCLOSER_WITH_LATEST_START")));
 
         Rules newRules = rules.eliminateFarthestRides(.1);
         results.add(calculateSolutionIfNeeded("FILTERED_MOVE_TO_SHORTEST_EARLY",newRules,(r)->proceedShortestDistanceRides(r,"FILTERED_MOVE_TO_SHORTEST_EARLY", ShortestPathToRidesStrategy.DEFAULT_STRATEGY)));
@@ -112,14 +113,22 @@ public class Main {
 
     }
 
+    private Solution proceedIamCloser(Rules rules, String name) {
+
+        SimpleSimulator simu = new SimpleSimulator(rules,RidesOrderingStrategy.LATEST_START_FIRST_SHORT_PRIO);
+        simu.allocateIAmCloserStrategy(10000);
+
+        return doSimulation(name, simu);
+    }
+
     private Solution proceedShortestDistanceRides(Rules r, String name, ShortestPathToRidesStrategy.NextRideFinder strategy) {
-        SimpleSimulator simu = new SimpleSimulator(r,RidesOrderingStrategy.LATEST_START_LAST);
+        SimpleSimulator simu = new SimpleSimulator(r,RidesOrderingStrategy.LATEST_START_FIRST_SHORT_PRIO);
         simu.setStrategy(new ShortestPathToRidesStrategy( ()->simu.getUnasssignedRides(), strategy ));
 
         return doSimulation(name, simu);
     }
 
-    private Solution doSimulation(String name, Simulator simu){
+    static Solution doSimulation(String name, Simulator simu){
         simu.runSimulation();
         Solution sol = simu.getSolution();
         sol.setName(name);
@@ -150,20 +159,20 @@ public class Main {
         return doSimulation(name, simu);
     }
 
-    private Solution proceedNaive(Rules r, AffectationStrategy strategy, String name)  {
+    static Solution proceedNaive(Rules r, AffectationStrategy strategy, String name)  {
         SimpleSimulator simu = new SimpleSimulator(r,RidesOrderingStrategy.DEFAULT);
         simu.setStrategy(strategy);
 
         return doSimulation(name, simu);
     }
 
-    private Solution proceedNaive(Rules r, RidesOrderingStrategy ordering,String name) {
+    static Solution proceedNaive(Rules r, RidesOrderingStrategy ordering,String name) {
         SimpleSimulator simu = new SimpleSimulator(r,ordering);
 
         return doSimulation(name, simu);
     }
 
-    private Solution proceedGenetic(Rules rules, String name)  {
+    static Solution proceedGenetic(Rules rules, String name)  {
         GeneticAlgorithm g = createGenetic(rules);
         Solution sol = g.solveWithRandomInitialSet();
         return sol;
@@ -175,14 +184,14 @@ public class Main {
         return sol;
     }
 
-    private GeneticAlgorithm createGenetic(Rules rules) {
+    static GeneticAlgorithm createGenetic(Rules rules) {
         return new GeneticAlgorithm(rules,100, 90);
     }
 
     private void writeSolutionToFile(Solution sol, String file) throws IOException {
         writeSolutionToFile(sol,new File(file));
     }
-    private void writeSolutionToFile(Solution sol, File file) throws IOException {
+    static void writeSolutionToFile(Solution sol, File file) throws IOException {
         FileWriter w = new FileWriter(file);
         w.write(sol.toString());
         w.close();

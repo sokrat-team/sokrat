@@ -5,13 +5,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sokrat.main.Main;
 import sokrat.main.definition.Rules;
+import sokrat.main.model.Position;
 import sokrat.main.model.Ride;
 import sokrat.main.model.Vehicle;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public class SimpleSimulator extends Simulator{
 
@@ -111,6 +112,296 @@ public class SimpleSimulator extends Simulator{
             .filter(r -> canDoFullRide(r,vehicle,step))
             .findFirst();
 
+
+    public void allocateRamdomizedStrategy(int i, long l) {
+        setStrategy(new RandomizedNextAvailableAndDoableRideStrategy(i,l));
+    }
+    public void allocateNextLongStrategy(int i) {
+        setStrategy(new TakeLongerInNextRidesStrategy(i));
+    }
+    public void allocateNextCompromiseStrategy(int i) {
+        setStrategy(new TakeCmompromiseInNextRidesStrategy(i));
+    }
+    public void allocateStayCentricStrategy(int i, Position position) {
+        setStrategy(new StayCentricStrategy(i, position));
+    }
+    public void allocateStrategyPool(int maxSkip, Position center, Rules rules, long seed) {
+        setStrategy(new StrategyPoolStrategy(maxSkip, center, rules, seed));
+    }
+
+    public void allocateIAmCloserStrategy(int maxSkip) {
+        setStrategy(new IAmCloserStrategy(maxSkip));
+    }
+
+
+    public void allocateRideNotIsolatedStrategy(int i, Rules r) {
+        setStrategy(new RideNotIsolatedStrategy(i, r));
+    }
+
+
+
+    public class StrategyPoolStrategy implements AffectationStrategy{
+
+
+        HashMap<AffectationStrategy, Integer> weightedStrategies = new HashMap<>();
+
+        public StrategyPoolStrategy(int maxSkip, Position center, Rules rules, long seed){
+            weightedStrategies.put(new RideNotIsolatedStrategy(maxSkip, rules),1);
+            weightedStrategies.put(new RandomizedNextAvailableAndDoableRideStrategy(maxSkip, seed),1);
+            weightedStrategies.put(new TakeCmompromiseInNextRidesStrategy(maxSkip),1);
+            weightedStrategies.put(new StayCentricStrategy(maxSkip, center),1);
+            weightedStrategies.put(new TakeLongerInNextRidesStrategy(maxSkip),1);
+            weightedStrategies.put(new DontGoTooFarStrategy(maxSkip),1);
+            weightedStrategies.put(nextAvailableAndDoableRideStrategy,2);
+            weightedStrategies.put(new IAmCloserStrategy(maxSkip),3);
+        }
+
+        @Override
+        public Optional<Ride> giveRideTo(Vehicle vehicle, int step) {
+            HashMap<Ride, Integer> rideCounts = new HashMap<>();
+
+            for(Map.Entry<AffectationStrategy,Integer> entry : weightedStrategies.entrySet()){
+                Optional<Ride> ride = entry.getKey().giveRideTo(vehicle,step);
+                if(ride.isPresent()){
+                    if (rideCounts.containsKey(ride)){
+                        int newCount=rideCounts.get(ride) + entry.getValue();
+                        rideCounts.put(ride.get(), newCount);
+                    }else{
+                        rideCounts.put(ride.get(), entry.getValue());
+                    }
+                }
+            }
+            Ride result = null;
+            int maxCount=0;
+            for(Ride ride : rideCounts.keySet()){
+                if(rideCounts.get(ride) > maxCount){
+                    result = ride;
+                    maxCount = rideCounts.get(ride);
+                }
+            }
+
+            return Optional.ofNullable(result);
+
+        }
+    }
+
+    public class RandomizedNextAvailableAndDoableRideStrategy implements AffectationStrategy{
+
+        private final int maxSkipped;
+        private final Random random;
+
+        public RandomizedNextAvailableAndDoableRideStrategy(int maxSkipped, long randomSeed){
+            this.maxSkipped = maxSkipped;
+            random = new Random(randomSeed);
+        }
+
+        @Override
+        public Optional<Ride> giveRideTo(Vehicle vehicle, int step) {
+            return unasssignedRides.stream()
+                    .parallel()
+                    .filter(r -> canDoFullRide(r,vehicle,step))
+                    .skip(random.nextInt(maxSkipped+1))
+                    .findFirst();
+        }
+    }
+
+    public class IAmCloserStrategy implements AffectationStrategy{
+
+        private final int maxSkipped;
+
+        public IAmCloserStrategy( int maxSkipped){
+            this.maxSkipped = maxSkipped;
+        }
+
+        @Override
+        public Optional<Ride> giveRideTo(Vehicle vehicle, int step) {
+
+            List<Ride> ridesPool = unasssignedRides.stream()
+                    .parallel()
+                    .filter(r -> canDoFullRide(r, vehicle, step))
+                    .limit(freeVehicles.size() + maxSkipped )
+                    .collect(Collectors.toList());
+
+            Ride selected = null;
+            int minDistance = Integer.MAX_VALUE;
+            for(Ride ride: ridesPool){
+                int distance = vehicle.getCurrentPosition().distanceTo(ride.getFrom());
+                if ( ride.getEarliestStart() > currentStep+distance) {
+                    distance = ride.getEarliestStart() - currentStep;
+                }
+                if(distance < minDistance){
+                    selected = ride;
+                    minDistance=distance;
+                }
+
+            }
+            return Optional.ofNullable(selected);
+        }
+    }
+
+
+    public class TakeLongerInNextRidesStrategy implements AffectationStrategy{
+
+
+        private final int maxSkipped;
+
+        public TakeLongerInNextRidesStrategy(int maxSkipped){
+            this.maxSkipped = maxSkipped;
+        }
+
+        @Override
+        public Optional<Ride> giveRideTo(Vehicle vehicle, int step) {
+            List<Ride> choice = unasssignedRides.stream()
+                    .parallel()
+                    .filter(r -> canDoFullRide(r, vehicle, step))
+                    .limit(maxSkipped)
+                    .collect(Collectors.toList());
+
+            Ride selectedRide = null;
+            int length = 0;
+            int distance = 0;
+            for( Ride ride : choice){
+                if (selectedRide == null || length < ride.getLength()) {
+                    selectedRide = ride;
+                    length = ride.getLength();
+                }
+            }
+
+            return Optional.ofNullable(selectedRide);
+        }
+    }
+
+    public class DontGoTooFarStrategy implements AffectationStrategy{
+
+
+        private final int maxSkipped;
+
+        public DontGoTooFarStrategy(int maxSkipped){
+            this.maxSkipped = maxSkipped;
+        }
+
+        @Override
+        public Optional<Ride> giveRideTo(Vehicle vehicle, int step) {
+            List<Ride> choice = unasssignedRides.stream()
+                    .parallel()
+                    .filter(r -> canDoFullRide(r, vehicle, step))
+                    .limit(maxSkipped)
+                    .collect(Collectors.toList());
+
+            Ride selectedRide = null;
+            int length = 0;
+            int distance = 0;
+            for( Ride ride : choice){
+                if (selectedRide == null || length > vehicle.getCurrentPosition().distanceTo(ride.getFrom())) {
+                    selectedRide = ride;
+                    length = vehicle.getCurrentPosition().distanceTo(ride.getFrom());
+                }
+            }
+
+            return Optional.ofNullable(selectedRide);
+        }
+    }
+
+    public class StayCentricStrategy implements AffectationStrategy{
+
+
+        private final int maxSkipped;
+        private final Position center;
+
+        public StayCentricStrategy(int maxSkipped, Position center){
+            this.maxSkipped = maxSkipped;
+            this.center = center;
+        }
+
+        @Override
+        public Optional<Ride> giveRideTo(Vehicle vehicle, int step) {
+            List<Ride> choice = unasssignedRides.stream()
+                    .parallel()
+                    .filter(r -> canDoFullRide(r, vehicle, step))
+                    .limit(maxSkipped)
+                    .collect(Collectors.toList());
+
+            Ride selectedRide = null;
+            int distanceToCenter = 0;
+
+            for( Ride ride : choice){
+                int distance=ride.getTo().distanceTo(center);
+                if (selectedRide == null || distance < distanceToCenter) {
+                    selectedRide = ride;
+                    distanceToCenter = distance;
+                }
+            }
+
+            return Optional.ofNullable(selectedRide);
+        }
+    }
+
+    public class RideNotIsolatedStrategy implements AffectationStrategy{
+
+
+        private final int maxSkipped;
+        Map<Ride, Integer> distances;
+
+        public RideNotIsolatedStrategy(int maxSkipped, Rules rules){
+            this.maxSkipped = maxSkipped;
+            distances = rules.computeMinDistancesBetweenRides();
+        }
+
+        @Override
+        public Optional<Ride> giveRideTo(Vehicle vehicle, int step) {
+            List<Ride> choice = unasssignedRides.stream()
+                    .parallel()
+                    .filter(r -> canDoFullRide(r, vehicle, step))
+                    .limit(maxSkipped)
+                    .collect(Collectors.toList());
+
+            Ride selectedRide = null;
+            int distanceToRides= 0;
+
+            for( Ride ride : choice){
+                int distance=distances.get(ride);
+                if (selectedRide == null || distance < distanceToRides) {
+                    selectedRide = ride;
+                    distanceToRides = distance;
+                }
+            }
+
+            return Optional.ofNullable(selectedRide);
+        }
+    }
+
+    public class TakeCmompromiseInNextRidesStrategy implements AffectationStrategy{
+
+
+        private final int maxSkipped;
+
+        public TakeCmompromiseInNextRidesStrategy(int maxSkipped){
+            this.maxSkipped = maxSkipped;
+        }
+
+        @Override
+        public Optional<Ride> giveRideTo(Vehicle vehicle, int step) {
+            List<Ride> choice = unasssignedRides.stream()
+                    .parallel()
+                    .filter(r -> canDoFullRide(r, vehicle, step))
+                    .limit(maxSkipped)
+                    .collect(Collectors.toList());
+
+            Ride selectedRide = null;
+            double lengthOverCost = 0.0;
+
+            int distance = 0;
+            for( Ride ride : choice){
+                double loc =  ride.getLength()*1.0d / Math.max(vehicle.getCurrentPosition().distanceTo(ride.getFrom())+currentStep, ride.getEarliestStart());
+                if (selectedRide == null || lengthOverCost < loc) {
+                    selectedRide = ride;
+                    lengthOverCost = loc;
+                }
+            }
+
+            return Optional.ofNullable(selectedRide);
+        }
+    }
 
     private void affectRideTo(Ride r, Vehicle vehicle, int currentStep) {
         unasssignedRides.remove(r);

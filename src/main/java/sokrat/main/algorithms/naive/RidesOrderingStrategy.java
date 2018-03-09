@@ -28,6 +28,26 @@ public interface RidesOrderingStrategy extends Comparator<Ride> {
                 .compare(r2.getLength(),r1.getLength())
                 .result();
     };
+    public static final RidesOrderingStrategy LATEST_START_FIRST_SHORT_PRIO= (Ride r1, Ride r2) -> {
+        return ComparisonChain.start()
+                .compare(r1.getLatestStart(),r2.getLatestStart())
+                .compare(r1.getLength(),r2.getLength())
+                .result();
+    };
+    public static final RidesOrderingStrategy LATEST_FINISH_FIRST= (Ride r1, Ride r2) -> {
+        return ComparisonChain.start()
+                .compare(r1.getLatestFinish(),r2.getLatestFinish())
+                .compare(r2.getLength(),r1.getLength())
+                .result();
+    };
+    public static final RidesOrderingStrategy LATEST_FINISH_LAST= (Ride r1, Ride r2) -> {
+        return ComparisonChain.start()
+                .compare(r2.getLatestFinish(),r1.getLatestFinish())
+                .compare(r1.getLength(),r2.getLength())
+                .result();
+    };
+
+
     public static final RidesOrderingStrategy DEFAULT=(r1, r2) -> Integer.compare(r1.getIndex(),r2.getIndex());
 
 
